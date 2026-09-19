@@ -43,7 +43,7 @@ Never put the key in configuration, prompts, commits, or intake. Requests send e
 
 ## Configuration and cost controls
 
-Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions refer to [prompts/](prompts/); preserve older prompt files when introducing a new version. Metadata records the version, prompt hash, provider, model, settings, and extraction tool. Updating configuration does not regenerate existing summaries or relationships.
+Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions refer to [prompts/](prompts/); preserve older prompt files when introducing a new version. Metadata records the version, prompt hash, provider, model, settings, and extraction tool. Updating configuration does not regenerate existing summaries or relationships. Summary prompt `v2` requests an array of exactly 100 non-whitespace word strings through the structured-output schema. The adapter validates the array and joins it with spaces; stored summaries remain plain text. This avoids relying on the model to count prose words. Unreadable or insufficient content can return a null array and is rejected without inventing a summary. Prompt `v1` remains available for provenance and legacy configuration, but retains the less reliable prose-counting approach.
 
 | Setting | Default | Meaning |
 | --- | --- | --- |

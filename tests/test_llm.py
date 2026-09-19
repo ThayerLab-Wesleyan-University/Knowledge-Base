@@ -8,7 +8,15 @@ from utility_scripts.contracts import KBError, load_config, validate_relationshi
 from utility_scripts.llm import OpenAI
 
 
+def wire_summary(value):
+    if isinstance(value, dict) and 'summary' in value:
+        value = dict(value)
+        value['summary_words'] = value.pop('summary').split() if value['sufficient'] else None
+    return value
+
+
 def success(value):
+    value = wire_summary(value)
     return httpx.Response(200, json={'status': 'completed', 'output': [
         {'type': 'message', 'content': [{'type': 'output_text', 'text': json.dumps(value)}]}]})
 
@@ -132,7 +140,7 @@ def test_word_count_repair_uses_previous_output_and_reports_actual_count(repo, m
         client.summarize('protein', CONTENT)
         assert client.requests == 2
         assert 'received 99' in requests[1]['instructions']
-        assert json.loads(requests[1]['input'])['previous_output'] == bad
+        assert json.loads(requests[1]['input'])['previous_output'] == wire_summary(bad)
         assert 'received 99' in caplog.text
         assert 'confidential-document-text' not in caplog.text
     finally:
@@ -180,3 +188,59 @@ def test_transport_diagnostics_do_not_echo_exception_secrets(repo, monkeypatch, 
         assert 'document-body' not in str(result.value) + caplog.text
     finally:
         client.close()
+
+
+def test_summary_request_enforces_word_array_and_returns_prose(repo, monkeypatch):
+    from jsonschema import Draft202012Validator
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    def handler(request):
+        schema = json.loads(request.content)['text']['format']['schema']
+        words_schema = schema['properties']['summary_words']
+        assert words_schema['minItems'] == words_schema['maxItems'] == 100
+        assert words_schema['items']['pattern'] == r'^\S+$'
+        good = wire_summary(summary())
+        Draft202012Validator(schema).validate(good)
+        for count in (94, 101, 96):
+            bad = {**good, 'summary_words': ['word'] * count}
+            assert not Draft202012Validator(schema).is_valid(bad)
+        return success(good)
+    client = OpenAI(repo, load_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        result = client.summarize('protein', CONTENT)
+        assert result['summary'] == SUMMARY
+        assert 'summary_words' not in result
+        assert client.provenance('summary')['prompt_version'] == 'v2'
+        assert client.requests == 1
+    finally:
+        client.close()
+
+
+@pytest.mark.parametrize('word', ['', 'two words', ' leading', 'trailing ', 'line\nbreak', 'word\n'])
+def test_summary_word_items_reject_whitespace(word):
+    from utility_scripts.contracts import decode_summary_words
+    value = wire_summary(summary())
+    value['summary_words'][0] = word
+    with pytest.raises(KBError):
+        decode_summary_words(value)
+
+
+def test_summary_words_insufficient_content_is_rejected():
+    from utility_scripts.contracts import decode_summary_words
+    with pytest.raises(KBError, match='Insufficient'):
+        decode_summary_words({'sufficient': False, 'title': '', 'summary_words': None, 'keywords': []})
+
+
+def test_word_array_ingests_as_plain_text_metadata(repo, monkeypatch):
+    from utility_scripts.ingest import run
+    from utility_scripts.storage import load_collection
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    (repo / 'markdown/test.md').write_text(CONTENT)
+    def factory(root, config):
+        return OpenAI(root, config, transport=httpx.MockTransport(lambda _: success(summary())), sleep=lambda _: None)
+    result = run(repo, provider_factory=factory)
+    record = next(iter(load_collection(repo)[0].values()))
+    assert record['summary'] == SUMMARY
+    assert len(record['summary'].split()) == 100
+    assert record['generation']['prompt_version'] == 'v2'
+    assert result['api_requests'] == 1
+    assert run(repo, 'validate')['valid']

@@ -9,7 +9,8 @@ import time
 import httpx
 
 from utility_scripts.contracts import (
-    KBError, RELATIONSHIP_RESPONSE, SUMMARY_RESPONSE, digest,
+    KBError, RELATIONSHIP_RESPONSE, SUMMARY_RESPONSE, SUMMARY_WORDS_RESPONSE, digest,
+    decode_summary_words,
     validate_relationship, validate_summary,
 )
 
@@ -132,8 +133,10 @@ class OpenAI:
         raise AssertionError("unreachable")
 
     def summarize(self, title_hint, content):
+        legacy = self.config["summary_prompt_version"] == "v1"
         return self._request("summary", {"filename_stem": title_hint, "document": content},
-                             SUMMARY_RESPONSE, validate_summary)
+                             SUMMARY_RESPONSE if legacy else SUMMARY_WORDS_RESPONSE,
+                             validate_summary if legacy else decode_summary_words)
 
     def relate(self, a, b):
         keys = ("document_id", "title", "summary", "keywords")

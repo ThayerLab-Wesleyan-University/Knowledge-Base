@@ -41,6 +41,14 @@ SUMMARY_RESPONSE = object_schema({
     "summary": {"type": "string"},
     "keywords": {"type": "array", "items": {"type": "string"}},
 })
+# API-only representation: constrained decoding controls the number of words.
+# Persistent metadata retains an ordinary prose summary.
+SUMMARY_WORDS_RESPONSE = object_schema({
+    "sufficient": {"type": "boolean"}, "title": {"type": "string"},
+    "summary_words": {"type": ["array", "null"], "minItems": 100, "maxItems": 100,
+                      "items": {"type": "string", "pattern": r"^\S+$"}},
+    "keywords": {"type": "array", "items": {"type": "string"}},
+})
 RELATIONSHIP_RESPONSE = object_schema({
     "source": TEXT, "target": TEXT, "related": {"type": "boolean"}, "rationale": TEXT,
 })
@@ -95,6 +103,22 @@ def validate_summary(value):
         safe_text(word, "keyword")
     value["keywords"] = [w.strip() for w in words]
     return value
+
+
+def decode_summary_words(value):
+    if isinstance(value, dict) and isinstance(value.get("summary_words"), list):
+        count = len(value["summary_words"])
+        if count != 100:
+            raise KBError(f"Summary must contain exactly 100 word items; received {count}.")
+    validate_schema(value, SUMMARY_WORDS_RESPONSE, "summary word response")
+    words = value["summary_words"]
+    if value["sufficient"] and words is None:
+        raise KBError("A sufficient document requires 100 summary word items.")
+    if words is not None and any(len(word.split()) != 1 or word != word.strip() for word in words):
+        raise KBError("Each summary word item must contain one nonempty word without whitespace.")
+    return validate_summary({"sufficient": value["sufficient"], "title": value["title"],
+                             "summary": " ".join(words) if words is not None else "",
+                             "keywords": value["keywords"]})
 
 
 def timestamp(value):

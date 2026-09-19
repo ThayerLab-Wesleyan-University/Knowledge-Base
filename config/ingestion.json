@@ -5,7 +5,7 @@
   "model_context_tokens": 1047576,
   "max_output_tokens": 2048,
   "temperature": 0,
-  "summary_prompt_version": "v1",
+  "summary_prompt_version": "v2",
   "relationship_prompt_version": "v1",
   "max_file_bytes": 20971520,
   "max_extracted_input_tokens": 60000,
