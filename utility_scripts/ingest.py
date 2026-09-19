@@ -123,7 +123,8 @@ def validate_outputs(root, records, relationships):
     if not image.is_file() or not image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
         raise KBError("Missing or invalid graph PNG; run rebuild.")
     readme = checked_path(root, "README.md").read_bytes().decode("utf-8")
-    if render_readme(readme, records, graph, relationships) != readme:
+    if render_readme(readme, records, graph, relationships,
+                     image_sha256=digest(image.read_bytes())) != readme:
         raise KBError("Generated README does not match the records; run rebuild.")
     for doc_id, attrs in graph.nodes(data=True):
         for key in ("content_path", "metadata_path", "source_path"):
@@ -138,7 +139,8 @@ def build_outputs(stage, records, relationships):
     write_graph(graph, stage / "KG/KG.graphml")
     render_image(graph, stage / "KG/KG.png")
     readme = (stage / "README.md").read_bytes().decode("utf-8")
-    (stage / "README.md").write_text(render_readme(readme, records, graph, relationships))
+    (stage / "README.md").write_text(render_readme(
+        readme, records, graph, relationships, image_sha256=digest((stage / "KG/KG.png").read_bytes())))
     checked_records, checked_edges = load_collection(stage)
     validate_outputs(stage, checked_records, checked_edges)
 

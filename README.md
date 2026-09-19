@@ -4,11 +4,11 @@ A shared record of our publications, theses, methods, research notes, and releva
 
 ## Knowledge graph
 
-Each node represents a submitted document. Connections are **LLM-inferred topical similarities**, not verified citations, causal relationships, or scientific conclusions. Node labels in the image match the document table below.
+Each node represents a submitted document. Connections are **LLM-inferred topical similarities**, not verified citations, causal relationships, or scientific conclusions. Short titles appear beneath each node; the IDs inside the circles match the full document titles and links in the table below.
 
 <!-- KG:START -->
 
-![ThayerLab document knowledge graph](KG/KG.png)
+![ThayerLab document knowledge graph](KG/KG.png?v=f3f9d973594efb7a464037015425ac96c9dafcfb9bb5f46462e12e94005a456b)
 
 **1 documents · 0 LLM-inferred connections**
 
