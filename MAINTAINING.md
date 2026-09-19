@@ -53,7 +53,7 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 | `max_output_tokens` | 2,048 | Per-response output cap. |
 | `temperature` | 0 | Generation setting, not a guarantee of deterministic model output. |
 | `max_file_bytes` | 20,971,520 | Maximum original file size (20 MiB). |
-| `max_extracted_input_tokens` | 100,000 | Conservative token upper bound: one token per UTF-8 byte of extracted text. |
+| `max_extracted_input_tokens` | 150,000 | Conservative token upper bound: one token per UTF-8 byte of extracted text. |
 | `max_new_documents` | 10 | Maximum distinct new sources in one batch. |
 | `max_api_requests` | 300 | Batch-wide attempt cap, including retries. |
 | `request_timeout_seconds` | 60 | HTTP transport timeout. |

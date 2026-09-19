@@ -95,8 +95,14 @@ def prepare(root, config, records, paths):
         else:
             content, extraction = markdown_text(data), {"tool": "utf8-passthrough", "version": "1"}
             source_type = "md"
-        if len(content.encode()) > config["max_extracted_input_tokens"]:
-            raise KBError(f"Document {doc_id} exceeds the conservative input-token limit; submit a shorter document or review the configured limit.")
+        extracted_bytes = len(content.encode("utf-8"))
+        input_limit = config["max_extracted_input_tokens"]
+        if extracted_bytes > input_limit:
+            raise KBError(
+                f"Document {doc_id} contains {extracted_bytes:,} UTF-8 bytes of extracted text; "
+                f"the configured conservative input limit is {input_limit:,} bytes "
+                "(one byte counted as one token for budgeting). "
+                "Submit a shorter document or review max_extracted_input_tokens in config/ingestion.json.")
         new[doc_id] = {"data": data, "content": content, "source_type": source_type,
                        "filename": path.name, "extraction": extraction}
     if len(new) > config["max_new_documents"]:
