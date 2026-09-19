@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/content.md",
+  "content_sha256": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+  "created_at": "2026-09-19T02:54:06.977716+00:00",
+  "document_id": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "SAWNERGY",
+    "molecular dynamics",
+    "residue interaction networks",
+    "DeepWalk",
+    "skip-gram embeddings",
+    "electrostatic interactions",
+    "van der Waals interactions",
+    "random walks",
+    "self-avoiding walks",
+    "Zarr compression"
+  ],
+  "schema_version": 1,
+  "source_filename": "sawnergy.md",
+  "source_path": "sources/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/original.md",
+  "source_type": "md",
+  "summary": "SAWNERGY is a Python toolkit that converts molecular dynamics trajectories into temporal residue interaction networks (TRINs), samples random walks, and trains DeepWalk-style skip-gram embeddings. It produces compact, low-dimensional representations of residue interaction patterns, replacing bulky framewise adjacencies, and stores them as compressed Zarr archives with metadata for reproducibility and visualization. Residues refer to biopolymer building blocks, especially amino acids in proteins, but the method can extend to other biomolecules with residue mappings and non-bonded energies. SAWNERGY focuses on non-bonded interaction energies, electrostatic and van der Waals, computed from standard MD force fields. It aggregates atomic interaction energies into residue-level matrices,prunes,normalizes,andcreatestransitionmatricesforwalksampling.Randomwalksincludeplainandself-avoidingtypes,balancinglocalandglobalnetworkexploration.Skip-grammodels,withfullsoftmaxornegativesampling,trainembeddingsfromwalksequences,encodingcontextualinteractionpatterns.Anorthogonalalignmentmethodenablescomparisonsacrossframesorconditions.SAWNERGYprovidesparallelcomputation,compression,visualization,andreproducibilityfeatures,facilitatinganalysisofallostericnetworksandproteindynamics.Itissuitableforfeatureengineering,dynamicsmapping,andcomparativeanalysisofMDsimulations,withopensourcecodeanddocumentationavailable.",
+  "title": "SAWNERGY: A Python framework for dynamic residue-interaction networks and walk-based embeddings from molecular dynamics simulations"
+}

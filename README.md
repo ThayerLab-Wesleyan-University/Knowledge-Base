@@ -8,15 +8,16 @@ Each node represents a submitted document. Connections are **LLM-inferred topica
 
 <!-- KG:START -->
 
-![ThayerLab document knowledge graph](KG/KG.png?v=f3f9d973594efb7a464037015425ac96c9dafcfb9bb5f46462e12e94005a456b)
+![ThayerLab document knowledge graph](KG/KG.png?v=137760a7a45907aa329351ef1f0505aa71db41134e60d1edfdb66770a5b038ec)
 
-**1 documents · 0 LLM-inferred connections**
+**2 documents · 1 LLM-inferred connections**
 
 ### Documents
 
 | Node | Document | Original source | Keywords | Connected documents |
 | --- | --- | --- | --- | --- |
-| D1 | [Structure-Based Drug Design: Test Research Note](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md) ([summary](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json)) | [MD](sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md) | structure-based drug design, molecular docking, protein-ligand interactions, binding pocket, computational study, molecular dynamics simulations, binding affinity estimation, ligand library, protein conformations, validation and reproducibility | None |
+| D1 | [SAWNERGY: A Python framework for dynamic residue-interaction networks and walk-based embeddings from molecular dynamics simulations](KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/content.md) ([summary](KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/metadata.json)) | [MD](sources/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/original.md) | SAWNERGY, molecular dynamics, residue interaction networks, DeepWalk, skip-gram embeddings, electrostatic interactions, van der Waals interactions, random walks, self-avoiding walks, Zarr compression | [Structure-Based Drug Design: Test Research Note](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md) |
+| D2 | [Structure-Based Drug Design: Test Research Note](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md) ([summary](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json)) | [MD](sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md) | structure-based drug design, molecular docking, protein-ligand interactions, binding pocket, computational study, molecular dynamics simulations, binding affinity estimation, ligand library, protein conformations, validation and reproducibility | [SAWNERGY: A Python framework for dynamic residue-interaction networks and walk-based embeddings from molecular dynamics simulations](KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/content.md) |
 
 ### Connections
 
@@ -24,8 +25,7 @@ All connections below are LLM-inferred topical similarities.
 
 | Document | Related document | Rationale |
 | --- | --- | --- |
-
-No connections have been generated.
+| [SAWNERGY: A Python framework for dynamic residue-interaction networks and walk-based embeddings from molecular dynamics simulations](KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/content.md) | [Structure-Based Drug Design: Test Research Note](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md) | Both documents involve molecular dynamics simulations and analysis of protein interactions; the source focuses on residue interaction networks and embeddings from MD trajectories, while the target applies MD simulations to study protein-ligand complexes in structure-based drug design, indicating a shared scientific system and method relevant to protein dynamics and interactions. |
 <!-- KG:END -->
 
 ## How lab members use this collection

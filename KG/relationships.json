@@ -1,4 +1,23 @@
 {
-  "edges": [],
+  "edges": [
+    {
+      "created_at": "2026-09-19T02:54:08.635751+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents involve molecular dynamics simulations and analysis of protein interactions; the source focuses on residue interaction networks and embeddings from MD trajectories, while the target applies MD simulations to study protein-ligand complexes in structure-based drug design, indicating a shared scientific system and method relevant to protein dynamics and interactions.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
+    }
+  ],
   "schema_version": 1
 }

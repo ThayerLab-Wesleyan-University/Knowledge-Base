@@ -1,17 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="inferred_by" for="edge" attr.name="inferred_by" attr.type="string" />
+  <key id="rationale" for="edge" attr.name="rationale" attr.type="string" />
+  <key id="relation_type" for="edge" attr.name="relation_type" attr.type="string" />
   <key id="metadata_path" for="node" attr.name="metadata_path" attr.type="string" />
   <key id="source_path" for="node" attr.name="source_path" attr.type="string" />
   <key id="content_path" for="node" attr.name="content_path" attr.type="string" />
   <key id="display_label" for="node" attr.name="display_label" attr.type="string" />
   <key id="title" for="node" attr.name="title" attr.type="string" />
   <graph edgedefault="undirected">
+    <node id="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be">
+      <data key="title">SAWNERGY: A Python framework for dynamic residue-interaction networks and walk-based embeddings from molecular dynamics simulations</data>
+      <data key="display_label">D1</data>
+      <data key="content_path">KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/content.md</data>
+      <data key="source_path">sources/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/original.md</data>
+      <data key="metadata_path">KG/node_contents/0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be/metadata.json</data>
+    </node>
     <node id="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
       <data key="title">Structure-Based Drug Design: Test Research Note</data>
-      <data key="display_label">D1</data>
+      <data key="display_label">D2</data>
       <data key="content_path">KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md</data>
       <data key="source_path">sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md</data>
       <data key="metadata_path">KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json</data>
     </node>
+    <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents involve molecular dynamics simulations and analysis of protein interactions; the source focuses on residue interaction networks and embeddings from MD trajectories, while the target applies MD simulations to study protein-ligand complexes in structure-based drug design, indicating a shared scientific system and method relevant to protein dynamics and interactions.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
   </graph>
 </graphml>
