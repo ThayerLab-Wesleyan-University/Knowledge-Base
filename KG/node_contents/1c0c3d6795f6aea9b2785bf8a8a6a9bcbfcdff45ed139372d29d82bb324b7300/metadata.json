@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md",
+  "content_sha256": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+  "created_at": "2026-09-19T02:32:37.311722+00:00",
+  "document_id": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "structure-based drug design",
+    "molecular docking",
+    "protein-ligand interactions",
+    "binding pocket",
+    "computational study",
+    "molecular dynamics simulations",
+    "binding affinity estimation",
+    "ligand library",
+    "protein conformations",
+    "validation and reproducibility"
+  ],
+  "schema_version": 1,
+  "source_filename": "drug-design-test.md",
+  "source_path": "sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md",
+  "source_type": "md",
+  "summary": "Structure-based drug design utilizes target protein's three-dimensional structure to guide selection and modification of candidate ligands. Molecular docking proposes binding poses and assigns scores that help prioritize compounds. These scores are model-dependent estimates, not experimental measurements of binding affinity. A favorable docking score alone cannot establish therapeutic efficacy or safety. A hypothetical protein with a known binding pocket is considered for a computational study comparing a small ligand library across several protein conformations. The study examines hydrogen bonds, hydrophobic contacts, and steric clashes. Molecular dynamics simulations explore selected protein-ligand complexes over time. The workflow records protein structures, ligand protonation states,",
+  "title": "Structure-Based Drug Design: Test Research Note"
+}

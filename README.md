@@ -10,14 +10,13 @@ Each node represents a submitted document. Connections are **LLM-inferred topica
 
 ![ThayerLab document knowledge graph](KG/KG.png)
 
-**0 documents · 0 LLM-inferred connections**
-
-No documents have been processed yet. Add a submission using the instructions below.
+**1 documents · 0 LLM-inferred connections**
 
 ### Documents
 
 | Node | Document | Original source | Keywords | Connected documents |
 | --- | --- | --- | --- | --- |
+| D1 | [Structure-Based Drug Design: Test Research Note](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md) ([summary](KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json)) | [MD](sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md) | structure-based drug design, molecular docking, protein-ligand interactions, binding pocket, computational study, molecular dynamics simulations, binding affinity estimation, ligand library, protein conformations, validation and reproducibility | None |
 
 ### Connections
 

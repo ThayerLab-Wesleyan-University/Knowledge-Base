@@ -1,4 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <graph edgedefault="undirected" />
+  <key id="metadata_path" for="node" attr.name="metadata_path" attr.type="string" />
+  <key id="source_path" for="node" attr.name="source_path" attr.type="string" />
+  <key id="content_path" for="node" attr.name="content_path" attr.type="string" />
+  <key id="display_label" for="node" attr.name="display_label" attr.type="string" />
+  <key id="title" for="node" attr.name="title" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
+      <data key="title">Structure-Based Drug Design: Test Research Note</data>
+      <data key="display_label">D1</data>
+      <data key="content_path">KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/content.md</data>
+      <data key="source_path">sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md</data>
+      <data key="metadata_path">KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json</data>
+    </node>
+  </graph>
 </graphml>
