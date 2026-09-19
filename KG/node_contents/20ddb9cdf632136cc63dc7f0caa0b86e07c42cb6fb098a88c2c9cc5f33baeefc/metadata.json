@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc/content.md",
+  "content_sha256": "932bfe47da1c75d2366107ee470c8d103518d7dfe38df6018f20b31d73701a47",
+  "created_at": "2026-09-19T04:54:06.650747+00:00",
+  "document_id": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "GISTnet-MD",
+    "graph neural networks",
+    "molecular dynamics",
+    "protein conformational dynamics",
+    "contrastive learning",
+    "explainable AI",
+    "integrated gradients",
+    "allostery",
+    "T4-Lysozyme",
+    "Adenosine A2A receptor"
+  ],
+  "schema_version": 1,
+  "source_filename": "2026.05.19.726195v1.full.pdf",
+  "source_path": "sources/20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc/original.pdf",
+  "source_type": "pdf",
+  "summary": "Biomolecular function is controlled by structural and dynamical adaptations to binding events. Molecular dynamics simulations capture these events at atomic resolution, but separating functional signatures from noise is challenging. We introduce GISTnet-MD, an explainable deep learning framework that uses dynamic protein graph representations and group-aware contrastive learning to detect state-specific dynamic signatures across independent replicas. The model filters trajectory-specific correlations and maps differences to individual residues. We demonstrate this approach on T4-Lysozyme mutant, PDZ3 domain, and A2A receptor, identifying binding-ready conformations, allosteric determinants, and ligand-independent activation signatures. GISTnet-MD generalizes across unseen data, translating raw trajectory differences into residue-level determinants. Theoretical,methodological,andsimulationdetailsincludecontinuousgraphrepresentations,1D-CNNtemporalintegration,globalattentionpooling,andgroup-awarecontrastivepre-trainingtoavoidoverfittingtoinitialconditionsandthermalnoise.Cross-validationensuresgeneralization.ExplainableAIusingIntegratedGradientsmapsfunctionalfeaturesbackto3Dstructures.Theframeworksuccessfullyisolateslocalizedanddistributedallostericsignaturesandactivationmechanisms,evenwhenprimarysignalsaremasked,demonstratingrobustnessandinterpretabilityforproteinfunctionanalysisanddrugdesignapplications.",
+  "title": "Spatiotemporal graph neural networks reveal conformational binding signature in protein dynamics"
+}

@@ -30,6 +30,13 @@
       <data key="source_path">sources/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/original.md</data>
       <data key="metadata_path">KG/node_contents/1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300/metadata.json</data>
     </node>
+    <node id="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc">
+      <data key="title">Spatiotemporal graph neural networks reveal conformational binding signature in protein dynamics</data>
+      <data key="display_label">D4</data>
+      <data key="content_path">KG/node_contents/20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc/content.md</data>
+      <data key="source_path">sources/20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc/original.pdf</data>
+      <data key="metadata_path">KG/node_contents/20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc/metadata.json</data>
+    </node>
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular docking and binding affinity in the context of drug design, with the source using docking scores to guide molecular generation and the target employing docking and protein-ligand interactions to prioritize compounds in structure-based drug design. This shared use of docking and binding affinity estimation provides a specific scientific connection.</data>
@@ -38,6 +45,16 @@
     <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents involve molecular dynamics simulations and analysis of protein interactions; the source focuses on residue interaction networks and embeddings from MD trajectories, while the target applies MD simulations to study protein-ligand complexes in structure-based drug design, indicating a shared scientific system and method relevant to protein dynamics and interactions.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on analyzing protein dynamics from molecular dynamics simulations using graph-based representations of residue interactions. The source uses residue interaction networks and random walk embeddings, while the target employs spatiotemporal graph neural networks to identify functional conformational signatures, indicating a shared research topic and methodological approach in protein dynamics analysis.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on protein-ligand interactions and utilize molecular dynamics simulations to study protein conformations and binding events. The source discusses structure-based drug design and computational analysis of protein-ligand complexes, while the target presents a deep learning framework analyzing protein conformational dynamics from molecular dynamics data, relevant for drug design. This shared focus on protein dynamics and binding signatures establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
   </graph>
