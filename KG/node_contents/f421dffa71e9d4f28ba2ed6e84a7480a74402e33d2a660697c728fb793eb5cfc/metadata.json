@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/content.md",
+  "content_sha256": "7a36ccf82c1eee892e79cdbefc444b9cca2699109750015a2cee120395f9f653",
+  "created_at": "2026-09-19T05:15:27.246541+00:00",
+  "document_id": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "Molecular Dynamics simulations",
+    "Protein conformational ensembles",
+    "Graph embedding",
+    "Machine learning",
+    "Protein dynamics",
+    "MDGraphEmb toolkit",
+    "GraphSAGE",
+    "Adenylate kinase",
+    "Protein state classification",
+    "Supervised learning"
+  ],
+  "schema_version": 1,
+  "source_filename": "btaf420.pdf",
+  "source_path": "sources/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/original.pdf",
+  "source_type": "pdf",
+  "summary": "Molecular Dynamics (MD) simulations are crucial for studying protein dynamics and function. MDGraphEmb is a Python library built on MDAnalysis that converts protein MD trajectories into graph-based representations and embeddings. It compresses high-dimensional simulation data into tabular formats suitable for machine learning. The toolkit supports various graph embedding methods including Node2Vec, GCN, GAT, and GraphSAGE, and machine learning models such as neural networks, random forests, and boosting. MDGraphEmb enables classification of protein conformational states, demonstrated using adenylate kinase (ADK) as a case study. Supervised models trained on graph embeddings predict functional states with high accuracy. GraphSAGE embeddings combined with neural-network-based-classifiers-performed-best,especially-with-large-datasets-up-to-100000-frames.The-toolkit-was-also-validated-on-Plantaricin-E-and-HIV-1-protease-to-assess-generalizability.MDGraphEmb-provides-a-domain-specific,integrated-workflow-from-MD-trajectory-preprocessing-to-embedding-and-classification,facilitating-scalable-and-reproducible-analysis-of-protein-dynamics-and-functional-state-prediction,lowering-the-barrier-for-applying-graph-learning-in-molecular-simulations-and-enabling-applications-such-as-mutation-impact-analysis-and-automated-state-classification-in-high-throughput-workflows-for-protein-dynamics-research-and-bioinformatics-applications-including-long-timescale-trajectory-annotation-and-functional-state-detection.",
+  "title": "MDGraphEmb: a toolkit for graph embedding and classification of protein conformational ensembles"
+}
