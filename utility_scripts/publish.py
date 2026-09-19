@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -40,6 +41,7 @@ def publish(root: Path, base: str, paths: list[str], *, message="Update knowledg
     check_remote(root, base)
     for path in paths:
         allowed = (path in {"README.md", "KG/KG.graphml", "KG/KG.png", "KG/relationships.json"}
+                   or re.fullmatch(r"KG/rendered/[0-9a-f]{64}\.png", path)
                    or path.startswith(("KG/node_contents/", "sources/", "pdf/", "markdown/")))
         if not allowed or path in ("pdf/README.md", "markdown/README.md"):
             raise KBError("Refusing to publish a path outside the ingestion output set.")

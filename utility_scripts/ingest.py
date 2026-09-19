@@ -124,6 +124,9 @@ def validate_outputs(root, records, relationships):
     image = checked_path(root, "KG/KG.png")
     if not image.is_file() or not image.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
         raise KBError("Missing or invalid graph PNG; run rebuild.")
+    versioned = checked_path(root, f"KG/rendered/{digest(image.read_bytes())}.png")
+    if not versioned.is_file() or versioned.read_bytes() != image.read_bytes():
+        raise KBError("Missing or inconsistent versioned graph PNG; run rebuild.")
     readme = checked_path(root, "README.md").read_bytes().decode("utf-8")
     if render_readme(readme, records, graph, relationships,
                      image_sha256=digest(image.read_bytes())) != readme:
@@ -140,11 +143,24 @@ def build_outputs(stage, records, relationships):
     graph = build_graph(records, relationships)
     write_graph(graph, stage / "KG/KG.graphml")
     render_image(graph, stage / "KG/KG.png")
+    image_bytes = (stage / "KG/KG.png").read_bytes()
+    (stage / "KG/rendered").mkdir(exist_ok=True)
+    (stage / f"KG/rendered/{digest(image_bytes)}.png").write_bytes(image_bytes)
     readme = (stage / "README.md").read_bytes().decode("utf-8")
     (stage / "README.md").write_text(render_readme(
         readme, records, graph, relationships, image_sha256=digest((stage / "KG/KG.png").read_bytes())))
     checked_records, checked_edges = load_collection(stage)
     validate_outputs(stage, checked_records, checked_edges)
+
+
+def derived_changes(stage, before):
+    """Publish the current immutable image and remove superseded image files."""
+    image_path = f"KG/rendered/{digest((stage / 'KG/KG.png').read_bytes())}.png"
+    paths = ["README.md", "KG/relationships.json", "KG/KG.graphml", "KG/KG.png", image_path]
+    updates = {rel: (stage / rel).read_bytes() for rel in paths}
+    removals = [rel for rel in before
+                if re.fullmatch(r"KG/rendered/[0-9a-f]{64}\.png", rel) and rel != image_path]
+    return updates, removals
 
 
 def run(root, command="ingest", *, dry_run=False, publish_changes=False, provider_factory=OpenAI):
@@ -240,12 +256,13 @@ def run(root, command="ingest", *, dry_run=False, publish_changes=False, provide
                 relationships["edges"].sort(key=lambda e: (e["source"], e["target"]))
                 validate_edges(relationships, records)
                 build_outputs(stage, records, relationships)
-                output_paths = ["README.md", "KG/relationships.json", "KG/KG.graphml", "KG/KG.png"]
+                updates, obsolete_images = derived_changes(stage, before)
+                output_paths = []
                 for doc_id in new:
                     output_paths += [records[doc_id]["source_path"], records[doc_id]["content_path"],
                                      f"KG/node_contents/{doc_id}/metadata.json"]
-                updates = {rel: (stage / rel).read_bytes() for rel in output_paths}
-                report["changed_paths"] = apply_changes(root, before, updates, removals)
+                updates.update({rel: (stage / rel).read_bytes() for rel in output_paths})
+                report["changed_paths"] = apply_changes(root, before, updates, removals + obsolete_images)
         report["documents"] = len(records)
         report["edges"] = len(relationships["edges"])
         if publish_changes:

@@ -8,7 +8,7 @@ Each node represents a submitted document. Connections are **LLM-inferred topica
 
 <!-- KG:START -->
 
-![ThayerLab document knowledge graph](KG/KG.png?v=24f915c0d7f46be48d57550de6b13855633d0de338214055156c9a693860603b)
+![ThayerLab document knowledge graph](KG/rendered/97b6a62a279c94ef972efff6fab3d530eb69ee0cc1ab6a8d808cb27fe94f185e.png)
 
 **3 documents · 2 LLM-inferred connections**
 

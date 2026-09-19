@@ -96,6 +96,10 @@ def test_publish_deletion_in_one_commit(repo, provider, tmp_path_factory):
     files = git(remote, 'ls-tree', '-r', '--name-only', commit).splitlines()
     assert not any(doc_id in p for p in files)
     assert 'KG/KG.png' in files and 'README.md' in files
+    assert len([p for p in files if p.startswith('KG/rendered/')]) == 1
+    assert set(p for p in files if p.startswith('KG/rendered/')) != set(
+        p for p in git(remote, 'ls-tree', '-r', '--name-only', base).splitlines()
+        if p.startswith('KG/rendered/'))
     assert 'markdown/README.md' in files and 'pdf/README.md' in files
     assert git(repo, 'diff', '--cached', '--name-only') == ''
     run(repo, 'validate')

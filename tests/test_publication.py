@@ -34,6 +34,7 @@ def test_complete_single_commit_publication(repo, tmp_path_factory, provider):
     assert 'markdown/paper.md' not in files
     assert 'markdown/README.md' in files and 'pdf/README.md' in files
     assert 'KG/KG.png' in files and 'KG/KG.graphml' in files
+    assert len([p for p in files if p.startswith('KG/rendered/')]) == 1
     assert len([p for p in files if p.startswith('sources/')]) == 1
     assert 'config/ingestion.json' not in git(remote, 'diff-tree', '--no-commit-id', '--name-only', '-r', commit).splitlines()
     assert git(repo, 'diff', '--cached', '--name-only') == ''  # isolated index

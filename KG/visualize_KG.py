@@ -36,7 +36,7 @@ def render_readme(text, records, graph, relationships, *, image_sha256):
     before, after = split_readme(text)
     if not re.fullmatch(r"[0-9a-f]{64}", image_sha256):
         raise KBError("README image version must be a SHA-256 digest.")
-    lines = ["", f"![ThayerLab document knowledge graph](KG/KG.png?v={image_sha256})", "",
+    lines = ["", f"![ThayerLab document knowledge graph](KG/rendered/{image_sha256}.png)", "",
              f"**{len(records)} documents · {graph.number_of_edges()} LLM-inferred connections**", ""]
     if not records:
         lines += ["No documents have been processed yet. Add a submission using the instructions below.", ""]

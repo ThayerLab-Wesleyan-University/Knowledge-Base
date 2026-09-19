@@ -66,7 +66,7 @@ def snapshot(root, extra=()):
     """Include inputs/config as guards so edits made during API work are not lost."""
     result = {}
     for rel in ("README.md", "KG/node_contents", "sources", "KG/relationships.json",
-                "KG/KG.graphml", "KG/KG.png", "pdf", "markdown", "config", "prompts", *extra):
+                "KG/KG.graphml", "KG/KG.png", "KG/rendered", "pdf", "markdown", "config", "prompts", *extra):
         path = checked_path(root, rel)
         if path.is_dir():
             for child in sorted(path.rglob("*")):

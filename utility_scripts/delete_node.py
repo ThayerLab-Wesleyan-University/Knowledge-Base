@@ -8,7 +8,7 @@ import re
 import tempfile
 
 from utility_scripts.contracts import KBError
-from utility_scripts.ingest import build_outputs, repository_lock
+from utility_scripts.ingest import build_outputs, derived_changes, repository_lock
 from utility_scripts.publish import publication_base, publish
 from utility_scripts.storage import apply_changes, load_collection, snapshot
 
@@ -43,10 +43,9 @@ def run(root, document_id, *, dry_run=False, publish_changes=False):
                     path.parent.mkdir(parents=True, exist_ok=True)
                     path.write_bytes(data)
             build_outputs(stage, records, relationships)
-            updates = {rel: (stage / rel).read_bytes() for rel in
-                       ("README.md", "KG/relationships.json", "KG/KG.graphml", "KG/KG.png")}
+            updates, obsolete_images = derived_changes(stage, before)
             report["changed_paths"] = apply_changes(
-                root, before, updates, removals,
+                root, before, updates, removals + obsolete_images,
                 empty_directories=(f"KG/node_contents/{document_id}", f"sources/{document_id}"))
         if publish_changes:
             report["published_commit"] = publish(
