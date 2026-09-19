@@ -1,0 +1,9 @@
+[project]
+name = "thayerlab-knowledge-base"
+version = "0.1.0"
+description = "Transactional document ingestion and a browsable literature graph"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

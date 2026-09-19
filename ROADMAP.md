@@ -4,13 +4,13 @@ Implementation specification for the [ThayerLab Knowledge Base](README.md).
 
 ## Project status and scope
 
-**This roadmap describes planned behavior, not working automation.** The current Python scripts are empty placeholders; the ingestion workflow and generated graph still need to be implemented.
+**v0.1 is implemented in this repository.** This document retains the design contracts and acceptance criteria. The public workflow is documented in [README.md](README.md), and setup, commands, limits, and recovery are in [MAINTAINING.md](MAINTAINING.md). OpenAI is the first implemented provider; Gemini remains deferred. Live ingestion requires a configured API key and GitHub publication permissions; offline tests do not establish that deployment is enabled.
 
 The first version will turn submitted PDFs and Markdown documents into a browsable document graph. Each node represents one submitted document; each edge represents an **LLM-inferred topical relationship**, not a verified citation, causal relationship, or scientific conclusion.
 
 The initial scope is a small collection processed through GitHub Actions and browsed on GitHub. A web application, graph database, embeddings, automatic literature downloads, citation extraction, and OCR are outside this version. The generated document table in `README.md` is the collection index; separate literature indexes are not maintained in this version.
 
-## Contributor workflow (after implementation)
+## Contributor workflow
 
 1. Clone the repository:
 
@@ -27,11 +27,12 @@ Submit only material that may be stored in this repository and sent to the confi
 
 ## Repository layout and responsibilities
 
-The following is the target layout. Entries beyond the current scaffold must be created during implementation.
+The following is the implementation layout. Source archives and per-document records are created on the first successful ingestion.
 
 ```text
 README.md                       Public overview, graph image, and linked node/edge tables
 ROADMAP.md                      Hand-maintained implementation specification
+MAINTAINING.md                  Setup, configuration, commands, and recovery
 pdf/                            PDF intake; retain README.md
 markdown/                       Markdown intake; retain README.md
 sources/<document_id>/           Archived original submission
@@ -39,6 +40,9 @@ utility_scripts/
   pdf2md.py                      PDF-to-Markdown conversion
   ingest.py                      Pipeline orchestration and command-line entry point
   llm.py                         Provider adapter and output validation
+  contracts.py                   Configuration and record validators
+  storage.py                     Record loading, staging guards, and local rollback
+  publish.py                     Isolated Git staging and atomic remote publication
 KG/
   node_contents/<document_id>/
     content.md                   Extracted or submitted Markdown
@@ -47,7 +51,7 @@ KG/
   KG.graphml                     Generated graph with links to document records
   KG.png                         Generated graph visualization
   append_node.py                 Graph construction/update helpers
-  visualize_KG.py                Deterministic visualization and README rendering
+  visualize_KG.py                Stable-layout visualization and README rendering
 config/ingestion.json            Non-secret settings and processing limits
 prompts/                        Versioned summary and relationship prompts
 tests/                          Fixtures and automated tests
@@ -81,7 +85,7 @@ tests/                          Fixtures and automated tests
 
 1. **Preflight.** Validate settings, secrets, persistent records, and file limits before external calls. Discover direct intake files in sorted order, ignoring instruction files and hidden files. Reject nested submissions and unsupported non-hidden files with a clear message rather than deleting them. An empty queue is a successful no-op. On the first ingestion, initialize an empty collection when no persistent records exist; generate GraphML from those records rather than requiring a pre-existing graph file. Once records exist, malformed or missing required records must fail validation.
 2. **Identify and deduplicate.** Hash submissions. Reuse complete, valid records for known IDs without repeating LLM calls. Deduplicate identical new submissions within the same batch. A known ID with missing or inconsistent records is an error requiring repair, not permission to discard its source.
-3. **Stage conversion.** Work in a temporary staging directory. Convert PDFs through `utility_scripts/pdf2md.py`; preserve submitted Markdown text. Reject corrupt, encrypted, empty, or unreadable inputs. Scanned PDFs requiring OCR must fail clearly. Never silently truncate a document to fit a model context window: reject oversized input with actionable guidance in this version.
+3. **Stage conversion.** Work in a temporary staging directory. Convert PDFs through `utility_scripts/pdf2md.py`; preserve submitted Markdown text. Reject Markdown links to local dependencies; use self-contained text or absolute web references. Reject corrupt, encrypted, empty, or unreadable inputs. Scanned PDFs requiring OCR must fail clearly. The conservative v0.1 extractor rejects any textless page, including blank pages, rather than silently dropping potential image content. Never silently truncate a document to fit a model context window: reject oversized input with actionable guidance in this version.
 4. **Generate document records.** Use one configured provider, OpenAI or Gemini, to produce summaries and keywords. Archive original bytes and write validated content/metadata in staging. Bound network timeouts and retries; permit at most two additional attempts after an initial request, including output-validation repairs. Respect the overall request budget.
 5. **Infer relationships.** Evaluate the required pairs against the staged collection. Validate responses and merge accepted new edges with existing edge records. Process one request at a time initially; do not add parallel API work or approximate candidate filtering in this version.
 6. **Build outputs.** Rebuild GraphML from the complete staged collection. Render a PNG with a fixed layout seed and stable node/edge ordering. Use short display labels with a legend/table mapping them to document titles; node IDs remain full hashes. Handle empty and single-node graphs without error.
@@ -93,8 +97,8 @@ The batch is all-or-nothing: any conversion, API, validation, rendering, or publ
 ## Configuration and GitHub Actions
 
 - Select one provider per run; do not silently switch between OpenAI and Gemini. Implement one adapter end-to-end first, with the same validated response contract available to the second adapter later. Require an explicit model identifier rather than a hard-coded claim about a current default model.
-- Keep non-secret configuration in `config/ingestion.json`: provider/model, prompt versions, generation settings, maximum file bytes, maximum extracted-input tokens, maximum new documents, total API request budget (including retries), and request timeout. Document concrete defaults when implementing, and validate limits against the selected model. Store API keys in GitHub Actions secrets or local environment variables.
-- Provide a local CLI for ingestion, offline rebuilding, and `--dry-run`. Dry-run reports discovered files, duplicates, limits, and planned changes without API calls or repository mutations. Document exact runnable commands once the CLI exists.
+- Keep non-secret configuration in `config/ingestion.json`: provider/model, prompt versions, generation settings, maximum file bytes, maximum extracted-input tokens, maximum new documents, total API request budget (including retries), and request timeout. Defaults are documented in `MAINTAINING.md`; validate limits against the selected model profile. Input token accounting uses a conservative UTF-8 byte upper bound, and preflight reserves all three possible attempts per request. Store API keys in GitHub Actions secrets or local environment variables.
+- Provide a local CLI for ingestion, offline rebuilding, and `--dry-run`. Dry-run reports discovered files, duplicates, limits, and planned changes without API calls or repository mutations. See `MAINTAINING.md` for runnable CLI commands.
 - Trigger ingestion on pushes to `main` affecting `pdf/**` or `markdown/**`, plus manual `workflow_dispatch` for retries. Each run scans the entire current intake queue, so pending submissions survive missed or superseded triggers. Manual publication must also target `main`.
 - Use one concurrency group for repository ingestion with `cancel-in-progress: false`. Fetch and check out the latest `main` after the run acquires its execution slot. Record that base commit, then publish using a normal fast-forward push. If `main` has advanced, fail safely and rerun against the new state; never force-push or blindly rebase generated state.
 - Grant only the required token permissions, including `contents: write` for publication. Repository branch rules must permit the bot's generated commit; if they do not, a pull-request publication design is required before enabling automation. Do not bypass branch protection.
@@ -103,7 +107,7 @@ The batch is all-or-nothing: any conversion, API, validation, rendering, or publ
 
 ## Implementation milestones
 
-Complete these in order. Do not start by wiring unfinished scripts into a publishing workflow.
+The milestones below are implemented and covered by offline tests, including publication to temporary local Git remotes. A live OpenAI/GitHub smoke test remains a deployment check once credentials and repository permissions are configured.
 
 1. **Contracts and fixtures:** add dependency/configuration files, versioned JSON schemas or equivalent validators, prompts, and small synthetic PDF/Markdown fixtures. Define the CLI and processing limits. Acceptance: fixtures and invalid records are handled by offline validation tests.
 2. **Local ingestion:** implement discovery, hashing, conversion, archival, the first provider adapter, and staging. Acceptance: a PDF and Markdown fixture yield valid source/content/metadata bundles; duplicate input makes no extra API calls; invalid input leaves published state unchanged.

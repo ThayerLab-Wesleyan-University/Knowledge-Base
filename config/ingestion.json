@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "provider": "openai",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "model_context_tokens": 1047576,
+  "max_output_tokens": 2048,
+  "temperature": 0,
+  "summary_prompt_version": "v1",
+  "relationship_prompt_version": "v1",
+  "max_file_bytes": 20971520,
+  "max_extracted_input_tokens": 60000,
+  "max_new_documents": 10,
+  "max_api_requests": 300,
+  "request_timeout_seconds": 60,
+  "max_pdf_pages": 300,
+  "max_pdf_page_stream_bytes": 10000000
+}

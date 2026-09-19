@@ -1,0 +1,45 @@
+name: Ingest documents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pdf/**'
+      - 'markdown/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: knowledge-base-ingestion
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Check out latest main after acquiring the concurrency slot
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Test offline before publication
+        run: python -m pytest -q
+      - name: Inspect the complete intake queue
+        run: python -m utility_scripts.ingest ingest --dry-run
+      - name: Ingest and publish one complete commit
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m utility_scripts.ingest ingest --publish
