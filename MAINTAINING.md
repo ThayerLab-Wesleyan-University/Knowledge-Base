@@ -53,7 +53,7 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 | `max_output_tokens` | 2,048 | Per-response output cap. |
 | `temperature` | 0 | Generation setting, not a guarantee of deterministic model output. |
 | `max_file_bytes` | 20,971,520 | Maximum original file size (20 MiB). |
-| `max_extracted_input_tokens` | 60,000 | Conservative token upper bound: one token per UTF-8 byte of extracted text. |
+| `max_extracted_input_tokens` | 100,000 | Conservative token upper bound: one token per UTF-8 byte of extracted text. |
 | `max_new_documents` | 10 | Maximum distinct new sources in one batch. |
 | `max_api_requests` | 300 | Batch-wide attempt cap, including retries. |
 | `request_timeout_seconds` | 60 | HTTP transport timeout. |
@@ -99,7 +99,7 @@ Failed unpublished batches can incur repeated API costs when retried. Completed 
 
 ## Implementation references
 
-The adapter follows [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs); model limits come from the [GPT-4.1 mini model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini). PDF text extraction uses [pypdf's layout mode](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), with no OCR. Workflow behavior follows [GitHub Actions concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency) and [workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Pushes using `GITHUB_TOKEN` do not ordinarily start another workflow run, so generated commits are validated before publication.
+The adapter follows [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs); model limits come from the [GPT-4.1 mini model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini). PDF text extraction uses [pypdf's layout mode](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), falling back to standard text extraction when layout mode returns no text (for example, covers whose text is inside a Form XObject). The extraction provenance records whether this fallback was used. Pages empty in both modes still fail; no OCR is performed. Workflow behavior follows [GitHub Actions concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency) and [workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Pushes using `GITHUB_TOKEN` do not ordinarily start another workflow run, so generated commits are validated before publication.
 
 ## Manual document deletion
 
