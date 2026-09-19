@@ -71,7 +71,9 @@ def markdown_text(data):
     safe_text(text, "Markdown")
     # Local dependencies would break when intake moves to a content-hash directory.
     destinations = re.findall(r"!?\[[^\]]*\]\(\s*<?([^\s)>]+)", text)
-    destinations += re.findall(r"^\s*\[[^\]]+\]:\s*<?([^\s>]+)", text, re.MULTILINE)
+    # Footnote definitions contain prose, not reference-link destinations.
+    # Inline links inside footnotes are still checked by the scan above.
+    destinations += re.findall(r"^\s*\[(?!\^)[^\]]+\]:\s*<?([^\s>]+)", text, re.MULTILINE)
     destinations += re.findall(r"(?:src|href)\s*=\s*['\"]([^'\"]+)", text, re.IGNORECASE)
     if any(not (p.startswith(("https://", "http://", "mailto:", "#"))) for p in destinations):
         raise KBError("Markdown contains local or unsupported links; use self-contained text and HTTPS references.")
