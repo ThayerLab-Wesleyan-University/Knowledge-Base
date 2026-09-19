@@ -1,0 +1,47 @@
+name: Delete document
+
+on:
+  workflow_dispatch:
+    inputs:
+      document_id:
+        description: 'Full 64-character document_id from metadata (deletes source, node, and connections)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: knowledge-base-ingestion
+  cancel-in-progress: false
+
+jobs:
+  delete:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out latest main after acquiring the concurrency slot
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+      - name: Install locked dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Test offline before publication
+        run: python -m pytest -q
+      - name: Inspect requested deletion
+        env:
+          DOCUMENT_ID: ${{ inputs.document_id }}
+        run: python -m utility_scripts.delete_node --document-id "$DOCUMENT_ID" --dry-run
+      - name: Delete document and publish complete rebuilt collection
+        env:
+          DOCUMENT_ID: ${{ inputs.document_id }}
+        run: python -m utility_scripts.delete_node --document-id "$DOCUMENT_ID" --publish

@@ -47,6 +47,14 @@ The workflow preserves the original file, stores the Markdown and metadata, and 
 
 Submit only material permitted to be stored in this repository and processed by OpenAI. Do not upload credentials, restricted lab data, or documents you cannot redistribute. Scanned/encrypted PDFs, local image/file dependencies in Markdown, and automatic OCR are unsupported. PDF extraction is text-only and can lose mathematical notation, figures, and table structure; always consult the original for these.
 
+### Delete a document through GitHub
+
+1. In the document table above, open the document's metadata link and copy its full `document_id` (64 characters). Do not use the image label such as `D1`; those labels can change.
+2. Open [Actions → Delete document](https://github.com/ThayerLab-Wesleyan-University/Knowledge-Base/actions/workflows/delete-document.yml), select **Run workflow**, and choose **main**.
+3. Paste the document ID and run the workflow. This requires repository permission to run Actions.
+
+The action deletes that document's content, metadata, archived original, and all its connections, then updates the graph image and README in one commit. It runs only when manually requested and makes no LLM/API calls. Other documents and queued submissions are preserved. Deleted files remain in Git history; uploading the same document again recreates its node.
+
 ### Add a document from your computer
 
 ```bash

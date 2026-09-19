@@ -93,12 +93,14 @@ def atomic_write(path, data):
             os.unlink(temp)
 
 
-def apply_changes(root, before, updates, removals):
+def apply_changes(root, before, updates, removals, *, empty_directories=()):
     if snapshot(root) != before:
         raise KBError("Repository inputs or outputs changed during ingestion; retry without concurrent edits.")
     changed = sorted(path for path, data in updates.items() if before.get(path) != data)
     paths = changed + sorted(removals)
     for rel in paths:
+        checked_path(root, rel)
+    for rel in empty_directories:
         checked_path(root, rel)
     applied = []
     try:
@@ -108,6 +110,8 @@ def apply_changes(root, before, updates, removals):
         for rel in sorted(removals):
             applied.append(rel)
             (root / rel).unlink()
+        for rel in empty_directories:
+            (root / rel).rmdir()  # Never recursively remove unexpected files.
     except Exception:
         # Ordinary I/O failures roll back. Process termination is handled by Git:
         # a fresh checkout restores the intake and last committed collection.

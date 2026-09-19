@@ -58,7 +58,7 @@ tests/                          Fixtures and automated tests
 .github/workflows/ingest.yml     Automated ingestion and publication
 ```
 
-`metadata.json`, `content.md`, archived sources, and `relationships.json` are the persistent records. GraphML, the image, and the generated README section must be rebuildable from these records without LLM calls. Document removal is outside the initial scope.
+`metadata.json`, `content.md`, archived sources, and `relationships.json` are the persistent records. GraphML, the image, and the generated README section must be rebuildable from these records without LLM calls. Document removal is supported through the manual-only `Delete document` workflow: accept a full document ID, remove its record bundle, archived original, and incident edges, validate and rebuild all derived outputs without LLM calls, and publish one complete commit. Serialize deletion with ingestion using the same concurrency group and refuse stale remote writes. Preserve other records and queued submissions; deletion does not erase Git history.
 
 ## Data contracts
 

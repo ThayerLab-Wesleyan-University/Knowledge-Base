@@ -34,7 +34,7 @@ def check_remote(root, base):
         raise KBError("main advanced during ingestion; rerun from the latest main. No force-push attempted.")
 
 
-def publish(root: Path, base: str, paths: list[str]):
+def publish(root: Path, base: str, paths: list[str], *, message="Update knowledge base from intake"):
     if not paths:
         return None
     check_remote(root, base)
@@ -55,7 +55,7 @@ def publish(root: Path, base: str, paths: list[str]):
         git(root, "add", "--all", "--", *paths, env=env)
         tree = git(root, "write-tree", env=env)
         commit = git(root, "commit-tree", tree, "-p", base, env=env,
-                     input="Update knowledge base from intake\n")
+                     input=message + "\n")
         check_remote(root, base)
         git(root, "push", "origin", f"{commit}:refs/heads/main", env=env)
         return commit
