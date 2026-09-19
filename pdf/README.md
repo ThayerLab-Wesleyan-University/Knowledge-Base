@@ -6,4 +6,4 @@ Once implemented, the ingestion workflow will extract Markdown, generate a summa
 
 Scanned PDFs requiring OCR and encrypted PDFs are unsupported in the first version. Extraction may lose equations, figures, or table structure.
 
-Keep this README; it is excluded from ingestion. See the [project plan](../README.md) for implementation status and the full workflow.
+Keep this README; it is excluded from ingestion. See the [implementation roadmap](../ROADMAP.md) for implementation status and the full workflow.
