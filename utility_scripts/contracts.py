@@ -85,8 +85,9 @@ def validate_summary(value):
     if not value["sufficient"]:
         raise KBError("Insufficient document content for a grounded summary and ten keywords.")
     safe_text(value["summary"], "summary")
-    if len(value["summary"].split()) != 100:
-        raise KBError("Summary must contain exactly 100 whitespace-separated words.")
+    word_count = len(value["summary"].split())
+    if word_count != 100:
+        raise KBError(f"Summary must contain exactly 100 whitespace-separated words; received {word_count}.")
     words = value["keywords"]
     if len(words) != 10 or len({w.strip().casefold() for w in words}) != 10:
         raise KBError("Keywords must contain exactly 10 distinct strings.")

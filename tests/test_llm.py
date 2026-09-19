@@ -116,3 +116,67 @@ def test_relationship_rejects_wrong_ids_and_nonboolean():
                   dict(source='a', target='b', related='false', rationale='Grounded')]:
         with pytest.raises(KBError):
             validate_relationship(value, 'a', 'b')
+
+
+def test_word_count_repair_uses_previous_output_and_reports_actual_count(repo, monkeypatch, caplog):
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    requests = []
+    bad = summary()
+    bad['summary'] = 'confidential-document-text ' * 99
+    def handler(request):
+        body = json.loads(request.content)
+        requests.append(body)
+        return success(bad if len(requests) == 1 else summary())
+    client = OpenAI(repo, load_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        client.summarize('protein', CONTENT)
+        assert client.requests == 2
+        assert 'received 99' in requests[1]['instructions']
+        assert json.loads(requests[1]['input'])['previous_output'] == bad
+        assert 'received 99' in caplog.text
+        assert 'confidential-document-text' not in caplog.text
+    finally:
+        client.close()
+
+
+def test_final_error_preserves_safe_validation_reason(repo, monkeypatch, caplog):
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    bad = summary()
+    bad['summary'] = 'confidential-document-text ' * 101
+    client = OpenAI(repo, load_config(repo), transport=httpx.MockTransport(lambda _: success(bad)), sleep=lambda _: None)
+    try:
+        with pytest.raises(KBError, match='last error:.*received 101') as result:
+            client.summarize('protein', CONTENT)
+        assert client.requests == 3
+        assert 'confidential-document-text' not in str(result.value) + caplog.text
+    finally:
+        client.close()
+
+
+@pytest.mark.parametrize('code', ['insufficient_quota', 'billing_hard_limit_reached', 'credit_balance_exhausted'])
+def test_exhausted_billing_does_not_retry(repo, monkeypatch, code):
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    transport = httpx.MockTransport(lambda _: httpx.Response(429, json={
+        'error': {'code': code, 'message': 'confidential-provider-body'}}))
+    client = OpenAI(repo, load_config(repo), transport=transport, sleep=lambda _: pytest.fail('Billing errors must not retry'))
+    try:
+        with pytest.raises(KBError, match='billing quota exhausted') as result:
+            client.summarize('protein', CONTENT)
+        assert client.requests == 1
+        assert 'confidential-provider-body' not in str(result.value)
+    finally:
+        client.close()
+
+
+def test_transport_diagnostics_do_not_echo_exception_secrets(repo, monkeypatch, caplog):
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-only-key')
+    def handler(request):
+        raise httpx.ReadTimeout('secret-api-key and document-body', request=request)
+    client = OpenAI(repo, load_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        with pytest.raises(KBError, match='timed out') as result:
+            client.summarize('protein', CONTENT)
+        assert 'secret-api-key' not in str(result.value) + caplog.text
+        assert 'document-body' not in str(result.value) + caplog.text
+    finally:
+        client.close()

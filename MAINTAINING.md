@@ -86,8 +86,9 @@ Publication uses a separate temporary Git index and a commit object with the ori
 | Failure | Next step |
 | --- | --- |
 | Missing key, HTTP 401/403, or model rejection | Correct the Actions secret/model access, then manually run ingestion on `main`. |
-| Rate limit, timeout, or service failure | At most three attempts are made per operation. Wait for recovery, then rerun. |
-| Invalid summary or relationship after retries | Review the input for readability and sufficient substance, then fix it or rerun. No malformed record is saved. |
+| Rate limit, timeout, or service failure | At most three attempts are made per operation. Logs show a sanitized reason for each failed attempt and retain the final reason. Wait for recovery, then rerun. |
+| Exhausted credits or billing quota | Recognized billing-quota errors stop immediately without retries. Check credits and project limits before another run. |
+| Invalid summary or relationship after retries | Read the validation reason (including the actual summary word count). Repair attempts receive the previous output and specific feedback. Review the input for readability and sufficient substance before retrying. No malformed record is saved. |
 | Scanned, encrypted, corrupt, or textless PDF page | Submit a permitted text-based copy or a self-contained Markdown version. Blank pages also require cleanup in v0.1. |
 | Limit exceeded | Reduce the pending batch or adjust the relevant limit after checking model limits and cost. |
 | `main` advanced or branch rules rejected the push | Retry from latest `main`; resolve publication policy with the repository administrator. |
