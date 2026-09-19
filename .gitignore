@@ -1,9 +1,58 @@
+# Local Python environments
 .venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Python bytecode, test/type-checker caches, and coverage
 __pycache__/
-.pytest_cache/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+/coverage.xml
+/htmlcov/
+
+# Local build and packaging output
+/build/
+/dist/
+*.egg-info/
+.eggs/
+
+# Local secrets; sanitized example files may be committed
 .env
 .env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+
+# Editor and operating-system clutter
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
-.coverage
-htmlcov/
+._*
+Thumbs.db
+Desktop.ini
+.ipynb_checkpoints/
+
+# Local scratch files, logs, and interrupted pipeline writes
+/tmp/
+/temp/
+/logs/
+*.log
+.kb-write-*
+
+# Keep intake documents, archived originals, node records, and generated
+# KG/KG.graphml, KG/KG.png, KG/relationships.json, and README.md tracked.
