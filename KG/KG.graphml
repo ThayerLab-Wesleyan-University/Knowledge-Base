@@ -93,30 +93,37 @@
       <data key="source_path">sources/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/original.md</data>
       <data key="metadata_path">KG/node_contents/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/metadata.json</data>
     </node>
+    <node id="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
+      <data key="title">3D Equivariant Diffusion for Target-Aware Molecule Generation and Affinity Prediction</data>
+      <data key="display_label">D13</data>
+      <data key="content_path">KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/content.md</data>
+      <data key="source_path">sources/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/original.pdf</data>
+      <data key="metadata_path">KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/metadata.json</data>
+    </node>
     <node id="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="title">DeepDriveMD</data>
-      <data key="display_label">D13</data>
+      <data key="display_label">D14</data>
       <data key="content_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/content.md</data>
       <data key="source_path">sources/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/original.md</data>
       <data key="metadata_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/metadata.json</data>
     </node>
     <node id="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="title">enspara</data>
-      <data key="display_label">D14</data>
+      <data key="display_label">D15</data>
       <data key="content_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/content.md</data>
       <data key="source_path">sources/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/original.md</data>
       <data key="metadata_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/metadata.json</data>
     </node>
     <node id="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="title">MDGraphEmb: a toolkit for graph embedding and classification of protein conformational ensembles</data>
-      <data key="display_label">D15</data>
+      <data key="display_label">D16</data>
       <data key="content_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/content.md</data>
       <data key="source_path">sources/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/original.pdf</data>
       <data key="metadata_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/metadata.json</data>
     </node>
     <node id="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="title">deeptime</data>
-      <data key="display_label">D16</data>
+      <data key="display_label">D17</data>
       <data key="content_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/content.md</data>
       <data key="source_path">sources/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/original.md</data>
       <data key="metadata_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/metadata.json</data>
@@ -124,6 +131,11 @@
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular docking and binding affinity in the context of drug design, with the source using docking scores to guide molecular generation and the target employing docking and protein-ligand interactions to prioritize compounds in structure-based drug design. This shared use of docking and binding affinity estimation provides a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on target-aware molecular generation using 3D equivariant diffusion models and SE(3)-equivariant graph neural networks, specifically involving the TargetDiff model and binding affinity prediction, indicating a strong topical and methodological connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be">
@@ -336,6 +348,11 @@
       <data key="rationale">Both documents focus on molecular dynamics simulations related to protein-ligand interactions and protein conformations. The source discusses molecular dynamics to study protein-ligand complexes, while the target covers software tools for machine learning on molecular dynamics trajectories, including residue interaction networks and protein dynamics, indicating a shared research area in computational analysis of protein dynamics.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods for drug design involving protein-ligand interactions and binding affinity prediction. The source discusses structure-based drug design using molecular docking and molecular dynamics simulations, while the target presents a 3D equivariant diffusion model for molecule generation and affinity prediction, addressing geometric constraints in protein-ligand complexes. Their shared emphasis on modeling protein-ligand binding and affinity estimation establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics simulations to study protein-ligand interactions and conformational states. The source discusses structure-based drug design using molecular docking and molecular dynamics, while the target presents DeepDriveMD, an adaptive molecular simulation workflow that uses machine learning to guide MD simulations toward interesting conformations. Their shared use of MD simulations and interest in protein conformations and ligand interactions establishes a specific scientific connection.</data>
@@ -374,6 +391,11 @@
     <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on applying machine learning methods to molecular dynamics data of proteins, specifically involving residue-level representations and dynamics analysis. The source presents a graph neural network framework for protein conformational dynamics, while the target surveys software tools for ML on MD trajectories including residue interaction networks and kinetic modeling, indicating a shared research area in ML-driven protein dynamics analysis.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on advanced graph neural network methods applied to protein-ligand interactions and drug design, with the source analyzing protein conformational dynamics and the target generating molecules and predicting binding affinity using 3D equivariant models. Their shared use of graph neural networks for understanding and manipulating protein-ligand systems establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">

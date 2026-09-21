@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/content.md",
+  "content_sha256": "104559d27c0f5f90ddc59a5c010a78cdeecc4a39a4e3fbbdc8afd602e689b735",
+  "created_at": "2026-09-21T20:45:25.861090+00:00",
+  "document_id": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "3D equivariant diffusion",
+    "target-aware molecule generation",
+    "binding affinity prediction",
+    "SE(3)-equivariant graph neural network",
+    "non-autoregressive sampling",
+    "protein-ligand complex",
+    "molecular generative models",
+    "drug design",
+    "CrossDocked2020 dataset",
+    "unsupervised feature extraction"
+  ],
+  "schema_version": 1,
+  "source_filename": "targetdiff.pdf",
+  "source_path": "sources/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/original.pdf",
+  "source_type": "pdf",
+  "summary": "This paper introduces TargetDiff, a 3D equivariant diffusion model for target-aware molecule generation and binding affinity prediction. TargetDiff models joint generative processes of continuous atom coordinates and categorical atom types using a SE(3)-equivariant graph neural network, enabling non-autoregressive sampling that is invariant to global translation and rotation. The model addresses limitations of prior methods such as voxelization and autoregressive sampling, which can violate geometric constraints and exhibit exposure bias. TargetDiff also serves as an unsupervised feature extractor to estimate binding affinity, improving drug screening and ranking. Evaluations on CrossDocked2020 show TargetDiff generates molecules with more realistic 3D structures, better binding-affinities,",
+  "title": "3D Equivariant Diffusion for Target-Aware Molecule Generation and Affinity Prediction"
+}

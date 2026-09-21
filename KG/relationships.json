@@ -19,6 +19,24 @@
       "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
     },
     {
+      "created_at": "2026-09-21T20:45:32.556835+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on target-aware molecular generation using 3D equivariant diffusion models and SE(3)-equivariant graph neural networks, specifically involving the TargetDiff model and binding affinity prediction, indicating a strong topical and methodological connection.",
+      "relation_type": "topical_similarity",
+      "source": "0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9",
+      "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
+    },
+    {
       "created_at": "2026-09-21T05:33:53.480777+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -775,6 +793,24 @@
       "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
     },
     {
+      "created_at": "2026-09-21T20:45:42.584654+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods for drug design involving protein-ligand interactions and binding affinity prediction. The source discusses structure-based drug design using molecular docking and molecular dynamics simulations, while the target presents a 3D equivariant diffusion model for molecule generation and affinity prediction, addressing geometric constraints in protein-ligand complexes. Their shared emphasis on modeling protein-ligand binding and affinity estimation establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
+    },
+    {
       "created_at": "2026-09-21T05:35:28.252527+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -917,6 +953,24 @@
       "relation_type": "topical_similarity",
       "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
       "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T20:45:44.246631+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on advanced graph neural network methods applied to protein-ligand interactions and drug design, with the source analyzing protein conformational dynamics and the target generating molecules and predicting binding affinity using 3D equivariant models. Their shared use of graph neural networks for understanding and manipulating protein-ligand systems establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
       "created_at": "2026-09-21T05:35:44.110227+00:00",
