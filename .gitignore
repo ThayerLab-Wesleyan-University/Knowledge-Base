@@ -4,6 +4,7 @@ venv/
 env/
 ENV/
 .python-version
+poetry.lock
 
 # Python bytecode, test/type-checker caches, and coverage
 __pycache__/
