@@ -79,51 +79,58 @@
       <data key="source_path">sources/5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257/original.md</data>
       <data key="metadata_path">KG/node_contents/5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257/metadata.json</data>
     </node>
+    <node id="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5">
+      <data key="title">LIDDIA: Language-based Intelligent Drug Discovery Agent</data>
+      <data key="display_label">D11</data>
+      <data key="content_path">KG/node_contents/61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5/content.md</data>
+      <data key="source_path">sources/61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5/original.pdf</data>
+      <data key="metadata_path">KG/node_contents/61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5/metadata.json</data>
+    </node>
     <node id="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568">
       <data key="title">gRINN</data>
-      <data key="display_label">D11</data>
+      <data key="display_label">D12</data>
       <data key="content_path">KG/node_contents/622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568/content.md</data>
       <data key="source_path">sources/622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568/original.md</data>
       <data key="metadata_path">KG/node_contents/622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568/metadata.json</data>
     </node>
     <node id="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">
       <data key="title">MD / ML Software Landscape Relevant to SAWNERGY</data>
-      <data key="display_label">D12</data>
+      <data key="display_label">D13</data>
       <data key="content_path">KG/node_contents/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/content.md</data>
       <data key="source_path">sources/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/original.md</data>
       <data key="metadata_path">KG/node_contents/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/metadata.json</data>
     </node>
     <node id="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
       <data key="title">3D Equivariant Diffusion for Target-Aware Molecule Generation and Affinity Prediction</data>
-      <data key="display_label">D13</data>
+      <data key="display_label">D14</data>
       <data key="content_path">KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/content.md</data>
       <data key="source_path">sources/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/original.pdf</data>
       <data key="metadata_path">KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/metadata.json</data>
     </node>
     <node id="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="title">DeepDriveMD</data>
-      <data key="display_label">D14</data>
+      <data key="display_label">D15</data>
       <data key="content_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/content.md</data>
       <data key="source_path">sources/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/original.md</data>
       <data key="metadata_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/metadata.json</data>
     </node>
     <node id="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="title">enspara</data>
-      <data key="display_label">D15</data>
+      <data key="display_label">D16</data>
       <data key="content_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/content.md</data>
       <data key="source_path">sources/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/original.md</data>
       <data key="metadata_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/metadata.json</data>
     </node>
     <node id="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="title">MDGraphEmb: a toolkit for graph embedding and classification of protein conformational ensembles</data>
-      <data key="display_label">D16</data>
+      <data key="display_label">D17</data>
       <data key="content_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/content.md</data>
       <data key="source_path">sources/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/original.pdf</data>
       <data key="metadata_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/metadata.json</data>
     </node>
     <node id="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="title">deeptime</data>
-      <data key="display_label">D17</data>
+      <data key="display_label">D18</data>
       <data key="content_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/content.md</data>
       <data key="source_path">sources/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/original.md</data>
       <data key="metadata_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/metadata.json</data>
@@ -131,6 +138,11 @@
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular docking and binding affinity in the context of drug design, with the source using docking scores to guide molecular generation and the target employing docking and protein-ligand interactions to prioritize compounds in structure-based drug design. This shared use of docking and binding affinity estimation provides a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational molecular generation and optimization for drug discovery, specifically targeting binding affinity and molecular properties. The source uses diffusion models guided by surrogate affinity predictors for target-aware molecular generation, while the target employs an autonomous agent integrating multiple computational tools to generate and optimize molecules with good binding affinity and drug-like properties. Their shared emphasis on improving molecule generation with respect to binding affinity and drug discovery targets establishes a meaningful scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
@@ -338,6 +350,11 @@
       <data key="rationale">Both documents focus on protein-ligand interactions and structural analysis of proteins. The source discusses structure-based drug design involving protein conformations and ligand binding, while the target describes RinPy, a tool for analyzing residue interaction networks including ligand-binding-site behavior. This shared focus on protein structure and ligand interactions provides a meaningful scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational drug discovery methods involving structure-based drug design and binding affinity evaluation. The source discusses molecular docking and molecular dynamics simulations for protein-ligand interactions, while the target describes an autonomous agent that integrates structure-based drug design and binding affinity assessments to generate and optimize drug candidates, indicating a shared research topic and methodology.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents involve computational analysis of protein structures and dynamics, with the source focusing on molecular docking and molecular dynamics simulations of protein-ligand complexes, and the target describing gRINN software for analyzing residue interaction energies from protein MD trajectories. The shared use of molecular dynamics simulations and analysis of protein interactions provides a specific methodological connection.</data>
@@ -423,6 +440,11 @@
       <data key="rationale">Both documents focus on residue interaction networks in proteins and perform network analysis using centrality metrics such as degree, betweenness, and closeness. They analyze protein structures and ensembles, including ligand interactions, and provide tools for visualization and further analysis, indicating a shared research topic and methodological approach.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6" target="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents involve the use of large language models and computational tools in the context of molecular and protein analysis relevant to drug discovery. i-gRINN focuses on protein energy network analysis with natural-language querying, while LIDDIA uses language models for autonomous drug discovery and molecule generation, indicating a shared research area in computational drug design and molecular interaction analysis.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6" target="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents describe software tools for protein residue interaction energy analysis and protein energy network construction, with i-gRINN being a redesigned and extended version of the original gRINN, sharing core methods such as pairwise energy calculations, network metrics, and GROMACS trajectory analysis.</data>
@@ -486,6 +508,11 @@
     <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on graph-based analysis of protein structures and dynamics, using graph representations derived from protein data to study functional states and interactions. RinPy constructs residue interaction networks for analyzing protein allostery and ligand binding, while MDGraphEmb converts MD simulation trajectories into graph embeddings for machine learning classification of protein conformational states. Their shared use of graph-theoretical approaches to analyze protein conformations and dynamics establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods for molecule generation and drug discovery, specifically targeting the generation of molecules with desirable binding affinity properties. The source uses large language models and modular components for drug design, while the target employs a 3D equivariant diffusion model for target-aware molecule generation and affinity prediction. Their shared emphasis on generating molecules optimized for binding affinity and drug design establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568" target="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">

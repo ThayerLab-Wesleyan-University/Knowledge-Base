@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5/content.md",
+  "content_sha256": "d053c3970e20f316a55321befd299b9e683304d9a008940f80a8d2b062c8b2fe",
+  "created_at": "2026-09-21T20:54:43.821977+00:00",
+  "document_id": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "autonomous drug discovery",
+    "large language models",
+    "molecule generation",
+    "drug-likeness",
+    "binding affinity",
+    "synthetic accessibility",
+    "chemical space exploration",
+    "structure-based drug design",
+    "medicinal chemistry automation",
+    "AR/NR3C4 target"
+  ],
+  "schema_version": 1,
+  "source_filename": "liddia.pdf",
+  "source_path": "sources/61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5/original.pdf",
+  "source_type": "pdf",
+  "summary": "LIDDIA is an autonomous agent designed to navigate the drug discovery process in silico by leveraging large language models and state-of-the-art computational tools. It integrates four components: REASONER for planning actions, EXECUTOR for executing drug discovery tasks, EVALUATOR for assessing molecule properties, and MEMORY for storing information. LIDDIA generates novel, diverse, and high-quality molecules meeting key pharmaceutical criteria across 30 clinically relevant targets, achieving a 73.3% target success rate. It balances exploration and exploitation in chemical space, iteratively generating, optimizing, and screening molecules. Compared to existing methods and general-purpose LLMs, LIDDIA outperforms in producing molecules with better drug-likeness, binding affinity,synthetic-accessibility,novelty,anddiversity.Itsmodulararchitectureallowsintegrationofnewtoolsandproperties.ItidentifiespromisingcandidatesforcriticaltargetslikeAR/NR3C4andEGFR,showingpotentialforcancertherapies.Limitationsincludein-silico-onlyevaluation,limitedpropertycoverage,andneedforwet-labvalidation.Humanexpertiseremainsessentialforpracticaldeployment.Codeanddatasetarepubliclyavailable.",
+  "title": "LIDDIA: Language-based Intelligent Drug Discovery Agent"
+}

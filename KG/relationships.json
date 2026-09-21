@@ -19,6 +19,24 @@
       "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
     },
     {
+      "created_at": "2026-09-21T20:54:45.586152+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational molecular generation and optimization for drug discovery, specifically targeting binding affinity and molecular properties. The source uses diffusion models guided by surrogate affinity predictors for target-aware molecular generation, while the target employs an autonomous agent integrating multiple computational tools to generate and optimize molecules with good binding affinity and drug-like properties. Their shared emphasis on improving molecule generation with respect to binding affinity and drug discovery targets establishes a meaningful scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9",
+      "target": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5"
+    },
+    {
       "created_at": "2026-09-21T20:45:32.556835+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -757,6 +775,24 @@
       "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
     },
     {
+      "created_at": "2026-09-21T20:54:56.158187+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational drug discovery methods involving structure-based drug design and binding affinity evaluation. The source discusses molecular docking and molecular dynamics simulations for protein-ligand interactions, while the target describes an autonomous agent that integrates structure-based drug design and binding affinity assessments to generate and optimize drug candidates, indicating a shared research topic and methodology.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5"
+    },
+    {
       "created_at": "2026-09-21T05:35:21.458627+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1063,6 +1099,24 @@
       "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
     },
     {
+      "created_at": "2026-09-21T20:54:59.253876+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents involve the use of large language models and computational tools in the context of molecular and protein analysis relevant to drug discovery. i-gRINN focuses on protein energy network analysis with natural-language querying, while LIDDIA uses language models for autonomous drug discovery and molecule generation, indicating a shared research area in computational drug design and molecular interaction analysis.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5"
+    },
+    {
       "created_at": "2026-09-21T05:35:52.574312+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1295,6 +1349,24 @@
       "relation_type": "topical_similarity",
       "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
       "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T20:55:08.047269+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods for molecule generation and drug discovery, specifically targeting the generation of molecules with desirable binding affinity properties. The source uses large language models and modular components for drug design, while the target employs a 3D equivariant diffusion model for target-aware molecule generation and affinity prediction. Their shared emphasis on generating molecules optimized for binding affinity and drug design establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5",
+      "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
       "created_at": "2026-09-21T05:36:29.085746+00:00",
