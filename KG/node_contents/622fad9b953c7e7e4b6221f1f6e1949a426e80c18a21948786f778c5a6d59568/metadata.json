@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568/content.md",
+  "content_sha256": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
+  "created_at": "2026-09-21T05:33:14.165139+00:00",
+  "document_id": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "gRINN",
+    "protein MD trajectories",
+    "residue interaction energy",
+    "nonbonded interactions",
+    "Interaction Energy Matrix",
+    "Protein Energy Networks",
+    "network analysis",
+    "force-field energies",
+    "time series correlation",
+    "SAWNERGY comparison"
+  ],
+  "schema_version": 1,
+  "source_filename": "gRINN.md",
+  "source_path": "sources/622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568/original.md",
+  "source_type": "md",
+  "summary": "gRINN (get Residue Interaction eNergies and Networks) is standalone software for pairwise residue interaction-energy analysis of protein MD trajectories and protein energy networks. It extracts force-field-based nonbonded interaction energies (electrostatic, van der Waals, total) between residue pairs using external MD engines like NAMD, CHARMM, and GROMACS. gRINN produces time series of interaction energies E_ij(t), averages, and constructs Interaction Energy Matrices (IEM). It calculates equal-time linear correlations between interaction-energy series, projecting these to residue-correlation measures. Protein Energy Networks (PENs) are built with residues as nodes and weighted edges from energetic relations. Network analysis includes degree, betweenness centrality, closeness centrality, and shortest-paths,identifyingstabilizinginteractions,energeticallyimportantresidues,communicationpathways,andallostericrelations.TheoriginalgRINNincludesGUIvisualizationforenergytimeseries,distributions,interactionenergymatrices,correlations,residuecorrelationmatrices,andnetworkanalyses,withCSVoutputforcustomanalysis.Thelegacyversionisnotmaintainedforcurrentsoftwarecompatibility,recommendingthenewi-gRINNversion.gRINN/i-gRINNfocusonphysicallymeaningfulresidue-levelenergeticinformationandnetworkanalyses,notmachinelearningmethodslikeCNNs,VAMPNets,orfutureself-supervisedprediction.SAWNERGYoverlapswithgRINNbycomputingresidue-pairforce-fieldenergiesbutextendswithadditionalrelationchannels,tensorrepresentations,neurallearning,andbiologicalvalidation.",
+  "title": "gRINN"
+}

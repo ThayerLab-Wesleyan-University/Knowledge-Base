@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/content.md",
+  "content_sha256": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b",
+  "created_at": "2026-09-21T05:33:28.201129+00:00",
+  "document_id": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "deeptime",
+    "time-series modeling",
+    "dynamical systems",
+    "TICA",
+    "VAMP",
+    "VAMPNet",
+    "Markov State Models",
+    "Koopman models",
+    "neural network",
+    "molecular dynamics"
+  ],
+  "schema_version": 1,
+  "source_filename": "deeptime.md",
+  "source_path": "sources/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/original.md",
+  "source_type": "md",
+  "summary": "deeptime is a general-purpose Python library for time-series and dynamical-modeling. It focuses on learning dynamical systems from time-series data, not specific to molecular dynamics. Core capabilities include estimating slow collective coordinates, state decompositions, Markov models, Koopman models, and deep time-lagged representations. Key model families are TICA, which finds slow directions; VAMP, a variational approach for Markov processes; VAMPNet, a neural network-based time-lagged representation; Markov State Models (MSM); Hidden Markov Models; and Koopman models. deeptime expects featurized time-series inputs from various sources. It does not perform trajectory parsing, force-field calculations, or topology selection. deeptime integrates well with preprocessing tools like CPPTRAJ,MDAnalysis,andSAWNERGY,servingasapowerfulback-endfordynamicalanalysisandrepresentationlearning.",
+  "title": "deeptime"
+}

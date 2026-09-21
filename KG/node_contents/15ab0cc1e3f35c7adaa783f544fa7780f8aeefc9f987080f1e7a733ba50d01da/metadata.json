@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da/content.md",
+  "content_sha256": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+  "created_at": "2026-09-21T05:32:59.041859+00:00",
+  "document_id": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "mdlearn",
+    "molecular dynamics",
+    "machine learning",
+    "preprocessing",
+    "contact maps",
+    "autoencoder",
+    "convolutional variational autoencoder",
+    "quasi-anharmonic analysis",
+    "latent space",
+    "PyTorch"
+  ],
+  "schema_version": 1,
+  "source_filename": "mdlearn.md",
+  "source_path": "sources/15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da/original.md",
+  "source_type": "md",
+  "summary": "mdlearn is a machine learning toolbox specifically designed for molecular dynamics data processing. It provides utilities for preprocessing MD-derived inputs such as coordinates, contact maps, and RMSD, and implements PyTorch-based representation-learning models. Supported models include Quasi-Anharmonic Analysis (QAA), Convolutional Variational Autoencoder (CVAE), Autoencoder (AE), and Adversarial Autoencoder (AAE). The package offers training, inference, visualization, and latent-space analysis, with GPU-accelerated options. mdlearn focuses on transforming MD data into ML-ready features and learning latent embeddings, but does not perform force-field calculations, general trajectory analysis, or kinetic estimations. It overlaps significantly with SAWNERGY's concept of contact-map-based convolutional autoencoding, though SAWNERGY adds time-resolved physics-based,predictive,biological-validation,features.",
+  "title": "mdlearn"
+}

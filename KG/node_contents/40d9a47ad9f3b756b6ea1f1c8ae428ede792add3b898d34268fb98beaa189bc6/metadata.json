@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6/content.md",
+  "content_sha256": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+  "created_at": "2026-09-21T05:33:02.018470+00:00",
+  "document_id": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "i-gRINN",
+    "gRINN",
+    "protein energy networks",
+    "GROMACS trajectory analysis",
+    "pairwise energy decomposition",
+    "frame-by-frame analysis",
+    "network metrics",
+    "interactive dashboard",
+    "natural-language querying",
+    "local deployment"
+  ],
+  "schema_version": 1,
+  "source_filename": "i-gRINN.md",
+  "source_path": "sources/40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6/original.md",
+  "source_type": "md",
+  "summary": "i-gRINN is a redesigned web server and application for protein energy network analysis, extending the original gRINN concept. It supports GROMACS trajectory analysis, PDB structural ensembles, standard amino acids, small-molecule ligands, and non-standard residues. Users provide structure, topology, and trajectory files to automate residue-pair energy calculations via GROMACS. The system performs frame-by-frame interaction-energy and network analysis, calculating metrics like degree, betweenness, and closeness centrality. Outputs are CSV-formatted for machine learning integration. An interactive dashboard offers visualizations of energy matrices, pairwise energies, network metrics, and 3D structures. A natural-language interface powered by large language models enables biologically grounded queries. Local deployment,",
+  "title": "i-gRINN"
+}

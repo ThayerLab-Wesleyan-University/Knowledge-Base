@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/content.md",
+  "content_sha256": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+  "created_at": "2026-09-21T05:33:21.642026+00:00",
+  "document_id": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "DeepDriveMD",
+    "adaptive molecular simulation",
+    "machine learning",
+    "latent representation",
+    "autoencoders",
+    "molecular dynamics",
+    "OpenMM",
+    "contact maps",
+    "adaptive sampling",
+    "SAWNERGY"
+  ],
+  "schema_version": 1,
+  "source_filename": "DeepDriveMD.md",
+  "source_path": "sources/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/original.md",
+  "source_type": "md",
+  "summary": "DeepDriveMD is an adaptive molecular-simulation workflow and software ecosystem that integrates molecular dynamics simulation, data preprocessing, deep-learning representation learning, inference, clustering, and new simulation launches. Its core idea is to use machine learning to identify undersampled or interesting conformational states and drive new simulations toward them. The workflow runs MD simulations, collects data, learns latent representations, selects states, and launches new MD runs iteratively. DeepDriveMD uses autoencoder-based models, including convolutional VAEs and adversarial autoencoders, with clustering on latent spaces. It interfaces with MD engines like OpenMM and NAMD, focusing on adaptive sampling. Contact-map-based representations are important, treating residue-pair matrices as,image-like,neural,inputs,which,links,to,mdlearn,workflows,DeepDriveMD,is,not,a,simple,trajectory,parser,or,a,generic,force-field,decomposition,tool,or,a,single,package,for,WT-vs-mutant,classification,or,a,general,kinetic-theory,library,Its,unique,contribution,is,adaptive,sampling,driven,by,deep,learning,While,it,overlaps,with,SAWNERGY,in,using,MD,and,representation,learning,for,scientific,decision-making,DeepDriveMD,focuses,on,adaptive,sampling,loops,whereas,SAWNERGY,aims,to,test,mutation,and,allostery,hypotheses,DeepDriveMD,can,be,found,at,its,project,website,and,GitHub,organization,with,multiple,implementations,and,original,paper,available,on,arXiv.",
+  "title": "DeepDriveMD"
+}

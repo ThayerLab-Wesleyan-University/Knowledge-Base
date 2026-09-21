@@ -19,6 +19,204 @@
       "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
     },
     {
+      "created_at": "2026-09-21T05:33:53.480777+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing molecular dynamics simulations of proteins using machine learning techniques to generate low-dimensional representations of protein conformational or interaction spaces. The source uses autoencoder-based latent space modeling for protein conformations, while the target constructs residue interaction networks and embeddings from MD trajectories, both aiming to capture protein dynamics in compact forms for further analysis.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be"
+    },
+    {
+      "created_at": "2026-09-21T05:33:55.633270+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The source document molearn explicitly relies on MDAnalysis for handling molecular dynamics data, indicating a direct methodological connection where molearn uses MDAnalysis as a foundational tool for data processing in protein conformational modeling.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd"
+    },
+    {
+      "created_at": "2026-09-21T05:33:57.311701+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both molearn and mdlearn are machine learning toolkits designed to process molecular dynamics data using autoencoder-based models to learn latent representations. They share a focus on protein or molecular conformational modeling through neural network architectures, including convolutional autoencoders, and provide latent-space analysis, making their research topics and methods closely related.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da"
+    },
+    {
+      "created_at": "2026-09-21T05:33:58.849227+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents involve protein conformations and molecular dynamics simulations; the source focuses on machine learning models to generate protein conformations, while the target uses molecular dynamics and protein conformations in structure-based drug design, indicating a shared scientific system of protein structural modeling and analysis.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
+    },
+    {
+      "created_at": "2026-09-21T05:34:00.489268+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on modeling protein conformational dynamics using machine learning approaches applied to molecular dynamics data. The source uses autoencoder-based latent space representations to generate protein conformations, while the target employs graph neural networks to analyze dynamic protein graphs and identify functional conformational signatures. Their shared emphasis on machine learning methods for understanding protein conformational changes establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc"
+    },
+    {
+      "created_at": "2026-09-21T05:34:01.989091+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on protein conformational analysis involving energy calculations: molearn uses physics-informed machine learning with energy functions to model protein conformations, while i-gRINN performs detailed residue-pair energy network analysis from molecular dynamics trajectories. Their shared emphasis on protein energy and conformational data provides a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6"
+    },
+    {
+      "created_at": "2026-09-21T05:34:08.279148+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents discuss machine learning applied to molecular dynamics data, specifically protein conformational modeling. The source describes molearn, a physics-informed ML tool for generative modeling of protein conformations, while the target lists molearn among key software tools relevant to ML on MD trajectories, indicating a shared focus on ML methods for protein dynamics and conformational space analysis.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:34:10.182742+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods, specifically autoencoder-based models, to learn latent representations of protein conformational spaces from molecular dynamics data. They both use OpenMM and emphasize generative or adaptive sampling approaches to explore protein conformations, establishing a clear shared research topic and methodology.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:34:14.495441+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning approaches to analyze protein conformational ensembles derived from molecular dynamics simulations. The source uses autoencoder-based latent space modeling to generate new conformations, while the target employs graph embedding and classification methods to analyze protein states. Both share the theme of applying advanced ML techniques to protein conformational data, making them specifically related in research topic and methodology.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:34:18.627870+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on Python tools for molecular dynamics simulation analysis. SAWNERGY builds on molecular dynamics trajectories to create residue interaction networks and embeddings, while MDAnalysis provides general-purpose trajectory reading, manipulation, and analysis capabilities. Their shared domain of molecular dynamics trajectory processing and analysis establishes a specific topical connection beyond generic overlap.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd"
+    },
+    {
+      "created_at": "2026-09-21T05:34:20.173154+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data, specifically learning latent embeddings from residue or contact interaction patterns. While SAWNERGY emphasizes physics-based residue interaction networks and random-walk embeddings, mdlearn provides ML models like autoencoders for MD data preprocessing and representation learning, showing a clear shared research topic in MD data-driven embedding and analysis.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da"
+    },
+    {
       "created_at": "2026-09-19T02:54:08.635751+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -55,6 +253,96 @@
       "target": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc"
     },
     {
+      "created_at": "2026-09-21T05:34:21.732872+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents describe computational tools for analyzing protein residue interaction networks derived from molecular dynamics simulations, focusing on residue-level energy interactions and network analysis methods. SAWNERGY emphasizes dynamic residue-interaction networks and embedding techniques, while i-gRINN focuses on energy network calculations and network metrics with visualization and querying features, indicating a shared research topic and complementary methodological approaches.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6"
+    },
+    {
+      "created_at": "2026-09-21T05:34:25.241372+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on residue interaction networks derived from protein structures or molecular dynamics simulations and aim to analyze protein interactions and allostery using network-based methods, making their research topics and methods specifically related.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
+    },
+    {
+      "created_at": "2026-09-21T05:34:27.009989+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing residue-level nonbonded interaction energies from molecular dynamics simulations to build residue interaction networks. SAWNERGY and gRINN share the core scientific system of residue interaction energy analysis and network construction, with SAWNERGY extending gRINN's approach by incorporating neural learning and additional relation channels.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:34:29.627855+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on SAWNERGY and its application to molecular dynamics and residue interaction networks, with the target document explicitly discussing software relevant to extending SAWNERGY for machine learning on MD trajectories, indicating a specific shared research topic and method.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:34:31.134712+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics simulations combined with machine learning-based representation learning of residue interactions. SAWNERGY creates residue interaction networks and embeddings from MD trajectories, while DeepDriveMD uses deep learning on MD data for adaptive sampling. Their shared use of MD data and learned representations of residue interactions establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
       "created_at": "2026-09-19T05:15:31.057545+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -71,6 +359,312 @@
       "relation_type": "topical_similarity",
       "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
       "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:34:34.195609+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents relate to molecular dynamics data analysis and time-series modeling. SAWNERGY produces residue interaction network embeddings from MD simulations, while deeptime provides general-purpose dynamical modeling tools that integrate with SAWNERGY for advanced dynamical analysis and representation learning, indicating a complementary and specific methodological connection.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:34:35.547697+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics data processing, with MDAnalysis providing trajectory reading and manipulation tools and mdlearn offering machine learning models for MD data analysis. Their shared emphasis on molecular dynamics and data transformation establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da"
+    },
+    {
+      "created_at": "2026-09-21T05:34:37.279528+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The source document describes MDAnalysis, a Python library for analyzing molecular dynamics trajectories, which is directly relevant to the target document's use of molecular dynamics simulations in structure-based drug design. Both involve computational analysis of protein-ligand interactions and molecular trajectories, indicating a specific shared research method and scientific system.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300"
+    },
+    {
+      "created_at": "2026-09-21T05:34:38.938781+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics simulations and analysis of protein conformational dynamics. The source provides a Python library (MDAnalysis) for trajectory analysis and manipulation, which is a foundational tool that could support the type of dynamic protein graph representations and trajectory analyses used in the target's deep learning framework (GISTnet-MD). This shared focus on molecular dynamics data and protein structural analysis establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc"
+    },
+    {
+      "created_at": "2026-09-21T05:34:40.711418+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analysis of molecular simulation trajectories, specifically involving protein structures and GROMACS trajectory data. MDAnalysis provides a general-purpose Python library for trajectory manipulation and analysis, while i-gRINN specializes in protein energy network analysis using GROMACS trajectories. Their shared use of trajectory data and protein structural analysis establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6"
+    },
+    {
+      "created_at": "2026-09-21T05:34:42.292891+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics trajectory analysis using Python tools. MDAnalysis provides general-purpose trajectory reading and manipulation, while PyEMMA offers advanced analysis methods like featurization, dimension reduction, and Markov State Models, making their functionalities complementary within molecular simulation analysis workflows.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5"
+    },
+    {
+      "created_at": "2026-09-21T05:34:43.627359+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing protein structures derived from molecular simulations or ensembles. MDAnalysis provides tools for trajectory analysis and atom selection in molecular dynamics, while RinPy constructs and analyzes residue interaction networks from protein structures, including MD-derived ones. Their shared emphasis on protein structural analysis and support for MD data establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
+    },
+    {
+      "created_at": "2026-09-21T05:34:45.307336+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both MDAnalysis and gRINN analyze molecular dynamics trajectories of proteins, with MDAnalysis providing general-purpose trajectory reading and manipulation, and gRINN focusing specifically on residue interaction energies and protein energy networks derived from force-field calculations. They share overlapping use of MD simulation data and residue-level analysis, making their topics specifically related rather than generically overlapping.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:34:46.737917+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents discuss molecular dynamics trajectory analysis software, specifically mentioning MDAnalysis and its role in the context of SAWNERGY. The target document explicitly includes MDAnalysis as a key tool relevant to extending SAWNERGY for machine learning on MD trajectories, indicating a specific shared research topic and software integration context.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:34:48.202585+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics (MD) simulations and analysis, with MDAnalysis providing a Python library for trajectory analysis and DeepDriveMD integrating MD simulations with deep learning for adaptive sampling. They share a research topic in MD simulation workflows and data analysis, making them specifically related beyond generic science overlap.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:34:49.906839+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both MDAnalysis and enspara are Python toolkits designed for the analysis of molecular dynamics (MD) simulation data. MDAnalysis focuses on reading, manipulating, and analyzing MD trajectories, providing infrastructure for trajectory access and atom selections, while enspara specializes in scalable modeling and analysis of molecular ensembles, particularly through Markov State Models and clustering methods. Their shared focus on MD data analysis and complementary functionalities indicate a specific shared research topic and method connection.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
+      "created_at": "2026-09-21T05:34:51.543702+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The target document MDGraphEmb explicitly builds on the source document MDAnalysis, using it as a foundation for processing molecular dynamics trajectories and converting them into graph-based representations for machine learning. This direct methodological connection and shared focus on protein molecular dynamics analysis establishes a specific and useful relationship.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:34:53.227018+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents relate to molecular dynamics data analysis in Python, with MDAnalysis providing trajectory parsing and preprocessing, and deeptime offering advanced dynamical modeling and time-series analysis. deeptime explicitly integrates with MDAnalysis, indicating a complementary and connected research topic in molecular simulation analysis workflows.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:35:06.538538+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The source document describes mdlearn, a machine learning toolbox for molecular dynamics data, which is explicitly mentioned as a key project in the target document's overview of software relevant to SAWNERGY. Both focus on ML methods applied to MD data, including contact-map-based latent space learning, indicating a specific shared research topic and method.",
+      "relation_type": "topical_similarity",
+      "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:35:08.070646+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data, specifically using contact-map-based representations and autoencoder models such as convolutional VAEs and adversarial autoencoders. While mdlearn provides tools for preprocessing and representation learning of MD data, DeepDriveMD integrates these approaches into an adaptive sampling workflow, showing a clear shared research topic and methodological overlap.",
+      "relation_type": "topical_similarity",
+      "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:35:11.739307+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data of proteins, specifically transforming MD simulation outputs into representations suitable for ML analysis. The source uses autoencoder-based latent space learning on contact maps and other MD-derived features, while the target uses graph embeddings and supervised learning for protein conformational state classification. Their shared goal of extracting meaningful ML-ready features from MD trajectories and applying advanced representation learning establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:35:14.054504+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both mdlearn and deeptime focus on machine learning methods applied to molecular dynamics or time-series data, with mdlearn providing preprocessing and representation learning for MD data and deeptime offering dynamical modeling and time-lagged representations. Their complementary roles in feature extraction and dynamical analysis establish a specific shared research topic in molecular dynamics data-driven modeling.",
+      "relation_type": "topical_similarity",
+      "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
     },
     {
       "created_at": "2026-09-19T04:54:12.771250+00:00",
@@ -91,6 +685,132 @@
       "target": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc"
     },
     {
+      "created_at": "2026-09-21T05:35:16.628211+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational analysis of protein-ligand interactions and protein structural dynamics. The source discusses molecular docking and molecular dynamics simulations to study protein-ligand complexes, while the target describes i-gRINN, a tool for analyzing protein energy networks from molecular dynamics trajectories. The shared use of molecular dynamics data and energy interaction analysis provides a specific methodological connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6"
+    },
+    {
+      "created_at": "2026-09-21T05:35:18.147232+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The source document discusses molecular dynamics simulations to study protein-ligand interactions, while the target document describes PyEMMA, a tool for analyzing molecular dynamics trajectories including clustering and Markov State Models. Both share a specific research topic of analyzing molecular dynamics data, making them related in computational study of biomolecular systems.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5"
+    },
+    {
+      "created_at": "2026-09-21T05:35:19.786363+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on protein-ligand interactions and structural analysis of proteins. The source discusses structure-based drug design involving protein conformations and ligand binding, while the target describes RinPy, a tool for analyzing residue interaction networks including ligand-binding-site behavior. This shared focus on protein structure and ligand interactions provides a meaningful scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
+    },
+    {
+      "created_at": "2026-09-21T05:35:21.458627+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents involve computational analysis of protein structures and dynamics, with the source focusing on molecular docking and molecular dynamics simulations of protein-ligand complexes, and the target describing gRINN software for analyzing residue interaction energies from protein MD trajectories. The shared use of molecular dynamics simulations and analysis of protein interactions provides a specific methodological connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:35:26.428162+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics simulations related to protein-ligand interactions and protein conformations. The source discusses molecular dynamics to study protein-ligand complexes, while the target covers software tools for machine learning on molecular dynamics trajectories, including residue interaction networks and protein dynamics, indicating a shared research area in computational analysis of protein dynamics.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:35:28.252527+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics simulations to study protein-ligand interactions and conformational states. The source discusses structure-based drug design using molecular docking and molecular dynamics, while the target presents DeepDriveMD, an adaptive molecular simulation workflow that uses machine learning to guide MD simulations toward interesting conformations. Their shared use of MD simulations and interest in protein conformations and ligand interactions establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:35:29.913152+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational analysis of protein-ligand interactions and molecular dynamics simulations. The source discusses structure-based drug design and molecular dynamics to study protein-ligand complexes, while the target provides a toolkit (enspara) for scalable modeling and analysis of molecular ensembles from MD data, including clustering and Markov State Models. This shared focus on analyzing molecular dynamics data and protein conformations establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
       "created_at": "2026-09-19T05:15:32.607216+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -109,6 +829,132 @@
       "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
     },
     {
+      "created_at": "2026-09-21T05:35:32.009093+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "The source document involves molecular dynamics simulations to study protein-ligand interactions, while the target document describes deeptime, a library for dynamical modeling and time-series analysis applicable to molecular dynamics data. Both share a focus on analyzing dynamical systems in molecular simulations, making them specifically related through the use of computational methods for studying molecular dynamics.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:35:33.879452+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing protein dynamics using computational methods that involve detailed residue-level interactions derived from molecular dynamics simulations. The source uses graph neural networks to identify conformational binding signatures in protein dynamics, while the target provides a tool for protein energy network analysis from MD trajectories, including residue-pair energy calculations and network metrics. Their shared emphasis on residue-level network analysis of protein dynamics and use of MD data establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6"
+    },
+    {
+      "created_at": "2026-09-21T05:35:38.579091+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on graph-based analysis of protein structures to understand allostery and ligand binding. The source uses graph neural networks on molecular dynamics data to identify dynamic binding signatures, while the target provides a tool for residue interaction network analysis and comparative state studies, including allosteric coupling. Their shared use of graph representations and focus on protein allostery and ligand interactions establish a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
+    },
+    {
+      "created_at": "2026-09-21T05:35:40.394005+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing protein molecular dynamics (MD) trajectories at the residue level to understand protein function and interactions. The source uses graph neural networks and contrastive learning to identify dynamic binding signatures and allosteric mechanisms, while the target provides software for residue interaction energy analysis and protein energy network construction from MD simulations. Their shared emphasis on residue-level dynamic and energetic analysis of protein MD data establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:35:42.726464+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on applying machine learning methods to molecular dynamics data of proteins, specifically involving residue-level representations and dynamics analysis. The source presents a graph neural network framework for protein conformational dynamics, while the target surveys software tools for ML on MD trajectories including residue interaction networks and kinetic modeling, indicating a shared research area in ML-driven protein dynamics analysis.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:35:44.110227+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on applying deep learning methods to molecular dynamics simulations of proteins, specifically using graph or contact-map representations to analyze protein conformational states and dynamics. They share a research topic in machine learning-driven analysis and sampling of protein conformations, making their approaches scientifically connected.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:35:45.804526+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing protein dynamics using computational methods. The source uses graph neural networks to identify conformational binding signatures in molecular dynamics simulations, while the target provides a toolkit for scalable modeling and analysis of molecular ensembles, including Markov State Models and clustering methods relevant to protein conformational states and allostery. Their shared emphasis on computational analysis of protein conformational dynamics and allosteric mechanisms establishes a meaningful scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
       "created_at": "2026-09-19T05:15:34.912787+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -125,6 +971,492 @@
       "relation_type": "topical_similarity",
       "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
       "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:35:47.350688+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing molecular dynamics data using advanced computational methods involving neural networks and time-series modeling. The source applies graph neural networks and contrastive learning to protein dynamics, while the target provides a general-purpose library for dynamical system modeling from time-series data, including neural network approaches relevant to molecular dynamics analysis, indicating a shared research topic and methodological overlap.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:35:50.837251+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on residue interaction networks in proteins and perform network analysis using centrality metrics such as degree, betweenness, and closeness. They analyze protein structures and ensembles, including ligand interactions, and provide tools for visualization and further analysis, indicating a shared research topic and methodological approach.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257"
+    },
+    {
+      "created_at": "2026-09-21T05:35:52.574312+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents describe software tools for protein residue interaction energy analysis and protein energy network construction, with i-gRINN being a redesigned and extended version of the original gRINN, sharing core methods such as pairwise energy calculations, network metrics, and GROMACS trajectory analysis.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:35:54.690514+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents discuss residue interaction networks and molecular dynamics trajectory analysis with machine learning integration. The target explicitly mentions gRINN/i-gRINN as key software relevant to residue-interaction-network analysis, directly connecting to the source's focus on i-gRINN for protein energy network analysis and GROMACS trajectory data.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:35:56.120560+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics (MD) simulation data analysis involving residue-pair interactions and energy/contact maps. i-gRINN performs detailed residue-pair energy network analysis from MD trajectories, while DeepDriveMD uses contact-map-based representations and machine learning to guide adaptive MD sampling. Their shared use of residue-pair matrices and integration of MD with machine learning establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:35:59.707268+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing protein molecular dynamics data using graph-based methods and machine learning. The source describes i-gRINN, which performs residue-pair energy network analysis from MD trajectories, producing network metrics and energy matrices for machine learning. The target presents MDGraphEmb, a toolkit converting MD trajectories into graph embeddings for classification of protein conformational states. Both share the theme of graph representation of protein dynamics and integration with machine learning for functional insights.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:01.251758+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents relate to molecular dynamics data analysis: i-gRINN processes GROMACS trajectories for protein energy networks, while deeptime provides advanced time-series and dynamical modeling tools applicable to molecular dynamics data. Their shared focus on analyzing molecular dynamics trajectories and extracting meaningful dynamical information establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:06.896326+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics analysis and kinetic modeling, with the target explicitly listing PyEMMA as a key tool for MD trajectory analysis and machine learning workflows, indicating a shared research topic and methodological overlap.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:36:08.386589+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics (MD) analysis and modeling, with PyEMMA providing tools for featurization, clustering, and Markov State Models, while DeepDriveMD integrates MD simulation with machine learning for adaptive sampling and representation learning. Their shared use of MD data analysis and clustering methods establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:36:10.817457+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents describe Python toolkits for molecular dynamics analysis focused on Markov State Models (MSMs), including clustering methods and Transition Path Theory, indicating a shared research topic and methodological approach.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
+      "created_at": "2026-09-21T05:36:13.227148+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analysis of molecular dynamics (MD) simulation data of proteins, aiming to characterize protein conformational states. PyEMMA provides a workflow including featurization, dimension reduction, clustering, and Markov State Models for kinetic and thermodynamic modeling, while MDGraphEmb converts MD trajectories into graph embeddings for machine learning classification of protein states. The shared research topic of MD trajectory analysis and protein conformational state characterization establishes a useful connection.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:17.259896+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on modeling dynamical systems using methods like TICA, VAMP, Markov State Models, and Hidden Markov Models. PyEMMA is specialized for molecular dynamics analysis, while deeptime is a general-purpose library for time-series dynamical modeling, but they share core scientific methods and modeling approaches, establishing a clear topical connection.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:18.900712+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on residue-level network analysis of protein structures, using graph-based methods to study residue interactions and allostery. RinPy constructs residue interaction networks from protein structures and ensembles emphasizing graph-theoretical analysis, while gRINN analyzes residue interaction energies from MD trajectories to build protein energy networks and perform network analysis. Their shared focus on residue interaction networks and network centrality measures establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
+      "target": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568"
+    },
+    {
+      "created_at": "2026-09-21T05:36:20.370670+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on residue interaction networks in proteins and their analysis, with the target document explicitly mentioning RinPy as a key tool in the molecular dynamics and machine learning software landscape, indicating a shared research topic and method.",
+      "relation_type": "topical_similarity",
+      "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:36:25.517345+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on graph-based analysis of protein structures and dynamics, using graph representations derived from protein data to study functional states and interactions. RinPy constructs residue interaction networks for analyzing protein allostery and ligand binding, while MDGraphEmb converts MD simulation trajectories into graph embeddings for machine learning classification of protein conformational states. Their shared use of graph-theoretical approaches to analyze protein conformations and dynamics establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:29.085746+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on residue interaction energies and protein molecular dynamics analysis, with gRINN providing force-field-based residue interaction energy calculations and network analyses, and the target document discussing software tools including gRINN/i-gRINN relevant to extending SAWNERGY for machine learning on MD trajectories. They share a specific research topic and methods related to residue interaction networks and energetic decomposition in protein MD simulations.",
+      "relation_type": "topical_similarity",
+      "source": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
+      "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-09-21T05:36:40.186152+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents involve analysis of time-series data from molecular dynamics simulations. gRINN focuses on residue interaction energies and network analysis from MD trajectories, while deeptime provides general-purpose time-series and dynamical modeling tools applicable to molecular dynamics data. deeptime integrates with tools like SAWNERGY, which overlaps with gRINN, indicating a useful connection in dynamical analysis of MD data.",
+      "relation_type": "topical_similarity",
+      "source": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:42.025783+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on integrating machine learning with molecular dynamics simulations, specifically using representation learning on residue interactions and contact maps. DeepDriveMD is explicitly mentioned in the source as a key project relevant to SAWNERGY, and both share the goal of leveraging learned representations for scientific insights, though with different emphases (adaptive sampling vs. mutation/allostery hypotheses).",
+      "relation_type": "topical_similarity",
+      "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+      "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-09-21T05:36:43.916330+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on molecular dynamics (MD) data analysis and modeling, with the source discussing software tools relevant to MD and machine learning workflows, including enspara as a key project. The target document describes enspara in detail as a toolkit for scalable modeling of molecular ensembles using Markov State Models, which aligns with the source's mention of kinetic modeling and MD trajectory analysis tools.",
+      "relation_type": "topical_similarity",
+      "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
+      "created_at": "2026-09-21T05:36:45.819892+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on applying machine learning methods to molecular dynamics simulations of protein systems, specifically involving trajectory analysis and protein conformational state classification. The source discusses software tools and frameworks for MD-to-ML workflows including residue interaction networks and time-dependent representations, while the target presents a toolkit (MDGraphEmb) that converts MD trajectories into graph embeddings for machine learning classification of protein states, indicating a shared research topic and methodological approach.",
+      "relation_type": "topical_similarity",
+      "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:47.340558+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning and dynamical modeling applied to molecular dynamics data. The source document mentions deeptime as a key project for slow-dynamics modeling and time-lagged representations, while the target document describes deeptime's capabilities in time-series and dynamical modeling, including integration with tools like SAWNERGY. This shared focus on time-lagged models and dynamical system learning in molecular dynamics establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:48.983957+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on advanced analysis of molecular dynamics (MD) simulation data using machine learning and statistical modeling techniques. DeepDriveMD emphasizes adaptive sampling driven by deep learning to explore molecular conformations, while enspara provides scalable tools for clustering and Markov State Model construction from MD trajectories. Their shared focus on MD data analysis, clustering, and modeling molecular ensembles establishes a meaningful scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
+      "created_at": "2026-09-21T05:36:50.341573+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing molecular dynamics simulations of proteins using machine learning techniques to identify and classify protein conformational states. DeepDriveMD uses deep learning with autoencoders and adaptive sampling, while MDGraphEmb employs graph embeddings and supervised learning for classification, representing complementary approaches to protein dynamics analysis.",
+      "relation_type": "topical_similarity",
+      "source": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:52.028662+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data and representation learning. DeepDriveMD uses deep learning for adaptive sampling in molecular simulations, while deeptime provides general-purpose tools for dynamical modeling and time-lagged representations, including neural network approaches, which can complement adaptive sampling workflows like DeepDriveMD.",
+      "relation_type": "topical_similarity",
+      "source": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:53.530321+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational toolkits for analyzing protein molecular dynamics simulations and conformational ensembles. The source describes enspara, which models molecular ensembles using Markov State Models and clustering, while the target presents MDGraphEmb, which uses graph embeddings and machine learning for protein conformational state classification. Both address scalable analysis of protein dynamics from MD data, making their research topics and methods specifically related.",
+      "relation_type": "topical_similarity",
+      "source": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-09-21T05:36:55.243184+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both enspara and deeptime focus on Markov State Models and dynamical modeling of time-series data, with enspara specialized for molecular ensembles and MSM construction, and deeptime providing general-purpose tools for dynamical systems including MSMs and related models. Their shared emphasis on MSMs and time-lagged representations establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-21T05:36:57.246778+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing molecular dynamics data using machine learning and dynamical systems approaches. The source provides a toolkit for graph embedding and classification of protein conformational ensembles from MD simulations, while the target offers a general-purpose library for time-series and dynamical modeling, including neural network-based representations and Markov models, applicable to molecular dynamics data. Their shared emphasis on advanced computational methods for understanding protein dynamics establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
     }
   ],
   "schema_version": 1

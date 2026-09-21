@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/content.md",
+  "content_sha256": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+  "created_at": "2026-09-21T05:33:17.348057+00:00",
+  "document_id": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "SAWNERGY",
+    "molecular dynamics",
+    "machine learning",
+    "trajectory analysis",
+    "residue interaction networks",
+    "kinetic modeling",
+    "deep learning",
+    "protein dynamics",
+    "time-lagged models",
+    "force-field energies"
+  ],
+  "schema_version": 1,
+  "source_filename": "SAWNERGY-software-landscape-overview.md",
+  "source_path": "sources/723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d/original.md",
+  "source_type": "md",
+  "summary": "This document provides an overview of software tools relevant to extending SAWNERGY for machine learning on molecular-dynamics (MD) trajectories. It categorizes tools into trajectory-analysis, machine-learning, dynamical/kinetic modeling, residue-interaction-network, generative conformational-modeling, and adaptive-simulation workflows. Key projects include MDAnalysis, mdlearn, DeepDriveMD, deeptime, gRINN/i-gRINN, RinPy, molearn, enspara, and PyEMMA. No single tool covers the entire MD-to-ML-to-kinetics pipeline; integration is common. Well-established solutions exist for trajectory access, contact-map latent spaces, slow-dynamics modeling, force-field energetic decomposition, and residue-network analysis. SAWNERGY's distinctive niche is learning time-dependent, physically meaningful residue-residue representations to capture nonlocal mutation-induced dynamics. Proposed representations include multichannel tensors encoding distances, electrostatics, van der Waals,",
+  "title": "MD / ML Software Landscape Relevant to SAWNERGY"
+}

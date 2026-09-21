@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd/content.md",
+  "content_sha256": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+  "created_at": "2026-09-21T05:32:56.195666+00:00",
+  "document_id": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "MDAnalysis",
+    "molecular dynamics",
+    "trajectory analysis",
+    "Python library",
+    "atom selection",
+    "structural analysis",
+    "parallel processing",
+    "custom extensibility",
+    "simulation formats",
+    "SAWNERGY"
+  ],
+  "schema_version": 1,
+  "source_filename": "MDAnalysis.md",
+  "source_path": "sources/0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd/original.md",
+  "source_type": "md",
+  "summary": "MDAnalysis is a mature general-purpose Python library for reading, manipulating, selecting, transforming, and analyzing molecular simulation trajectories. It provides an MD system called Universe, which contains topology information, atom groups, and trajectory frames. Coordinates, velocities, and forces are accessible as NumPy-compatible data. MDAnalysis supports formats from AMBER, GROMACS, NAMD, CHARMM, LAMMPS, and others. Its core functionality includes trajectory I/O, frame iteration, atom selection, and on-the-fly modification. The rich selection language targets protein, backbone, residues, ligands, and spatial regions. The analysis modules cover distances, contacts, RMSD, RMSF, alignment, dihedrals, secondary structure, density, diffusion maps, PCA, hydrogen-bonds, water dynamics, ensemble comparison, covariance,dielectric,andspecializedanalyses.Parallelprocessingissupportedforcertainanalyses.UserscanextendMDAnalysiswithcustomframe-wiseclasses.Itisnotadeep-learningframework,noradeepneuraldynamicspackage,force-fieldenergyengine,ornativeMLpipeline.MDAnalysisoverlapswithSAWNERGY'sgeometricpreprocessingbutdoesnotprovidephysics-awareresidue-pairtensorchannelsorneuralinterfaces.Itservesasaninfrastructurelayerforcustomscientificcodeandtrajectoryaccess.AnalysisresultsareexportedasNumPyarraysorderivedtrajectories.Thelateststableversionis2.10.0,withdevelopmentongoing.",
+  "title": "MDAnalysis"
+}

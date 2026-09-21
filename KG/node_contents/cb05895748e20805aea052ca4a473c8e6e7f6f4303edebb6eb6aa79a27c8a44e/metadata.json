@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/content.md",
+  "content_sha256": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e",
+  "created_at": "2026-09-21T05:33:24.211236+00:00",
+  "document_id": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "enspara",
+    "Markov State Models",
+    "molecular ensembles",
+    "clustering",
+    "Transition Path Theory",
+    "information theory",
+    "exposons",
+    "allostery",
+    "smFRET prediction",
+    "scalability"
+  ],
+  "schema_version": 1,
+  "source_filename": "enspara.md",
+  "source_path": "sources/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/original.md",
+  "source_type": "md",
+  "summary": "enspara is a Python toolkit designed for scalable modeling and analysis of molecular ensembles, focusing on Markov State Models (MSMs). It provides high-performance clustering algorithms such as k-centers and k-hybrid, supporting distance metrics including RMSD, Euclidean, and Manhattan. The toolkit handles large MD datasets with threading and MPI support. enspara enables clustering across different topologies, useful for wild-type and mutant comparisons. It constructs MSMs from discrete state trajectories, offering transition-count and probability matrices, equilibrium probabilities, implied timescales, and lag-time analysis. Transition Path Theory (TPT) is included, allowing calculations of mean first-passage times, net fluxes, and dominant pathways. Information-theoretic tools like,",
+  "title": "enspara"
+}

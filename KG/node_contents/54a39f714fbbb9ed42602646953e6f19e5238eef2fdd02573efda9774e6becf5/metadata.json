@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5/content.md",
+  "content_sha256": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+  "created_at": "2026-09-21T05:33:05.093635+00:00",
+  "document_id": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "PyEMMA",
+    "Markov State Models",
+    "TICA",
+    "VAMP",
+    "clustering",
+    "featurization",
+    "Hidden Markov Models",
+    "metastable-state analysis",
+    "Transition Path Theory",
+    "thermodynamic modeling"
+  ],
+  "schema_version": 1,
+  "source_filename": "PyEMMA.md",
+  "source_path": "sources/54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5/original.md",
+  "source_type": "md",
+  "summary": "PyEMMA is a Python/C package for molecular dynamics analysis, including featurization, dimension reduction, clustering, Markov State Models (MSM), Hidden Markov Models (HMM), and thermodynamic and kinetic model analysis. Although no longer actively maintained, it established a complete workflow from MD trajectories to kinetic models. Featurization supports coordinates, distances, contacts, torsion angles, and custom features. Dimension reduction methods include TICA, VAMP, and PCA. Clustering methods include k-means, mini-batch k-means, regular-space, and uniform-time. MSM capabilities cover maximum-likelihood, Bayesian models, implied-timescales, validation, and transition matrices. HMMs include Bayesian variants. Metastable-state analysis uses PCCA/PCCA+. Transition Path Theory tools analyze committors, first-passage times, rates, and,",
+  "title": "PyEMMA"
+}
