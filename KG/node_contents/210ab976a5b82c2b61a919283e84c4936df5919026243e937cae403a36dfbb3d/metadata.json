@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d/content.md",
+  "content_sha256": "8085ea90d4eed14aa296fa33798cba8b37d420c28dc4f8c8eb9126e6770b2be9",
+  "created_at": "2026-09-21T23:14:21.395014+00:00",
+  "document_id": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "diffusion models",
+    "3D molecular generation",
+    "de novo drug design",
+    "structure-based drug design",
+    "molecular docking",
+    "molecular dynamics",
+    "graph neural networks",
+    "equivariant neural networks",
+    "conditional generation",
+    "fragment-based drug design"
+  ],
+  "schema_version": 1,
+  "source_filename": "diffusion-models-article.pdf",
+  "source_path": "sources/210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d/original.pdf",
+  "source_type": "pdf",
+  "summary": "Diffusion models have emerged as powerful tools for 3D molecular generation in drug discovery. Inspired by nonequilibrium statistical physics, they learn complex probability distributions of 3D molecular geometries and chemical properties via forward and reverse diffusion. This review focuses on technical implementation of diffusion models tailored for 3D molecular generation, comparing performance, evaluation methods, and details. It covers atom and bond representation, reverse diffusion denoising networks, and challenges in generating stable 3D structures. Applications in de novo drug design and computational chemistry include structure-based drug design, target-specific generation, molecular docking, and dynamics. Conditional generation on physical properties, conformation generation, and,",
+  "title": "Diffusion Models in De Novo Drug Design"
+}
