@@ -37,6 +37,24 @@
       "target": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d"
     },
     {
+      "created_at": "2026-09-29T20:31:59.876078+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecular generation with an emphasis on spatial constraints related to protein binding sites. The source explores diffusion models guided by binding affinity for target-aware molecular generation, while the target benchmarks large language models and diffusion models for generating molecules under complex 3D spatial constraints in protein pockets. This shared focus on molecular generation conditioned by 3D structural and binding considerations establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9",
+      "target": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917"
+    },
+    {
       "created_at": "2026-09-21T20:54:45.586152+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -811,6 +829,24 @@
       "target": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5"
     },
     {
+      "created_at": "2026-09-29T20:32:11.358518+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on structure-based drug design involving protein-ligand interactions and molecular docking. The source discusses computational methods including docking and molecular dynamics for evaluating ligand binding, while the target evaluates large language models for 3D molecular generation under spatial constraints relevant to protein pockets, directly connecting to the drug design context.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917"
+    },
+    {
       "created_at": "2026-09-21T05:35:19.786363+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1153,6 +1189,24 @@
       "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
     },
     {
+      "created_at": "2026-09-29T20:32:14.635869+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecular generation for drug design, specifically involving diffusion models and structure-based drug design. The target paper benchmarks large language models against diffusion models for generating molecules under spatial constraints, directly relating to the source's discussion of diffusion models in de novo drug design and molecular docking.",
+      "relation_type": "topical_similarity",
+      "source": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
+      "target": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917"
+    },
+    {
       "created_at": "2026-09-21T23:14:44.080055+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1439,6 +1493,42 @@
       "relation_type": "topical_similarity",
       "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
       "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-29T20:32:22.247607+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on leveraging large language models for molecular generation in drug discovery, specifically addressing structure-based drug design and molecule optimization. The source benchmarks LLMs under spatial constraints for 3D molecular generation, while the target describes an autonomous agent using LLMs to generate and optimize drug-like molecules, indicating a shared research topic and methodology in AI-driven drug design.",
+      "relation_type": "topical_similarity",
+      "source": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917",
+      "target": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5"
+    },
+    {
+      "created_at": "2026-09-29T20:32:28.909748+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecular generation for drug design using advanced models and evaluate on the CrossDocked2020 dataset. The source benchmarks LLMs under spatial constraints for molecule generation, while the target proposes a 3D equivariant diffusion model for target-aware molecule generation and affinity prediction. Their shared focus on 3D structure-based drug design and molecular generative modeling establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917",
+      "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
       "created_at": "2026-09-21T05:36:18.900712+00:00",

@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917/content.md",
+  "content_sha256": "973db4baf9d962df7dd584873ad866870aaaa66c2e38623a8e7e9f4c702097d5",
+  "created_at": "2026-09-29T20:31:56.808597+00:00",
+  "document_id": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "3D-Fit benchmark",
+    "Large Language Models",
+    "Molecular generation",
+    "Spatial constraints",
+    "Protein pockets",
+    "Anchor fragments",
+    "Pharmacophore points",
+    "Mandatory interactions",
+    "Diffusion models",
+    "Structure-based drug design"
+  ],
+  "schema_version": 1,
+  "source_filename": "3d-fit.pdf",
+  "source_path": "sources/56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917/original.pdf",
+  "source_type": "pdf",
+  "summary": "This study introduces 3D-Fit, a benchmark to evaluate large language models' (LLMs) capabilities in 3D molecular generation under complex spatial constraints, including protein pockets, anchor fragments, pharmacophore points, and mandatory interactions. The benchmark uses token-efficient textual representations for conditions and a simplified SDF format for molecule output. Experiments compare state-of-the-art LLMs and specialized diffusion models on CrossDocked2020 and PLINDER datasets. Results show LLMs can parse and partially satisfy multiple 3D constraints, especially anchor fragments and pharmacophore points, but often produce molecules with non-optimal geometry and poor raw docking scores. Local optimization improves LLM-generated poses, yet diffusion models still outperform inbindingqualityandphysicalplausibility.LLMs'abilitytohandlemultipleconstraintsimprovesplacementaccuracy,butinternalandintermolecularvalidityremainchallenging.TheworkhighlightsLLMspromiseandlimitationsinstructure-baseddrugdesignandprovidesacodeanddatasetforfutureadvancements.",
+  "title": "Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints"
+}
