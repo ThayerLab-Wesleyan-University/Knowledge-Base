@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f/content.md",
+  "content_sha256": "78d23cb718477fbd8a07d6bb83dc77e0b2e24f914df7a5c1f9fbd0f3154094c2",
+  "created_at": "2026-09-29T20:59:36.012162+00:00",
+  "document_id": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "3D molecule generation",
+    "text-guided molecule design",
+    "multimodal diffusion model",
+    "contrastive learning",
+    "equivariant graph neural networks",
+    "conditional diffusion model",
+    "molecular structure alignment",
+    "drug discovery",
+    "molecular embeddings",
+    "digital medicine"
+  ],
+  "schema_version": 1,
+  "source_filename": "tdmol.pdf",
+  "source_path": "sources/b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f/original.pdf",
+  "source_type": "pdf",
+  "summary": "Generating novel functional molecules is essential in drug discovery, addressing antibiotic resistance and scarcity of effective treatments. 3D structure design reflects biological function, but complexity and topology irregularity make de novo 3D molecule generation challenging. Conditional design offers accurate, quick generation. This study proposes TDmol, a Text-guided De novo 3D molecule generation approach based on multimodal diffusion model. TDmol uses two-stage modality alignment contrastive learning to extract shared and unique features from textual descriptions, 2D, and 3D structures, enabling controllable generation. It is the first to realize text-3D modality alignment. Experiments show TDmol significantly improves validity and reliability of 3D-molecular-structures,highlightingmultimodalfoundationmodels'potentialindigitalmedicine,providingscalable,generalizable3Dmoleculegenerationframeworksadaptableacrossclinicalsettings.Auser-friendlywebserverisdeployedforacademicuse.TDmolbridgesmoleculartextualdescriptionswith3Dstructuralgeneration,leveragingcontrastivelearningandclassifier-guideddiffusionmodels.Text-guidedgenerationimproves3Dembeddingandsimilaritymetricscomparedgroundtruth.Two-stagealignmentimprovesperformanceoverdirecttext-3Dalignment.Post-processingensures100%validmolecules.TDmoloutperformsbaselinesinvalidityandstabilitymetrics,demonstratingtextualguidanceeffectivenessandpotentialforprecisiondrugdesign.Futureworkincludesacceleratedsampling,largerdatasets,andproteinbindingintegration.",
+  "title": "Condition controllable generation of 3D molecules using textual prompts by multimodal equivariant diffusion model"
+}

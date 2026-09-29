@@ -121,30 +121,37 @@
       <data key="source_path">sources/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/original.pdf</data>
       <data key="metadata_path">KG/node_contents/83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84/metadata.json</data>
     </node>
+    <node id="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="title">Condition controllable generation of 3D molecules using textual prompts by multimodal equivariant diffusion model</data>
+      <data key="display_label">D17</data>
+      <data key="content_path">KG/node_contents/b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f/content.md</data>
+      <data key="source_path">sources/b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f/original.pdf</data>
+      <data key="metadata_path">KG/node_contents/b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f/metadata.json</data>
+    </node>
     <node id="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="title">DeepDriveMD</data>
-      <data key="display_label">D17</data>
+      <data key="display_label">D18</data>
       <data key="content_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/content.md</data>
       <data key="source_path">sources/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/original.md</data>
       <data key="metadata_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/metadata.json</data>
     </node>
     <node id="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="title">enspara</data>
-      <data key="display_label">D18</data>
+      <data key="display_label">D19</data>
       <data key="content_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/content.md</data>
       <data key="source_path">sources/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/original.md</data>
       <data key="metadata_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/metadata.json</data>
     </node>
     <node id="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="title">MDGraphEmb: a toolkit for graph embedding and classification of protein conformational ensembles</data>
-      <data key="display_label">D19</data>
+      <data key="display_label">D20</data>
       <data key="content_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/content.md</data>
       <data key="source_path">sources/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/original.pdf</data>
       <data key="metadata_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/metadata.json</data>
     </node>
     <node id="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="title">deeptime</data>
-      <data key="display_label">D20</data>
+      <data key="display_label">D21</data>
       <data key="content_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/content.md</data>
       <data key="source_path">sources/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/original.md</data>
       <data key="metadata_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/metadata.json</data>
@@ -172,6 +179,11 @@
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on target-aware molecular generation using 3D equivariant diffusion models and SE(3)-equivariant graph neural networks, specifically involving the TargetDiff model and binding affinity prediction, indicating a strong topical and methodological connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on 3D molecular generation using diffusion models with guidance mechanisms to improve generation quality. The source uses graph neural networks and surrogate models for target-aware molecular generation, while the target employs multimodal diffusion models with textual prompts for conditional 3D molecule design. Both share the theme of guided diffusion-based molecular generation with equivariant neural networks, making their research topics specifically related.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be">
@@ -409,6 +421,11 @@
       <data key="rationale">Both documents focus on computational methods for drug design involving protein-ligand interactions and binding affinity prediction. The source discusses structure-based drug design using molecular docking and molecular dynamics simulations, while the target presents a 3D equivariant diffusion model for molecule generation and affinity prediction, addressing geometric constraints in protein-ligand complexes. Their shared emphasis on modeling protein-ligand binding and affinity estimation establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational approaches to molecular design relevant to drug discovery, with the source emphasizing structure-based drug design and molecular docking, and the target presenting a method for 3D molecule generation guided by textual prompts. Their shared interest in 3D molecular structures and drug design methods establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics simulations to study protein-ligand interactions and conformational states. The source discusses structure-based drug design using molecular docking and molecular dynamics, while the target presents DeepDriveMD, an adaptive molecular simulation workflow that uses machine learning to guide MD simulations toward interesting conformations. Their shared use of MD simulations and interest in protein conformations and ligand interactions establishes a specific scientific connection.</data>
@@ -459,6 +476,11 @@
       <data key="rationale">Both documents focus on advanced graph neural network methods applied to protein-ligand interactions and drug design, with the source analyzing protein conformational dynamics and the target generating molecules and predicting binding affinity using 3D equivariant models. Their shared use of graph neural networks for understanding and manipulating protein-ligand systems establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on advanced machine learning methods involving graph neural networks and contrastive learning applied to molecular structures for drug design. The source analyzes protein conformational dynamics using spatiotemporal graph neural networks, while the target generates 3D molecular structures guided by textual prompts using multimodal diffusion models and equivariant graph neural networks. Their shared emphasis on molecular-level modeling, graph-based representations, and applications in drug discovery establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on applying deep learning methods to molecular dynamics simulations of proteins, specifically using graph or contact-map representations to analyze protein conformational states and dynamics. They share a research topic in machine learning-driven analysis and sampling of protein conformations, making their approaches scientifically connected.</data>
@@ -497,6 +519,11 @@
     <edge source="210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on 3D equivariant diffusion models applied to molecular generation for drug design, specifically addressing generation of 3D molecular structures and incorporating target or binding affinity considerations, indicating a shared research topic and methodology.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on 3D molecular generation using diffusion models for drug design. They share specific topics such as conditional generation, equivariant neural networks, and applications in de novo drug design, indicating a strong topical and methodological connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
@@ -574,6 +601,11 @@
       <data key="rationale">Both documents focus on 3D molecular generation for drug design using advanced models and evaluate on the CrossDocked2020 dataset. The source benchmarks LLMs under spatial constraints for molecule generation, while the target proposes a 3D equivariant diffusion model for target-aware molecule generation and affinity prediction. Their shared focus on 3D structure-based drug design and molecular generative modeling establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on 3D molecule generation for drug design using advanced AI models, specifically involving spatial or structural constraints and conditional generation methods. The source benchmarks LLMs under spatial constraints for molecular design, while the target proposes a multimodal diffusion model for text-guided 3D molecule generation, indicating a shared research topic in AI-driven 3D molecular structure generation and control.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on residue-level network analysis of protein structures, using graph-based methods to study residue interactions and allostery. RinPy constructs residue interaction networks from protein structures and ensembles emphasizing graph-theoretical analysis, while gRINN analyzes residue interaction energies from MD trajectories to build protein energy networks and perform network analysis. Their shared focus on residue interaction networks and network centrality measures establishes a specific scientific connection.</data>
@@ -592,6 +624,11 @@
     <edge source="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5" target="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on computational methods for molecule generation and drug discovery, specifically targeting the generation of molecules with desirable binding affinity properties. The source uses large language models and modular components for drug design, while the target employs a 3D equivariant diffusion model for target-aware molecule generation and affinity prediction. Their shared emphasis on generating molecules optimized for binding affinity and drug design establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational drug discovery through novel molecule generation guided by advanced AI models. The source uses large language models for molecule design and optimization, while the target employs text-guided multimodal diffusion models for 3D molecule generation, linking textual descriptions to molecular structures. Their shared emphasis on AI-driven, text- or language-based molecular design and drug discovery establishes a specific scientific connection beyond generic overlap.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568" target="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">
@@ -622,6 +659,11 @@
     <edge source="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d" target="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on machine learning and dynamical modeling applied to molecular dynamics data. The source document mentions deeptime as a key project for slow-dynamics modeling and time-lagged representations, while the target document describes deeptime's capabilities in time-series and dynamical modeling, including integration with tools like SAWNERGY. This shared focus on time-lagged models and dynamical system learning in molecular dynamics establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both papers focus on 3D molecule generation using equivariant diffusion models and graph neural networks, aiming to improve molecular design for drug discovery. They share a specific research topic of equivariant diffusion-based 3D molecular generation, with one emphasizing target-aware generation and affinity prediction, and the other emphasizing text-guided conditional generation, indicating a useful connection in methodology and application domain.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">

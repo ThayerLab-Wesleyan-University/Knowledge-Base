@@ -91,6 +91,24 @@
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
+      "created_at": "2026-09-29T20:59:39.024227+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecular generation using diffusion models with guidance mechanisms to improve generation quality. The source uses graph neural networks and surrogate models for target-aware molecular generation, while the target employs multimodal diffusion models with textual prompts for conditional 3D molecule design. Both share the theme of guided diffusion-based molecular generation with equivariant neural networks, making their research topics specifically related.",
+      "relation_type": "topical_similarity",
+      "source": "0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
+    },
+    {
       "created_at": "2026-09-21T05:33:53.480777+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -937,6 +955,24 @@
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
+      "created_at": "2026-09-29T20:59:53.484990+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational approaches to molecular design relevant to drug discovery, with the source emphasizing structure-based drug design and molecular docking, and the target presenting a method for 3D molecule generation guided by textual prompts. Their shared interest in 3D molecular structures and drug design methods establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
+    },
+    {
       "created_at": "2026-09-21T05:35:28.252527+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1117,6 +1153,24 @@
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
+      "created_at": "2026-09-29T20:59:55.397404+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on advanced machine learning methods involving graph neural networks and contrastive learning applied to molecular structures for drug design. The source analyzes protein conformational dynamics using spatiotemporal graph neural networks, while the target generates 3D molecular structures guided by textual prompts using multimodal diffusion models and equivariant graph neural networks. Their shared emphasis on molecular-level modeling, graph-based representations, and applications in drug discovery establishes a specific scientific connection.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
+    },
+    {
       "created_at": "2026-09-21T05:35:44.110227+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1259,6 +1313,24 @@
       "relation_type": "topical_similarity",
       "source": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
+    },
+    {
+      "created_at": "2026-09-29T20:59:56.842192+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecular generation using diffusion models for drug design. They share specific topics such as conditional generation, equivariant neural networks, and applications in de novo drug design, indicating a strong topical and methodological connection.",
+      "relation_type": "topical_similarity",
+      "source": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
       "created_at": "2026-09-21T23:14:52.113330+00:00",
@@ -1531,6 +1603,24 @@
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
     },
     {
+      "created_at": "2026-09-29T21:00:02.544265+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on 3D molecule generation for drug design using advanced AI models, specifically involving spatial or structural constraints and conditional generation methods. The source benchmarks LLMs under spatial constraints for molecular design, while the target proposes a multimodal diffusion model for text-guided 3D molecule generation, indicating a shared research topic in AI-driven 3D molecular structure generation and control.",
+      "relation_type": "topical_similarity",
+      "source": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
+    },
+    {
       "created_at": "2026-09-21T05:36:18.900712+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1601,6 +1691,24 @@
       "relation_type": "topical_similarity",
       "source": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5",
       "target": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84"
+    },
+    {
+      "created_at": "2026-09-29T21:00:05.837855+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational drug discovery through novel molecule generation guided by advanced AI models. The source uses large language models for molecule design and optimization, while the target employs text-guided multimodal diffusion models for 3D molecule generation, linking textual descriptions to molecular structures. Their shared emphasis on AI-driven, text- or language-based molecular design and drug discovery establishes a specific scientific connection beyond generic overlap.",
+      "relation_type": "topical_similarity",
+      "source": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
       "created_at": "2026-09-21T05:36:29.085746+00:00",
@@ -1709,6 +1817,24 @@
       "relation_type": "topical_similarity",
       "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
       "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-09-29T21:00:10.948756+00:00",
+      "generation": {
+        "model": "gpt-4.1-mini-2025-04-14",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "openai",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both papers focus on 3D molecule generation using equivariant diffusion models and graph neural networks, aiming to improve molecular design for drug discovery. They share a specific research topic of equivariant diffusion-based 3D molecular generation, with one emphasizing target-aware generation and affinity prediction, and the other emphasizing text-guided conditional generation, indicating a useful connection in methodology and application domain.",
+      "relation_type": "topical_similarity",
+      "source": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84",
+      "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
       "created_at": "2026-09-21T05:36:48.983957+00:00",
