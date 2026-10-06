@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1/content.md",
+  "content_sha256": "28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1",
+  "created_at": "2026-10-06T22:06:26.668104+00:00",
+  "document_id": "28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1",
+  "extraction": {
+    "tool": "utf8-passthrough",
+    "version": "1"
+  },
+  "generation": {
+    "model": "gpt-4.1-mini-2025-04-14",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "openai",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "p53 restoration",
+    "molecular dynamics",
+    "MD simulations",
+    "wild-type validation",
+    "surrogate model",
+    "distance-to-WT score",
+    "diffusion model",
+    "molecule generation",
+    "machine learning",
+    "iterative refinement"
+  ],
+  "schema_version": 1,
+  "source_filename": "roadmap_to_restoring_p53.md",
+  "source_path": "sources/28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1/original.md",
+  "source_type": "md",
+  "summary": "This document presents a systematic roadmap for restoring the functionality of the p53 protein using molecular dynamics (MD) simulations and machine learning. The process begins with validation by embedding MD trajectories to ensure wild-type (WT) simulations are consistent. Next, a dataset is created from multiple MD simulations including mutant-only and mutant-plus-docked-molecule conditions, with each example labeled by distance-to-WT scores. A surrogate model is trained to predict these scores from molecular inputs. Molecule generation is performed using diffusion models to minimize the predicted distance. Generated molecules are evaluated via MD simulations, and those reducing distance are identified. Training data is refined,",
+  "title": "Roadmap toward Restoring p53"
+}
