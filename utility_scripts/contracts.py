@@ -169,17 +169,19 @@ def load_config(root: Path):
                 "max_extracted_input_tokens", "max_new_documents", "max_api_requests",
                 "request_timeout_seconds", "max_pdf_pages", "max_pdf_page_stream_bytes")
     props = {k: {"type": "integer", "minimum": 1} for k in integers}
-    props.update({"schema_version": {"const": 1}, "provider": {"const": "openai"},
+    props.update({"schema_version": {"const": 1}, "provider": {"enum": ["openai", "gemini"]},
                   "model": TEXT, "temperature": {"type": "number", "minimum": 0, "maximum": 2},
                   "summary_prompt_version": {"type": "string", "pattern": "^v[0-9]+$"},
                   "relationship_prompt_version": {"type": "string", "pattern": "^v[0-9]+$"}})
     validate_schema(cfg, object_schema(props), "configuration")
     # Verified model limits; new models require an explicit reviewed profile.
-    profiles = {"gpt-4.1-mini": (1047576, 32768),
-                "gpt-4.1-mini-2025-04-14": (1047576, 32768)}
-    if cfg["model"] not in profiles:
+    profiles = {("openai", "gpt-4.1-mini"): (1047576, 32768),
+                ("openai", "gpt-4.1-mini-2025-04-14"): (1047576, 32768),
+                ("gemini", "gemini-3.8-flash"): (1048576, 65536)}
+    profile = (cfg["provider"], cfg["model"])
+    if profile not in profiles:
         raise KBError("Unsupported model profile; add reviewed limits in contracts.py before switching.")
-    context, output = profiles[cfg["model"]]
+    context, output = profiles[profile]
     if cfg["model_context_tokens"] > context or cfg["max_output_tokens"] > output:
         raise KBError("Configured token limits exceed the selected model profile.")
     if cfg["max_extracted_input_tokens"] + cfg["max_output_tokens"] + 8192 > cfg["model_context_tokens"]:

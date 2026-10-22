@@ -42,4 +42,5 @@ jobs:
       - name: Ingest and publish one complete commit
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python -m utility_scripts.ingest ingest --publish
