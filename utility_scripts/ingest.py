@@ -17,7 +17,7 @@ from utility_scripts.contracts import (
     KBError, digest, json_bytes, load_config, safe_text, validate_edges,
     validate_metadata, validate_relationship, validate_summary,
 )
-from utility_scripts.llm import create_provider
+from utility_scripts.llm import MAX_ATTEMPTS_PER_OPERATION, create_provider
 from utility_scripts.pdf2md import convert_pdf
 from utility_scripts.publish import publication_base, publish
 from utility_scripts.storage import apply_changes, checked_path, load_collection, snapshot
@@ -109,8 +109,8 @@ def prepare(root, config, records, paths):
         raise KBError("Batch exceeds max_new_documents; reduce the intake queue or review the limit.")
     minimum = len(new) + len(new) * len(records) + len(new) * (len(new) - 1) // 2
     # Reserve all permitted retries, so the planned batch cannot exceed the budget.
-    if minimum * 3 > config["max_api_requests"]:
-        raise KBError(f"Batch needs up to {minimum * 3} API requests including retries; limit is {config['max_api_requests']}.")
+    if minimum * MAX_ATTEMPTS_PER_OPERATION > config["max_api_requests"]:
+        raise KBError(f"Batch needs up to {minimum * MAX_ATTEMPTS_PER_OPERATION} API requests including retries and fallback; limit is {config['max_api_requests']}.")
     return new, minimum
 
 
@@ -188,7 +188,7 @@ def run(root, command="ingest", *, dry_run=False, publish_changes=False, provide
             new, minimum = prepare(root, config, records, paths)
         report = {"documents": len(records), "submissions": len(paths), "new_documents": len(new),
                   "duplicates": len(paths) - len(new), "minimum_api_requests": minimum,
-                  "maximum_api_requests": minimum * 3, "changed_paths": []}
+                  "maximum_api_requests": minimum * MAX_ATTEMPTS_PER_OPERATION, "changed_paths": []}
         if command == "ingest":
             report["files"] = [p.relative_to(root).as_posix() for p in paths]
             report["limits"] = {k: config[k] for k in ("max_file_bytes", "max_extracted_input_tokens",

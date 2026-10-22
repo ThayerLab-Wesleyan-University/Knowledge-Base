@@ -43,7 +43,7 @@ Never put the key in configuration, prompts, commits, or intake. Requests send e
 
 ## Switch between OpenAI and Gemini
 
-Choose the provider and matching model in [config/ingestion.json](config/ingestion.json). Leave the other settings as they are to start:
+Choose the preferred provider and matching model in [config/ingestion.json](config/ingestion.json). Leave the other settings as they are to start:
 
 | Provider | `provider` | `model` | Key environment variable / Actions secret |
 | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ For example, to select Gemini, change these two fields in the existing JSON obje
 
 The existing `model_context_tokens: 1047576` and `max_output_tokens: 2048` fit both supported profiles. Gemini requests use low reasoning effort to limit thinking overhead. If the provider reports an incomplete response, increase `max_output_tokens` within the reviewed model limits.
 
-**GitHub Actions:** open **Settings → Secrets and variables → Actions → New repository secret** and add each key under its exact name above. Both secrets may coexist; the config selects which one is used. Commit the configuration and workflow changes to `main`, then use **Actions → Ingest documents → Run workflow** on `main`. Configuration changes alone do not trigger ingestion. Get a Gemini key from [Google AI Studio](https://aistudio.google.com/apikey).
+**GitHub Actions:** open **Settings → Secrets and variables → Actions → New repository secret** and add each key under its exact name above. Save both secrets to enable fallback in either direction; the config selects which provider is tried first. Commit the configuration and workflow changes to `main`, then use **Actions → Ingest documents → Run workflow** on `main`. Configuration changes alone do not trigger ingestion. Get a Gemini key from [Google AI Studio](https://aistudio.google.com/apikey).
 
 **Local terminal (the default macOS zsh):** after selecting Gemini in the config, read and export its key without putting its value in command history:
 
@@ -71,7 +71,13 @@ python -m utility_scripts.ingest ingest --dry-run
 python -m utility_scripts.ingest ingest
 ```
 
-For OpenAI, change the two config fields back and use `OPENAI_API_KEY` in the commands instead. Keys are never placed in `ingestion.json`. A `.env` file is not automatically loaded. The selected provider must have its own key; there is no automatic fallback. Existing summaries and relationships keep their original provenance, and switching affects subsequent ingestion only.
+For OpenAI, change the two config fields back and use `OPENAI_API_KEY` in the commands instead. Keys are never placed in `ingestion.json`. A `.env` file is not automatically loaded.
+
+The configured provider is tried first. If its key is missing, it rejects a request (including authentication or billing errors), or its three bounded attempts fail, ingestion automatically tries the other provider. Rate limits, transport failures, and invalid structured responses each allow up to three attempts per provider.
+
+The alternate uses `gemini-3.8-flash` or `gpt-4.1-mini-2025-04-14`, respectively. Its context and output caps are clamped to that model’s reviewed limits, and its actual settings are recorded in provenance. A successful alternate stays active for the rest of the batch; if it later fails, the other provider is tried again. Each operation tries each provider at most once, with at most six HTTP attempts total. Logs report provider switches without response bodies or keys.
+
+Both providers share `max_api_requests`; an exhausted batch budget or local context-limit error stops processing without fallback. If both providers fail, no partial batch is published. A new ingestion run starts with the configured preference again. Existing summaries and relationships keep their original provenance, and switching affects subsequent ingestion only.
 
 ## Configuration and cost controls
 
@@ -79,7 +85,7 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
-| `provider` | `openai` | `openai` or `gemini`; no silent fallback. |
+| `provider` | `openai` | Preferred provider: `openai` or `gemini`; automatic fallback to the other. |
 | `model` | `gpt-4.1-mini-2025-04-14` | OpenAI snapshot; also supports `gpt-4.1-mini`, or `gemini-3.8-flash` with Gemini. |
 | `model_context_tokens` | 1,047,576 | Checked against the model profile. |
 | `max_output_tokens` | 2,048 | Per-response output cap. |
@@ -94,7 +100,7 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 
 The input bound intentionally overestimates token counts and may reject a document that would fit the model. It avoids tokenizer downloads and paid token-count calls. Each complete request is checked against the model context limit with an 8,192-token framing reserve; inputs are never silently truncated. New model families require a reviewed profile and adapter compatibility check in `utility_scripts/contracts.py`, not just a config rename.
 
-For `n` stored documents and `m` new documents, a successful batch needs at least `m + n*m + m*(m-1)/2` requests: `m` summaries, `n*m` old/new pairs, and one comparison for each unordered new/new pair. Preflight reserves three attempts for every request. A batch that cannot fit this worst-case count is rejected before API work. For example, one new document with 100 existing documents needs up to 303 attempts, exceeding the default budget. Increase the budget deliberately or plan a future candidate-selection strategy as the collection grows. These are request counts, not dollar estimates; configure account-level spending limits separately.
+For `n` stored documents and `m` new documents, a successful batch needs at least `m + n*m + m*(m-1)/2` requests: `m` summaries, `n*m` old/new pairs, and one comparison for each unordered new/new pair. Preflight reserves six attempts for every operation (three per provider), even if only one key is available. A batch that cannot fit this worst-case count is rejected before API work. For example, one new document with 100 existing documents needs up to 606 attempts, exceeding the configured 450-request budget. Increase the budget deliberately or plan a future candidate-selection strategy as the collection grows. These are request counts, not dollar estimates; configure account-level spending limits separately.
 
 ## Permanent records and derived outputs
 
@@ -118,8 +124,8 @@ Publication uses a separate temporary Git index and a commit object with the ori
 | Failure | Next step |
 | --- | --- |
 | Missing key, HTTP 401/403, or model rejection | Correct the Actions secret/model access, then manually run ingestion on `main`. |
-| Rate limit, timeout, or service failure | At most three attempts are made per operation. Logs show a sanitized reason for each failed attempt and retain the final reason. Wait for recovery, then rerun. |
-| Exhausted credits or billing quota | Recognized billing-quota errors stop immediately without retries. Check credits and project limits before another run. |
+| Rate limit, timeout, or service failure | Up to three attempts per provider, followed by automatic fallback. Both providers share the batch cap. If both fail, wait for recovery and rerun; logs show sanitized reasons. |
+| Exhausted credits or billing quota | Recognized billing-quota errors immediately try the other provider, without retrying the exhausted provider. If both fail, check credits and project limits before another run. |
 | Invalid summary or relationship after retries | Read the validation reason (including the actual summary word count). Repair attempts receive the previous output and specific feedback. Review the input for readability and sufficient substance before retrying. No malformed record is saved. |
 | Scanned, encrypted, corrupt, or textless PDF page | Submit a permitted text-based copy or a self-contained Markdown version. Blank pages also require cleanup in v0.1. |
 | Limit exceeded | Reduce the pending batch or adjust the relevant limit after checking model limits and cost. |

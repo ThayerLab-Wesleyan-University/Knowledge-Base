@@ -163,6 +163,12 @@ def validate_edges(envelope, records):
         timestamp(edge["created_at"])
 
 
+DEFAULT_MODELS = {"openai": "gpt-4.1-mini-2025-04-14", "gemini": "gemini-3.8-flash"}
+MODEL_LIMITS = {("openai", "gpt-4.1-mini"): (1047576, 32768),
+                ("openai", "gpt-4.1-mini-2025-04-14"): (1047576, 32768),
+                ("gemini", "gemini-3.8-flash"): (1048576, 65536)}
+
+
 def load_config(root: Path):
     cfg = read_json(root / "config/ingestion.json")
     integers = ("model_context_tokens", "max_output_tokens", "max_file_bytes",
@@ -175,13 +181,10 @@ def load_config(root: Path):
                   "relationship_prompt_version": {"type": "string", "pattern": "^v[0-9]+$"}})
     validate_schema(cfg, object_schema(props), "configuration")
     # Verified model limits; new models require an explicit reviewed profile.
-    profiles = {("openai", "gpt-4.1-mini"): (1047576, 32768),
-                ("openai", "gpt-4.1-mini-2025-04-14"): (1047576, 32768),
-                ("gemini", "gemini-3.8-flash"): (1048576, 65536)}
     profile = (cfg["provider"], cfg["model"])
-    if profile not in profiles:
+    if profile not in MODEL_LIMITS:
         raise KBError("Unsupported model profile; add reviewed limits in contracts.py before switching.")
-    context, output = profiles[profile]
+    context, output = MODEL_LIMITS[profile]
     if cfg["model_context_tokens"] > context or cfg["max_output_tokens"] > output:
         raise KBError("Configured token limits exceed the selected model profile.")
     if cfg["max_extracted_input_tokens"] + cfg["max_output_tokens"] + 8192 > cfg["model_context_tokens"]:

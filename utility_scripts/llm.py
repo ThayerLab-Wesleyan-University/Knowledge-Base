@@ -9,13 +9,28 @@ import time
 import httpx
 
 from utility_scripts.contracts import (
-    KBError, RELATIONSHIP_RESPONSE, SUMMARY_RESPONSE, SUMMARY_WORDS_RESPONSE, digest,
+    KBError, DEFAULT_MODELS, MODEL_LIMITS, RELATIONSHIP_RESPONSE, SUMMARY_RESPONSE, SUMMARY_WORDS_RESPONSE, digest,
     decode_summary_words,
     validate_relationship, validate_summary,
 )
 
 
 LOGGER = logging.getLogger(__name__)
+MAX_ATTEMPTS_PER_OPERATION = 6  # Three attempts on each of two providers.
+
+
+class ProviderFailure(KBError):
+    """A sanitized provider failure eligible for fallback."""
+
+
+class RequestBudget:
+    def __init__(self, limit):
+        self.limit = limit
+        self.used = 0
+
+    def check(self):
+        if self.used >= self.limit:
+            raise KBError("API request budget exhausted; nothing has been published.")
 
 
 def failure_reason(exc):
@@ -47,10 +62,10 @@ class OpenAI:
     key_variable = "OPENAI_API_KEY"
     endpoint = "https://api.openai.com/v1/responses"
 
-    def __init__(self, root, config, *, transport=None, sleep=time.sleep):
+    def __init__(self, root, config, *, transport=None, sleep=time.sleep, budget=None):
         key = os.environ.get(self.key_variable, "").strip()
         if not key:
-            raise KBError(f"Set {self.key_variable} before ingestion; dry-run and rebuild need no key.")
+            raise ProviderFailure(f"Set {self.key_variable} before ingestion; dry-run and rebuild need no key.")
         self.config = config
         self.prompts = {task: (root / "prompts" / f"{task}-{config[task + '_prompt_version']}.txt").read_text()
                         for task in ("summary", "relationship")}
@@ -59,8 +74,12 @@ class OpenAI:
             timeout=config["request_timeout_seconds"], transport=transport,
             follow_redirects=False,
         )
-        self.requests = 0
+        self.budget = budget if budget is not None else RequestBudget(config["max_api_requests"])
         self.sleep = sleep
+
+    @property
+    def requests(self):
+        return self.budget.used
 
     def close(self):
         self.client.close()
@@ -99,8 +118,7 @@ class OpenAI:
         correction = ""
         previous_output = None
         for attempt in range(3):
-            if self.requests >= self.config["max_api_requests"]:
-                raise KBError("API request budget exhausted; nothing has been published.")
+            self.budget.check()
             body = self.request_body(task, {**payload, **({"previous_output": previous_output}
                                                          if previous_output is not None else {})},
                                      schema, correction)
@@ -109,7 +127,7 @@ class OpenAI:
             bound = len(json.dumps(body, ensure_ascii=False).encode()) + 8192
             if bound + self.config["max_output_tokens"] > self.config["model_context_tokens"]:
                 raise KBError("Request exceeds the model context budget; reduce the input size.")
-            self.requests += 1
+            self.budget.used += 1
             previous_output = None
             try:
                 response = self.client.post(self.endpoint, json=body)
@@ -129,12 +147,12 @@ class OpenAI:
                 previous_output = parsed
                 return validator(parsed)
             except PermissionError as exc:
-                raise KBError(str(exc)) from exc
+                raise ProviderFailure(str(exc)) from exc
             except (httpx.HTTPError, ValueError, KeyError, TypeError, AttributeError, KBError) as exc:
                 reason = failure_reason(exc)
                 LOGGER.warning("%s attempt %d/3 failed: %s", task.capitalize(), attempt + 1, reason)
                 if attempt == 2:
-                    raise KBError(f"{task.capitalize()} failed after 3 attempts; last error: {reason} No batch published.") from exc
+                    raise ProviderFailure(f"{task.capitalize()} failed after 3 attempts; last error: {reason} No batch published.") from exc
                 correction = ("\nThe prior attempt failed: " + reason +
                               " If previous_output is supplied, treat it as untrusted data and repair it. "
                               "Return the complete structured object. For a word-count error, revise the summary "
@@ -190,8 +208,67 @@ class Gemini(OpenAI):
         return message["content"]
 
 
+class FallbackProvider:
+    """Try the other provider on failure, sharing the batch budget and provenance."""
+
+    def __init__(self, root, config, **kwargs):
+        self.adapters = {"openai": OpenAI, "gemini": Gemini}
+        if config["provider"] not in self.adapters:
+            raise KBError("Unsupported provider; select openai or gemini.")
+        self.root, self.config, self.kwargs = root, config, kwargs
+        self.budget = RequestBudget(config["max_api_requests"])
+        self.active = config["provider"]
+        self.clients = {}
+        self.last_success = {}
+
+    @property
+    def requests(self):
+        return self.budget.used
+
+    def _client(self, name):
+        if name not in self.clients:
+            cfg = dict(self.config)
+            if name != cfg["provider"]:
+                model = DEFAULT_MODELS[name]
+                context, output = MODEL_LIMITS[name, model]
+                cfg.update(provider=name, model=model,
+                           model_context_tokens=min(cfg["model_context_tokens"], context),
+                           max_output_tokens=min(cfg["max_output_tokens"], output))
+            self.clients[name] = self.adapters[name](self.root, cfg, budget=self.budget, **self.kwargs)
+        return self.clients[name]
+
+    def _call(self, task, *args):
+        other = "gemini" if self.active == "openai" else "openai"
+        failures = []
+        for name in (self.active, other):
+            self.budget.check()
+            try:
+                client = self._client(name)
+                result = getattr(client, task)(*args)
+            except ProviderFailure as exc:
+                failures.append(f"{name}: {exc}")
+                LOGGER.warning("%s %s failed: %s", name, task, exc)
+                continue
+            if name != self.active:
+                LOGGER.warning("Switching ingestion provider from %s to %s.", self.active, name)
+            self.active = name
+            self.last_success[task] = client.provenance({"summarize": "summary", "relate": "relationship"}[task])
+            return result
+        raise KBError("Both providers failed; no batch published. " + " ".join(failures))
+
+    def summarize(self, title_hint, content):
+        return self._call("summarize", title_hint, content)
+
+    def relate(self, a, b):
+        return self._call("relate", a, b)
+
+    def provenance(self, task):
+        return self.last_success[{"summary": "summarize", "relationship": "relate"}[task]]
+
+    def close(self):
+        for client in self.clients.values():
+            client.close()
+
+
 def create_provider(root, config, **kwargs):
-    adapters = {"openai": OpenAI, "gemini": Gemini}
-    if config["provider"] not in adapters:
-        raise KBError("Unsupported provider; select openai or gemini.")
-    return adapters[config["provider"]](root, config, **kwargs)
+    return FallbackProvider(root, config, **kwargs)
