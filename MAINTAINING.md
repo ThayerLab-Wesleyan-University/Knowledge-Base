@@ -27,7 +27,7 @@ The virtual environment isolates installed packages from system Python. `require
 
 All commands accept `--root /path/to/Knowledge-Base`. Rebuild also accepts `--dry-run`. Normal local ingestion deliberately leaves changes uncommitted so they can be reviewed. Do not run `--publish` after a local ingestion: publication requires a clean checkout containing the pending intake files.
 
-For local API use, set `OPENAI_API_KEY` in the environment. In Bash, this reads it without echoing it or placing its value in shell history:
+For local API use, set `OPENAI_API_KEY` or `GEMINI_API_KEY` in the environment to match the configured provider. In Bash, this reads it without echoing it or placing its value in shell history:
 
 ```bash
 read -r -s -p 'OpenAI API key: ' OPENAI_API_KEY
@@ -39,7 +39,39 @@ unset OPENAI_API_KEY
 
 GitHub Actions is the normal processing environment: lab members only upload or push documents. Local execution is for development and troubleshooting. `.env` files are ignored by Git but are not loaded automatically; prefer the shell environment for a local test.
 
-Never put the key in configuration, prompts, commits, or intake. Requests send extracted Markdown for summarization and pairs of summaries/keywords for relationship inference. The Responses API adapter uses structured JSON output and `store: false`; this setting is not a claim that all provider retention is disabled. Confirm the lab's account and data-sharing requirements before submitting restricted material.
+Never put the key in configuration, prompts, commits, or intake. Requests send extracted Markdown for summarization and pairs of summaries/keywords for relationship inference. Both adapters use structured JSON output. OpenAI uses the Responses API with `store: false`; Gemini uses Google’s OpenAI-compatible Chat Completions endpoint. This is not a claim that all provider retention is disabled. Confirm the lab's account and data-sharing requirements before submitting restricted material.
+
+## Switch between OpenAI and Gemini
+
+Choose the provider and matching model in [config/ingestion.json](config/ingestion.json). Leave the other settings as they are to start:
+
+| Provider | `provider` | `model` | Key environment variable / Actions secret |
+| --- | --- | --- | --- |
+| OpenAI | `openai` | `gpt-4.1-mini-2025-04-14` | `OPENAI_API_KEY` |
+| Google Gemini | `gemini` | `gemini-3.8-flash` | `GEMINI_API_KEY` |
+
+For example, to select Gemini, change these two fields in the existing JSON object:
+
+```json
+"provider": "gemini",
+"model": "gemini-3.8-flash"
+```
+
+The existing `model_context_tokens: 1047576` and `max_output_tokens: 2048` fit both supported profiles. Gemini requests use low reasoning effort to limit thinking overhead. If the provider reports an incomplete response, increase `max_output_tokens` within the reviewed model limits.
+
+**GitHub Actions:** open **Settings → Secrets and variables → Actions → New repository secret** and add each key under its exact name above. Both secrets may coexist; the config selects which one is used. Commit the configuration and workflow changes to `main`, then use **Actions → Ingest documents → Run workflow** on `main`. Configuration changes alone do not trigger ingestion. Get a Gemini key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+**Local terminal (the default macOS zsh):** after selecting Gemini in the config, read and export its key without putting its value in command history:
+
+```zsh
+read -r -s 'GEMINI_API_KEY?Gemini API key: '
+printf '\n'
+export GEMINI_API_KEY
+python -m utility_scripts.ingest ingest --dry-run
+python -m utility_scripts.ingest ingest
+```
+
+For OpenAI, change the two config fields back and use `OPENAI_API_KEY` in the commands instead. Keys are never placed in `ingestion.json`. A `.env` file is not automatically loaded. The selected provider must have its own key; there is no automatic fallback. Existing summaries and relationships keep their original provenance, and switching affects subsequent ingestion only.
 
 ## Configuration and cost controls
 
@@ -47,8 +79,8 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
-| `provider` | `openai` | Only implemented provider; no silent fallback. |
-| `model` | `gpt-4.1-mini-2025-04-14` | Explicit model snapshot; the alias `gpt-4.1-mini` is also supported. |
+| `provider` | `openai` | `openai` or `gemini`; no silent fallback. |
+| `model` | `gpt-4.1-mini-2025-04-14` | OpenAI snapshot; also supports `gpt-4.1-mini`, or `gemini-3.8-flash` with Gemini. |
 | `model_context_tokens` | 1,047,576 | Checked against the model profile. |
 | `max_output_tokens` | 2,048 | Per-response output cap. |
 | `temperature` | 0 | Generation setting, not a guarantee of deterministic model output. |
@@ -77,7 +109,7 @@ For a summary/keyword correction, edit the matching metadata record while keepin
 
 ## Publication, failures, and recovery
 
-The ingestion action runs after intake changes land on `main`, or through manual dispatch on `main`. It serializes ingestion jobs, checks out current `main`, runs offline tests, and processes the entire queue. It uses only `GITHUB_TOKEN` for Git publication and exposes the OpenAI secret only to the ingestion step. Pull-request validation has read-only permissions and no provider secrets.
+The ingestion action runs after intake changes land on `main`, or through manual dispatch on `main`. It serializes ingestion jobs, checks out current `main`, runs offline tests, and processes the entire queue. It uses only `GITHUB_TOKEN` for Git publication and exposes provider secrets only to the ingestion step. Pull-request validation has read-only permissions and no provider secrets.
 
 All extraction and API work happens before applying a staged result. Ordinary local write failures roll back applied files. Process termination or hardware failure during local writes is not a multi-file filesystem transaction: use Git to inspect/recover the last committed state. In CI, nothing becomes public until one complete commit is pushed. A rejected push leaves the remote collection and intake unchanged; the disposable runner may retain staged output until it is discarded.
 
@@ -99,11 +131,11 @@ Failed unpublished batches can incur repeated API costs when retried. Completed 
 
 ## Implementation references
 
-The adapter follows [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs); model limits come from the [GPT-4.1 mini model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini). PDF text extraction uses [pypdf's layout mode](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), falling back to standard text extraction when layout mode returns no text (for example, covers whose text is inside a Form XObject). The extraction provenance records whether this fallback was used. Pages empty in both modes still fail; no OCR is performed. Workflow behavior follows [GitHub Actions concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency) and [workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Pushes using `GITHUB_TOKEN` do not ordinarily start another workflow run, so generated commits are validated before publication.
+Gemini follows [Google’s OpenAI compatibility documentation](https://ai.google.dev/gemini-api/docs/openai), with limits from the [Gemini 3.8 Flash model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash). The OpenAI adapter follows [OpenAI Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs); model limits come from the [GPT-4.1 mini model documentation](https://developers.openai.com/api/docs/models/gpt-4.1-mini). PDF text extraction uses [pypdf's layout mode](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), falling back to standard text extraction when layout mode returns no text (for example, covers whose text is inside a Form XObject). The extraction provenance records whether this fallback was used. Pages empty in both modes still fail; no OCR is performed. Workflow behavior follows [GitHub Actions concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency) and [workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Pushes using `GITHUB_TOKEN` do not ordinarily start another workflow run, so generated commits are validated before publication.
 
 ## Manual document deletion
 
-Use **Actions → Delete document → Run workflow** on `main`, providing the full 64-character `document_id` from metadata. The workflow is manual-only and needs `contents: write`, but no OpenAI secret. It shares the ingestion concurrency group, checks out the latest `main`, runs offline tests, previews the deletion in its logs, then publishes one commit. Branch protection must permit the bot's push, as for ingestion; a rejected push leaves the remote collection unchanged.
+Use **Actions → Delete document → Run workflow** on `main`, providing the full 64-character `document_id` from metadata. The workflow is manual-only and needs `contents: write`, but no provider secret. It shares the ingestion concurrency group, checks out the latest `main`, runs offline tests, previews the deletion in its logs, then publishes one commit. Branch protection must permit the bot's push, as for ingestion; a rejected push leaves the remote collection unchanged.
 
 Deletion removes the selected content, metadata, archived original, and incident relationships. It validates and rebuilds GraphML, PNG, and README before applying the change. Unknown or malformed IDs fail without modifying the collection. Other documents and pending intake files are preserved. Re-uploading a deleted source can recreate the node. This is removal from the current collection, not an erasure of Git history.
 

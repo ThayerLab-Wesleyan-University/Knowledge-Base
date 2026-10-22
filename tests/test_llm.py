@@ -5,7 +5,7 @@ import pytest
 
 from conftest import CONTENT, KEYWORDS, SUMMARY
 from utility_scripts.contracts import KBError, load_config, validate_relationship, validate_summary
-from utility_scripts.llm import OpenAI
+from utility_scripts.llm import OpenAI, Gemini, create_provider
 
 
 def wire_summary(value):
@@ -100,6 +100,109 @@ def test_no_key_and_no_automatic_provider_fallback(repo, monkeypatch):
     (repo / 'config/ingestion.json').write_text(json.dumps(cfg))
     with pytest.raises(KBError):
         load_config(repo)
+
+
+def gemini_config(repo):
+    cfg = load_config(repo)
+    cfg.update(provider='gemini', model='gemini-3.8-flash')
+    (repo / 'config/ingestion.json').write_text(json.dumps(cfg))
+    return load_config(repo)
+
+
+def gemini_success(value):
+    return httpx.Response(200, json={'choices': [{'finish_reason': 'stop',
+        'message': {'role': 'assistant', 'content': json.dumps(wire_summary(value))}}]})
+
+
+def test_gemini_routing_structured_output_and_repair(repo, monkeypatch):
+    monkeypatch.setenv('OPENAI_API_KEY', 'unused-openai-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    requests = []
+    def handler(request):
+        assert str(request.url) == Gemini.endpoint
+        assert request.headers['Authorization'] == 'Bearer gemini-test-key'
+        body = json.loads(request.content)
+        requests.append(body)
+        assert body['model'] == 'gemini-3.8-flash'
+        assert body['response_format']['json_schema']['strict'] is True
+        assert body['max_tokens'] == 2048
+        assert 'untrusted document data' in body['messages'][0]['content']
+        payload = json.loads(body['messages'][1]['content'])
+        assert payload['document'] == CONTENT
+        value = summary()
+        if len(requests) == 1:
+            value['summary'] = 'too short'
+        else:
+            assert payload['previous_output']['summary_words'] == ['too', 'short']
+        return gemini_success(value)
+    client = create_provider(repo, gemini_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        assert client.summarize('protein', CONTENT)['summary'] == SUMMARY
+        assert client.requests == 2
+        assert client.provenance('summary')['provider'] == 'gemini'
+    finally:
+        client.close()
+
+
+def test_gemini_requires_its_own_key(repo, monkeypatch):
+    monkeypatch.setenv('OPENAI_API_KEY', 'unused-openai-key')
+    monkeypatch.delenv('GEMINI_API_KEY', raising=False)
+    with pytest.raises(KBError, match='GEMINI_API_KEY'):
+        create_provider(repo, gemini_config(repo))
+
+
+@pytest.mark.parametrize('kind,expected', [('rate_limit', 3), ('length', 3), ('refusal', 3),
+                                         ('malformed', 3), ('authentication', 1)])
+def test_gemini_bounded_failures(repo, monkeypatch, kind, expected):
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    def handler(request):
+        if kind in ('rate_limit', 'authentication'):
+            return httpx.Response(429 if kind == 'rate_limit' else 401, text='secret-body')
+        if kind == 'malformed':
+            return httpx.Response(200, text='secret-body')
+        return httpx.Response(200, json={'choices': [{
+            'finish_reason': 'length' if kind == 'length' else 'stop',
+            'message': {'refusal': 'secret-body', 'content': None}}]})
+    client = create_provider(repo, gemini_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        with pytest.raises(KBError) as result:
+            client.summarize('protein', CONTENT)
+        assert 'secret-body' not in str(result.value)
+        assert client.requests == expected
+    finally:
+        client.close()
+
+
+def test_gemini_pipeline_uses_config_and_preserves_existing_provenance(repo, provider, monkeypatch):
+    from utility_scripts.ingest import run
+    (repo / 'markdown/first.md').write_text(CONTENT)
+    run(repo, provider_factory=provider)
+    original = {p: p.read_bytes() for p in (repo / 'KG/node_contents').glob('*/metadata.json')}
+    cfg = gemini_config(repo)
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    (repo / 'markdown/second.md').write_text(CONTENT + '\nAdditional research notes.\n')
+    def handler(request):
+        assert str(request.url) == Gemini.endpoint
+        body = json.loads(request.content)
+        if body['response_format']['json_schema']['name'] == 'summary':
+            return gemini_success(summary())
+        payload = json.loads(body['messages'][1]['content'])
+        return gemini_success({'source': payload['source']['document_id'],
+            'target': payload['target']['document_id'], 'related': True,
+            'rationale': 'Both documents study protein dynamics.'})
+    real_client = httpx.Client
+    monkeypatch.setattr('utility_scripts.llm.httpx.Client',
+                        lambda **kwargs: real_client(**{**kwargs, 'transport': httpx.MockTransport(handler)}))
+    run(repo)
+    for path, content in original.items():
+        assert path.read_bytes() == content
+    new_records = [json.loads(p.read_text()) for p in (repo / 'KG/node_contents').glob('*/metadata.json')
+                   if p not in original]
+    assert len(new_records) == 1
+    assert new_records[0]['generation']['provider'] == 'gemini'
+    assert new_records[0]['generation']['model'] == cfg['model']
+    edges = json.loads((repo / 'KG/relationships.json').read_text())['edges']
+    assert len(edges) == 1 and edges[0]['generation']['provider'] == 'gemini'
 
 
 @pytest.mark.parametrize('change', ['words', 'duplicates', 'empty_keyword', 'sufficient', 'type'])

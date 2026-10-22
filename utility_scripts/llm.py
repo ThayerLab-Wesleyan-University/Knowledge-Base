@@ -1,4 +1,4 @@
-"""One-provider structured output adapter, with one shared request/retry budget."""
+"""Explicitly selected structured output adapters with a shared request/retry budget."""
 from __future__ import annotations
 
 import json
@@ -44,10 +44,13 @@ def billing_failure(response):
 
 
 class OpenAI:
+    key_variable = "OPENAI_API_KEY"
+    endpoint = "https://api.openai.com/v1/responses"
+
     def __init__(self, root, config, *, transport=None, sleep=time.sleep):
-        key = os.environ.get("OPENAI_API_KEY", "").strip()
+        key = os.environ.get(self.key_variable, "").strip()
         if not key:
-            raise KBError("Set OPENAI_API_KEY before ingestion; dry-run and rebuild need no key.")
+            raise KBError(f"Set {self.key_variable} before ingestion; dry-run and rebuild need no key.")
         self.config = config
         self.prompts = {task: (root / "prompts" / f"{task}-{config[task + '_prompt_version']}.txt").read_text()
                         for task in ("summary", "relationship")}
@@ -68,22 +71,39 @@ class OpenAI:
                 "prompt_sha256": digest(self.prompts[task].encode()),
                 "settings": {k: self.config[k] for k in ("temperature", "max_output_tokens")}}
 
+    def request_body(self, task, payload, schema, correction):
+        return {
+            "model": self.config["model"], "store": False,
+            "instructions": self.prompts[task] + correction,
+            "input": json.dumps(payload, ensure_ascii=False),
+            "temperature": self.config["temperature"],
+            "max_output_tokens": self.config["max_output_tokens"],
+            "text": {"format": {"type": "json_schema", "name": task,
+                                 "strict": True, "schema": schema}},
+        }
+
+    def response_text(self, data):
+        if data.get("status") != "completed":
+            details = data.get("incomplete_details")
+            if isinstance(details, dict) and details.get("reason") == "max_output_tokens":
+                raise KBError("Provider reached max_output_tokens before completing the response.")
+            raise KBError("Provider did not complete the response; check output limits.")
+        texts = [part["text"] for item in data.get("output", [])
+                 if item.get("type") == "message"
+                 for part in item.get("content", []) if part.get("type") == "output_text"]
+        if len(texts) != 1:
+            raise KBError("Provider refused or returned no single structured output.")
+        return texts[0]
+
     def _request(self, task, payload, schema, validator):
         correction = ""
         previous_output = None
         for attempt in range(3):
             if self.requests >= self.config["max_api_requests"]:
                 raise KBError("API request budget exhausted; nothing has been published.")
-            body = {
-                "model": self.config["model"], "store": False,
-                "instructions": self.prompts[task] + correction,
-                "input": json.dumps({**payload, **({"previous_output": previous_output}
-                                                  if previous_output is not None else {})}, ensure_ascii=False),
-                "temperature": self.config["temperature"],
-                "max_output_tokens": self.config["max_output_tokens"],
-                "text": {"format": {"type": "json_schema", "name": task,
-                                     "strict": True, "schema": schema}},
-            }
+            body = self.request_body(task, {**payload, **({"previous_output": previous_output}
+                                                         if previous_output is not None else {})},
+                                     schema, correction)
             # UTF-8 bytes provide a conservative upper bound for byte-level tokens;
             # reserve additional room for protocol framing. No truncation or token API.
             bound = len(json.dumps(body, ensure_ascii=False).encode()) + 8192
@@ -92,7 +112,7 @@ class OpenAI:
             self.requests += 1
             previous_output = None
             try:
-                response = self.client.post("https://api.openai.com/v1/responses", json=body)
+                response = self.client.post(self.endpoint, json=body)
                 if response.status_code != 200 and billing_failure(response):
                     raise PermissionError("Provider billing quota exhausted; check prepaid credits and project spend limits before retrying.")
                 if response.status_code in (408, 409, 429) or response.status_code >= 500:
@@ -103,17 +123,7 @@ class OpenAI:
                 data = response.json()
                 if not isinstance(data, dict):
                     raise KBError("Provider returned an invalid response envelope.")
-                if data.get("status") != "completed":
-                    details = data.get("incomplete_details")
-                    if isinstance(details, dict) and details.get("reason") == "max_output_tokens":
-                        raise KBError("Provider reached max_output_tokens before completing the response.")
-                    raise KBError("Provider did not complete the response; check output limits.")
-                texts = [part["text"] for item in data.get("output", [])
-                         if item.get("type") == "message"
-                         for part in item.get("content", []) if part.get("type") == "output_text"]
-                if len(texts) != 1:
-                    raise KBError("Provider refused or returned no single structured output.")
-                parsed = json.loads(texts[0])
+                parsed = json.loads(self.response_text(data))
                 # The previous output is sent back as untrusted data for repair,
                 # never included in logs or promoted into system instructions.
                 previous_output = parsed
@@ -143,3 +153,45 @@ class OpenAI:
         payload = {"source": {k: a[k] for k in keys}, "target": {k: b[k] for k in keys}}
         return self._request("relationship", payload, RELATIONSHIP_RESPONSE,
                              lambda value: validate_relationship(value, a["document_id"], b["document_id"]))
+
+
+class Gemini(OpenAI):
+    """Gemini's OpenAI-compatible Chat Completions endpoint."""
+
+    key_variable = "GEMINI_API_KEY"
+    endpoint = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+
+    def request_body(self, task, payload, schema, correction):
+        return {
+            "model": self.config["model"],
+            "messages": [
+                {"role": "system", "content": self.prompts[task] + correction},
+                {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
+            ],
+            "temperature": self.config["temperature"],
+            "max_tokens": self.config["max_output_tokens"],
+            "reasoning_effort": "low",
+            "response_format": {"type": "json_schema", "json_schema": {
+                "name": task, "strict": True, "schema": schema}},
+        }
+
+    def response_text(self, data):
+        choices = data.get("choices", [])
+        if len(choices) != 1:
+            raise KBError("Provider refused or returned no single structured output.")
+        choice = choices[0]
+        if choice.get("finish_reason") == "length":
+            raise KBError("Provider reached max_output_tokens before completing the response.")
+        if choice.get("finish_reason") != "stop":
+            raise KBError("Provider did not complete the response; check output limits.")
+        message = choice["message"]
+        if message.get("refusal") or not isinstance(message.get("content"), str):
+            raise KBError("Provider refused or returned no single structured output.")
+        return message["content"]
+
+
+def create_provider(root, config, **kwargs):
+    adapters = {"openai": OpenAI, "gemini": Gemini}
+    if config["provider"] not in adapters:
+        raise KBError("Unsupported provider; select openai or gemini.")
+    return adapters[config["provider"]](root, config, **kwargs)

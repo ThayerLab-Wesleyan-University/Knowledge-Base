@@ -17,7 +17,7 @@ from utility_scripts.contracts import (
     KBError, digest, json_bytes, load_config, safe_text, validate_edges,
     validate_metadata, validate_relationship, validate_summary,
 )
-from utility_scripts.llm import OpenAI
+from utility_scripts.llm import create_provider
 from utility_scripts.pdf2md import convert_pdf
 from utility_scripts.publish import publication_base, publish
 from utility_scripts.storage import apply_changes, checked_path, load_collection, snapshot
@@ -169,7 +169,7 @@ def derived_changes(stage, before):
     return updates, removals
 
 
-def run(root, command="ingest", *, dry_run=False, publish_changes=False, provider_factory=OpenAI):
+def run(root, command="ingest", *, dry_run=False, publish_changes=False, provider_factory=create_provider):
     root = Path(root).resolve()
     with repository_lock(root):
         if publish_changes and (command != "ingest" or dry_run):
