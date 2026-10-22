@@ -166,7 +166,8 @@ def validate_edges(envelope, records):
 DEFAULT_MODELS = {"openai": "gpt-4.1-mini-2025-04-14", "gemini": "gemini-3.8-flash"}
 MODEL_LIMITS = {("openai", "gpt-4.1-mini"): (1047576, 32768),
                 ("openai", "gpt-4.1-mini-2025-04-14"): (1047576, 32768),
-                ("gemini", "gemini-3.8-flash"): (1048576, 65536)}
+                ("gemini", "gemini-3.8-flash"): (1048576, 65536),
+                ("gemini", "gemini-3.5-flash-lite"): (1048576, 65536)}
 
 
 def load_config(root: Path):
