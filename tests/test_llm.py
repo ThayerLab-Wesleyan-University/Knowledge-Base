@@ -424,7 +424,7 @@ def test_both_providers_fail_with_bounded_sanitized_error(repo, monkeypatch, cap
     try:
         with pytest.raises(KBError, match='Both providers failed') as error:
             client.summarize('protein', CONTENT)
-        assert client.requests == 6
+        assert client.requests == 7
         assert 'openai:' in str(error.value) and 'gemini:' in str(error.value)
         assert 'secret-body' not in str(error.value) + caplog.text
     finally:
