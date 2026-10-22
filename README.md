@@ -193,7 +193,7 @@ This collection covers the material lab members submit; it does not automaticall
 
 The workflow preserves the original file, stores the Markdown and metadata, and removes the intake copy only in the same commit that publishes the complete results. Identical files are deduplicated even if renamed. Revised file contents create a new node; editions and PDF/Markdown versions are not automatically merged.
 
-Submit only material permitted to be stored in this repository and processed by the configured provider (OpenAI or Google Gemini). Do not upload credentials, restricted lab data, or documents you cannot redistribute. Scanned/encrypted PDFs, local image/file dependencies in Markdown, and automatic OCR are unsupported. PDF extraction is text-only and can lose mathematical notation, figures, and table structure; always consult the original for these.
+Submit only material permitted to be stored in this repository and processed by OpenAI and Google Gemini, since ingestion can automatically fall back between them. Do not upload credentials, restricted lab data, or documents you cannot redistribute. Scanned/encrypted PDFs, local image/file dependencies in Markdown, and automatic OCR are unsupported. PDF extraction is text-only and can lose mathematical notation, figures, and table structure; always consult the original for these.
 
 ### Delete a document through GitHub
 
@@ -227,8 +227,8 @@ For an incorrect summary or connection, open an issue with the document link and
 
 The implementation and offline tests are included. **Before the first automated ingestion**, a maintainer must:
 
-1. Add provider keys under **Settings → Secrets and variables → Actions**: **`OPENAI_API_KEY`** for OpenAI and **`GEMINI_API_KEY`** for Gemini. Only the selected provider’s key is required.
-2. Review [config/ingestion.json](config/ingestion.json), including the model and request limits. Choose `provider: "openai"` with model `gpt-4.1-mini-2025-04-14`, or `provider: "gemini"` with model `gemini-3.8-flash`. See [switching providers](MAINTAINING.md#switch-between-openai-and-gemini) for exact steps.
+1. Add provider keys under **Settings → Secrets and variables → Actions**: **`OPENAI_API_KEY`** for OpenAI and **`GEMINI_API_KEY`** for Gemini. Save both keys to enable automatic fallback in either direction; one working key can still process ingestion.
+2. Review [config/ingestion.json](config/ingestion.json), including the model and request limits. Choose the preferred provider: `provider: "openai"` with model `gpt-4.1-mini-2025-04-14`, or `provider: "gemini"` with model `gemini-3.8-flash`. If it fails, ingestion automatically tries the other provider and records the actual provider in metadata. See [switching providers](MAINTAINING.md#switch-between-openai-and-gemini) for exact steps.
 3. Enable GitHub Actions and ensure repository rules permit the ingestion workflow to publish its generated commit to `main` with `contents: write`. If branch rules prohibit bot pushes, direct publication will fail safely; a PR-based publication workflow must be implemented before enabling ingestion under those rules.
 4. Merge this implementation, submit one permitted document, and verify its source archive, summary, and graph links after the action succeeds.
 

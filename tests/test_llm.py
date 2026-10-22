@@ -91,7 +91,7 @@ def test_global_budget_is_shared_across_requests(repo, monkeypatch):
         client.close()
 
 
-def test_no_key_and_no_automatic_provider_fallback(repo, monkeypatch):
+def test_no_key_and_mismatched_provider_model(repo, monkeypatch):
     monkeypatch.delenv('OPENAI_API_KEY', raising=False)
     with pytest.raises(KBError, match='OPENAI_API_KEY'):
         OpenAI(repo, load_config(repo))
@@ -148,7 +148,7 @@ def test_gemini_requires_its_own_key(repo, monkeypatch):
     monkeypatch.setenv('OPENAI_API_KEY', 'unused-openai-key')
     monkeypatch.delenv('GEMINI_API_KEY', raising=False)
     with pytest.raises(KBError, match='GEMINI_API_KEY'):
-        create_provider(repo, gemini_config(repo))
+        Gemini(repo, gemini_config(repo))
 
 
 @pytest.mark.parametrize('kind,expected', [('rate_limit', 3), ('length', 3), ('refusal', 3),
@@ -163,7 +163,7 @@ def test_gemini_bounded_failures(repo, monkeypatch, kind, expected):
         return httpx.Response(200, json={'choices': [{
             'finish_reason': 'length' if kind == 'length' else 'stop',
             'message': {'refusal': 'secret-body', 'content': None}}]})
-    client = create_provider(repo, gemini_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    client = Gemini(repo, gemini_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
     try:
         with pytest.raises(KBError) as result:
             client.summarize('protein', CONTENT)
@@ -347,3 +347,205 @@ def test_word_array_ingests_as_plain_text_metadata(repo, monkeypatch):
     assert record['generation']['prompt_version'] == 'v2'
     assert result['api_requests'] == 1
     assert run(repo, 'validate')['valid']
+
+
+@pytest.mark.parametrize('primary', ['openai', 'gemini'])
+@pytest.mark.parametrize('failure,attempts', [('missing_key', 0), ('quota', 1), ('auth', 1),
+                                            ('rate_limit', 3), ('timeout', 3), ('invalid', 3)])
+def test_automatic_fallback_both_directions(repo, monkeypatch, caplog, primary, failure, attempts):
+    cfg = gemini_config(repo) if primary == 'gemini' else load_config(repo)
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    if failure == 'missing_key':
+        monkeypatch.delenv('OPENAI_API_KEY' if primary == 'openai' else 'GEMINI_API_KEY')
+    seen = []
+    def handler(request):
+        name = 'openai' if str(request.url) == OpenAI.endpoint else 'gemini'
+        seen.append(name)
+        assert request.headers['Authorization'] == f'Bearer {name}-test-key'
+        if name == primary:
+            if failure == 'quota':
+                return httpx.Response(429, json={'error': {'code': 'insufficient_quota', 'message': 'secret-body'}})
+            if failure == 'auth':
+                return httpx.Response(401, text='secret-body')
+            if failure == 'rate_limit':
+                return httpx.Response(429, text='secret-body')
+            if failure == 'timeout':
+                raise httpx.ReadTimeout('secret-body', request=request)
+            return httpx.Response(200, text='secret-body')
+        return success(summary()) if name == 'openai' else gemini_success(summary())
+    client = create_provider(repo, cfg, transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    other = 'gemini' if primary == 'openai' else 'openai'
+    try:
+        assert client.summarize('protein', CONTENT)['summary'] == SUMMARY
+        assert seen == [primary] * attempts + [other]
+        assert client.requests == attempts + 1
+        provenance = client.provenance('summary')
+        assert provenance['provider'] == other
+        assert provenance['model'] == ('gemini-3.8-flash' if other == 'gemini' else 'gpt-4.1-mini-2025-04-14')
+        client.summarize('another protein', CONTENT)
+        assert seen == [primary] * attempts + [other, other]
+        assert client.requests == attempts + 2
+        assert 'secret-body' not in caplog.text
+    finally:
+        client.close()
+    assert all(adapter.client.is_closed for adapter in client.clients.values())
+
+
+@pytest.mark.parametrize('limit,expected', [(2, ['openai', 'gemini']), (1, ['openai'])])
+def test_fallback_cannot_reset_shared_batch_budget(repo, monkeypatch, limit, expected):
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    cfg = load_config(repo)
+    cfg['max_api_requests'] = limit
+    seen = []
+    def handler(request):
+        name = 'openai' if str(request.url) == OpenAI.endpoint else 'gemini'
+        seen.append(name)
+        return httpx.Response(401) if name == 'openai' else gemini_success(summary())
+    client = create_provider(repo, cfg, transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        if limit == 2:
+            client.summarize('protein', CONTENT)
+        with pytest.raises(KBError, match='budget exhausted'):
+            client.summarize('protein', CONTENT)
+        assert seen == expected
+        assert client.requests == limit
+    finally:
+        client.close()
+
+
+def test_both_providers_fail_with_bounded_sanitized_error(repo, monkeypatch, caplog):
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    client = create_provider(repo, load_config(repo),
+        transport=httpx.MockTransport(lambda _: httpx.Response(503, text='secret-body')),
+        sleep=lambda _: None)
+    try:
+        with pytest.raises(KBError, match='Both providers failed') as error:
+            client.summarize('protein', CONTENT)
+        assert client.requests == 6
+        assert 'openai:' in str(error.value) and 'gemini:' in str(error.value)
+        assert 'secret-body' not in str(error.value) + caplog.text
+    finally:
+        client.close()
+
+
+def test_no_keys_reports_both_required_environment_variables(repo, monkeypatch):
+    monkeypatch.delenv('OPENAI_API_KEY', raising=False)
+    monkeypatch.delenv('GEMINI_API_KEY', raising=False)
+    client = create_provider(repo, load_config(repo))
+    try:
+        with pytest.raises(KBError, match='Both providers failed') as error:
+            client.summarize('protein', CONTENT)
+        assert 'OPENAI_API_KEY' in str(error.value) and 'GEMINI_API_KEY' in str(error.value)
+        assert client.requests == 0
+    finally:
+        client.close()
+
+
+def test_fallback_respects_other_model_limits_and_context_failures(repo, monkeypatch):
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    cfg = gemini_config(repo)
+    cfg.update(max_output_tokens=65536, model_context_tokens=1048576)
+    seen = []
+    def handler(request):
+        seen.append(str(request.url))
+        if str(request.url) == Gemini.endpoint:
+            return httpx.Response(401)
+        body = json.loads(request.content)
+        assert body['max_output_tokens'] == 32768
+        return success(summary())
+    client = create_provider(repo, cfg, transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        client.summarize('protein', CONTENT)
+        assert seen == [Gemini.endpoint, OpenAI.endpoint]
+        assert client.provenance('summary')['settings']['max_output_tokens'] == 32768
+        assert cfg['max_output_tokens'] == 65536
+    finally:
+        client.close()
+    cfg['model_context_tokens'] = 1
+    client = create_provider(repo, cfg, transport=httpx.MockTransport(lambda _: pytest.fail('Oversized request sent')))
+    try:
+        with pytest.raises(KBError, match='context budget'):
+            client.summarize('protein', CONTENT)
+        assert list(client.clients) == ['gemini']
+        assert client.requests == 0
+    finally:
+        client.close()
+
+
+def test_pipeline_records_provider_for_each_successful_operation(repo, monkeypatch):
+    from utility_scripts.ingest import run
+    from utility_scripts.storage import load_collection
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    (repo / 'markdown/first.md').write_text(CONTENT)
+    (repo / 'markdown/second.md').write_text(CONTENT + '\nAdditional notes.\n')
+    def handler(request):
+        body = json.loads(request.content)
+        if str(request.url) == OpenAI.endpoint:
+            if body['text']['format']['name'] == 'summary':
+                return success(summary())
+            return httpx.Response(401, text='secret-body')
+        payload = json.loads(body['messages'][1]['content'])
+        return gemini_success({'source': payload['source']['document_id'],
+            'target': payload['target']['document_id'], 'related': True,
+            'rationale': 'Both documents study protein dynamics.'})
+    real_client = httpx.Client
+    clients = []
+    def mock_client(**kwargs):
+        client = real_client(**{**kwargs, 'transport': httpx.MockTransport(handler)})
+        clients.append(client)
+        return client
+    monkeypatch.setattr('utility_scripts.llm.httpx.Client', mock_client)
+    report = run(repo)
+    records, relationships = load_collection(repo)
+    assert report['api_requests'] == 4
+    assert all(record['generation']['provider'] == 'openai' for record in records.values())
+    assert relationships['edges'][0]['generation']['provider'] == 'gemini'
+    assert all(client.is_closed for client in clients)
+    assert run(repo, 'validate')['valid']
+
+
+def test_failed_fallback_leaves_intake_and_collection_unchanged(repo, monkeypatch):
+    from utility_scripts.ingest import run
+    from utility_scripts.storage import snapshot
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    (repo / 'markdown/first.md').write_text(CONTENT)
+    before = snapshot(repo)
+    real_client = httpx.Client
+    clients = []
+    def mock_client(**kwargs):
+        client = real_client(**{**kwargs, 'transport': httpx.MockTransport(lambda _: httpx.Response(401))})
+        clients.append(client)
+        return client
+    monkeypatch.setattr('utility_scripts.llm.httpx.Client', mock_client)
+    with pytest.raises(KBError, match='Both providers failed'):
+        run(repo)
+    assert snapshot(repo) == before
+    assert all(client.is_closed for client in clients)
+
+
+def test_fallback_can_switch_back_when_alternate_later_fails(repo, monkeypatch):
+    monkeypatch.setenv('OPENAI_API_KEY', 'openai-test-key')
+    monkeypatch.setenv('GEMINI_API_KEY', 'gemini-test-key')
+    seen = []
+    def handler(request):
+        name = 'openai' if str(request.url) == OpenAI.endpoint else 'gemini'
+        seen.append(name)
+        if len(seen) in (1, 3):
+            return httpx.Response(401)
+        return success(summary()) if name == 'openai' else gemini_success(summary())
+    client = create_provider(repo, load_config(repo), transport=httpx.MockTransport(handler), sleep=lambda _: None)
+    try:
+        client.summarize('protein', CONTENT)
+        assert client.provenance('summary')['provider'] == 'gemini'
+        client.summarize('protein', CONTENT)
+        assert client.provenance('summary')['provider'] == 'openai'
+        assert seen == ['openai', 'gemini', 'gemini', 'openai']
+        assert client.requests == 4
+    finally:
+        client.close()

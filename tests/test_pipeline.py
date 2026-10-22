@@ -77,7 +77,7 @@ def test_dry_run_does_not_mutate_or_require_key(repo):
     def no_provider(*args):
         pytest.fail('Dry-run created a provider')
     result = run(repo, dry_run=True, provider_factory=no_provider)
-    assert result['maximum_api_requests'] == 3
+    assert result['maximum_api_requests'] == 6
     assert snapshot(repo) == before
 
 
