@@ -127,6 +127,24 @@
       "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
+      "created_at": "2026-10-30T19:07:20.099977+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on generative diffusion models and surrogate scoring models for targeted molecular generation specifically aimed at the mutant p53 Y220C cancer target.",
+      "relation_type": "topical_similarity",
+      "source": "0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:33:53.480777+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -305,6 +323,24 @@
       "relation_type": "topical_similarity",
       "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:07:21.306167+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on applying machine learning techniques, specifically autoencoders and generative models, to analyze and model protein conformational spaces derived from molecular dynamics simulations.",
+      "relation_type": "topical_similarity",
+      "source": "032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:34:14.495441+00:00",
@@ -503,6 +539,24 @@
       "relation_type": "topical_similarity",
       "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:07:22.381707+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on the SAWNERGY framework, detailing its application to molecular dynamics simulations for analyzing protein dynamics and residue interactions.",
+      "relation_type": "topical_similarity",
+      "source": "0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-19T05:15:31.057545+00:00",
@@ -721,6 +775,24 @@
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
     },
     {
+      "created_at": "2026-10-30T19:07:23.383440+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents discuss molecular dynamics trajectory processing, with the source document explicitly mentioning an overlap and serving as an infrastructure layer for systems like the SAWNERGY machine learning pipeline described in the target.",
+      "relation_type": "topical_similarity",
+      "source": "0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:34:49.906839+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -827,6 +899,24 @@
       "relation_type": "topical_similarity",
       "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:07:24.476918+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data, specifically utilizing autoencoders for learning representations from trajectory features.",
+      "relation_type": "topical_similarity",
+      "source": "15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:35:11.739307+00:00",
@@ -1099,6 +1189,24 @@
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
     },
     {
+      "created_at": "2026-10-30T19:07:25.395286+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods in drug discovery, specifically utilizing molecular dynamics simulations and analyzing protein-ligand interactions to guide candidate selection.",
+      "relation_type": "topical_similarity",
+      "source": "1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:35:29.913152+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1315,6 +1423,24 @@
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
     },
     {
+      "created_at": "2026-10-30T19:07:26.267232+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on developing advanced machine learning frameworks to analyze protein dynamics and extract residue-level features from molecular dynamics simulations for drug discovery and structural biology applications.",
+      "relation_type": "topical_similarity",
+      "source": "20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:35:45.804526+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1493,6 +1619,24 @@
       "relation_type": "topical_similarity",
       "source": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:07:27.370140+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on the application of generative diffusion models and machine learning techniques for molecular generation and drug discovery. This shared methodological focus on diffusion-based drug design provides a direct and useful connection between the two records.",
+      "relation_type": "topical_similarity",
+      "source": "210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-10-06T22:06:50.230817+00:00",
@@ -1675,6 +1819,24 @@
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
     },
     {
+      "created_at": "2026-10-30T19:07:28.524445+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational frameworks utilizing molecular dynamics simulations, machine learning surrogate models, and generative diffusion models to discover therapeutic compounds that restore the function of mutant p53.",
+      "relation_type": "topical_similarity",
+      "source": "28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-10-06T22:07:09.168831+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1819,6 +1981,24 @@
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
     },
     {
+      "created_at": "2026-10-30T19:07:29.452813+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational frameworks for analyzing protein molecular dynamics trajectories to extract structural and energetic insights for downstream applications like machine learning and drug discovery.",
+      "relation_type": "topical_similarity",
+      "source": "40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:35:59.707268+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -1889,6 +2069,24 @@
       "relation_type": "topical_similarity",
       "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:07:30.468328+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on the analysis of molecular dynamics trajectories, with the source describing a general-purpose kinetics and modeling package and the target outlining a specialized machine learning pipeline for quantifying protein dynamics.",
+      "relation_type": "topical_similarity",
+      "source": "54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:36:10.817457+00:00",
@@ -1999,6 +2197,24 @@
       "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
+      "created_at": "2026-10-30T19:07:31.447197+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods and generative models for structure-based drug design and molecular generation. They share a core interest in evaluating or optimizing molecular structures for protein targets.",
+      "relation_type": "topical_similarity",
+      "source": "56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:36:18.900712+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -2033,6 +2249,24 @@
       "relation_type": "topical_similarity",
       "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
       "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-10-30T19:07:32.455439+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods for analyzing protein structures and dynamics, specifically addressing comparative states like wild-type versus mutant or ligand-bound states to study functional mechanisms and drug discovery.",
+      "relation_type": "topical_similarity",
+      "source": "5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:36:25.517345+00:00",
@@ -2089,6 +2323,24 @@
       "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
+      "created_at": "2026-10-30T19:07:33.460674+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents describe computational frameworks and pipelines aimed at automated molecular generation and drug discovery. They share a core focus on leveraging advanced machine learning methods to propose and optimize novel therapeutic compounds.",
+      "relation_type": "topical_similarity",
+      "source": "61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:36:29.085746+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -2105,6 +2357,24 @@
       "relation_type": "topical_similarity",
       "source": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
       "target": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d"
+    },
+    {
+      "created_at": "2026-10-30T19:08:04.607043+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents deal with the analysis of protein molecular dynamics trajectories, specifically extracting residue-level energetic or structural information, with the first document explicitly comparing its software to the SAWNERGY pipeline described in the second.",
+      "relation_type": "topical_similarity",
+      "source": "622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:36:40.186152+00:00",
@@ -2141,6 +2411,24 @@
       "relation_type": "topical_similarity",
       "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
       "target": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01"
+    },
+    {
+      "created_at": "2026-10-30T19:08:05.559259+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents directly discuss the SAWNERGY project, focusing on its machine learning software landscape and its end-to-end research pipeline for analyzing protein molecular dynamics.",
+      "relation_type": "topical_similarity",
+      "source": "723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
     },
     {
       "created_at": "2026-09-21T05:36:43.916330+00:00",
@@ -2215,6 +2503,60 @@
       "target": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f"
     },
     {
+      "created_at": "2026-10-30T19:08:06.629928+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods and machine learning models for drug discovery and molecular generation targeting protein structures. Specifically, they utilize generative diffusion models to propose novel therapeutic compounds.",
+      "relation_type": "topical_similarity",
+      "source": "83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
+      "created_at": "2026-10-30T19:08:07.605602+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on generative machine learning models applied to drug discovery and molecular design, specifically utilizing diffusion models for generating novel molecular structures.",
+      "relation_type": "topical_similarity",
+      "source": "b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
+      "created_at": "2026-10-30T19:08:11.397802+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents discuss the integration of molecular dynamics simulations with machine learning and autoencoders to analyze protein conformations and drive iterative scientific workflows.",
+      "relation_type": "topical_similarity",
+      "source": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+      "target": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0"
+    },
+    {
       "created_at": "2026-09-21T05:36:48.983957+00:00",
       "generation": {
         "model": "gpt-4.1-mini-2025-04-14",
@@ -2266,6 +2608,60 @@
       "rationale": "Both documents focus on machine learning methods applied to molecular dynamics data and representation learning. DeepDriveMD uses deep learning for adaptive sampling in molecular simulations, while deeptime provides general-purpose tools for dynamical modeling and time-lagged representations, including neural network approaches, which can complement adaptive sampling workflows like DeepDriveMD.",
       "relation_type": "topical_similarity",
       "source": "ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01",
+      "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
+    },
+    {
+      "created_at": "2026-10-30T19:08:12.416747+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on computational methods and toolkits for analyzing protein molecular dynamics simulations, particularly involving trajectory data and comparisons between wild-type and mutant protein states.",
+      "relation_type": "topical_similarity",
+      "source": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0",
+      "target": "cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e"
+    },
+    {
+      "created_at": "2026-10-30T19:08:13.614423+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on applying machine learning and graph-based representations to molecular dynamics simulations of protein conformational ensembles. They share a core methodology centered on extracting feature representations from simulation trajectories to analyze protein dynamics.",
+      "relation_type": "topical_similarity",
+      "source": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0",
+      "target": "f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc"
+    },
+    {
+      "created_at": "2026-10-30T19:08:14.516143+00:00",
+      "generation": {
+        "model": "gemini-3.5-flash-lite",
+        "prompt_sha256": "6dd1ff274bf44daf031288d394bcebef7281ed65fae5d38066a504d5f8b226ef",
+        "prompt_version": "v1",
+        "provider": "gemini",
+        "settings": {
+          "max_output_tokens": 2048,
+          "temperature": 0
+        }
+      },
+      "inferred_by": "llm",
+      "rationale": "Both documents focus on analyzing molecular dynamics and time-series representations, with the target library explicitly noting integration with the source pipeline for dynamical analysis.",
+      "relation_type": "topical_similarity",
+      "source": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0",
       "target": "f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b"
     },
     {

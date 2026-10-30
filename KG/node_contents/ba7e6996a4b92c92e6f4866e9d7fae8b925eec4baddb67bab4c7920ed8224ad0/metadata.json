@@ -1,0 +1,38 @@
+{
+  "content_path": "KG/node_contents/ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0/content.md",
+  "content_sha256": "fb30b950a7af959b331492fe524c4ca6e2b45d2ca3d1d030db8cfea7e88cba07",
+  "created_at": "2026-10-30T19:07:19.157730+00:00",
+  "document_id": "ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0",
+  "extraction": {
+    "tool": "pypdf-layout",
+    "version": "6.19.0"
+  },
+  "generation": {
+    "model": "gemini-3.5-flash-lite",
+    "prompt_sha256": "0e0bf9ec527c8725abf39795c594ba00138f90ff90c8b99cf4c8aed066077ace",
+    "prompt_version": "v2",
+    "provider": "gemini",
+    "settings": {
+      "max_output_tokens": 2048,
+      "temperature": 0
+    }
+  },
+  "keywords": [
+    "SAWNERGY",
+    "molecular dynamics",
+    "protein dynamics",
+    "mutant p53",
+    "Y220C",
+    "autoencoder",
+    "trajectory embedding",
+    "active learning",
+    "molecular generation",
+    "surrogate model"
+  ],
+  "schema_version": 1,
+  "source_filename": "SAWNERGY_Refined_Research_Pipeline-1.pdf",
+  "source_path": "sources/ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0/original.pdf",
+  "source_type": "pdf",
+  "summary": "This document outlines the SAWNERGY research pipeline, an end-to-end machine learning framework designed to quantify protein dynamics and guide drug discovery for mutant p53. The system extracts residue-level features from molecular dynamics trajectories, represents each simulation frame using tensors or graphs, and employs hierarchical autoencoders to learn trajectory-level embeddings. By establishing a wild-type dynamical reference distribution, the pipeline computes a dynamical rescue score measuring how effectively candidate compounds restore mutant Y220C dynamics toward normal behavior. A molecular surrogate model and generative diffusion model operate within an active learning loop to iteratively propose, evaluate, and optimize novel therapeutic compounds for experimentalists.",
+  "title": "SAWNERGY: Refined End-to-End Research Pipeline"
+}

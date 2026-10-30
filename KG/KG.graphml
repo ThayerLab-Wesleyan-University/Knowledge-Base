@@ -142,23 +142,30 @@
       <data key="source_path">sources/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/original.md</data>
       <data key="metadata_path">KG/node_contents/ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01/metadata.json</data>
     </node>
+    <node id="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="title">SAWNERGY: Refined End-to-End Research Pipeline</data>
+      <data key="display_label">D20</data>
+      <data key="content_path">KG/node_contents/ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0/content.md</data>
+      <data key="source_path">sources/ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0/original.pdf</data>
+      <data key="metadata_path">KG/node_contents/ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0/metadata.json</data>
+    </node>
     <node id="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="title">enspara</data>
-      <data key="display_label">D20</data>
+      <data key="display_label">D21</data>
       <data key="content_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/content.md</data>
       <data key="source_path">sources/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/original.md</data>
       <data key="metadata_path">KG/node_contents/cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e/metadata.json</data>
     </node>
     <node id="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="title">MDGraphEmb: a toolkit for graph embedding and classification of protein conformational ensembles</data>
-      <data key="display_label">D21</data>
+      <data key="display_label">D22</data>
       <data key="content_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/content.md</data>
       <data key="source_path">sources/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/original.pdf</data>
       <data key="metadata_path">KG/node_contents/f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc/metadata.json</data>
     </node>
     <node id="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="title">deeptime</data>
-      <data key="display_label">D22</data>
+      <data key="display_label">D23</data>
       <data key="content_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/content.md</data>
       <data key="source_path">sources/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/original.md</data>
       <data key="metadata_path">KG/node_contents/f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b/metadata.json</data>
@@ -196,6 +203,11 @@
     <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on 3D molecular generation using diffusion models with guidance mechanisms to improve generation quality. The source uses graph neural networks and surrogate models for target-aware molecular generation, while the target employs multimodal diffusion models with textual prompts for conditional 3D molecule design. Both share the theme of guided diffusion-based molecular generation with equivariant neural networks, making their research topics specifically related.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0189f29a1668f2dccc3adbd7eb3a23c6794df9c12fbe8a99a11e55a2ed4e02d9" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on generative diffusion models and surrogate scoring models for targeted molecular generation specifically aimed at the mutant p53 Y220C cancer target.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be">
@@ -246,6 +258,11 @@
     <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on machine learning methods, specifically autoencoder-based models, to learn latent representations of protein conformational spaces from molecular dynamics data. They both use OpenMM and emphasize generative or adaptive sampling approaches to explore protein conformations, establishing a clear shared research topic and methodology.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on applying machine learning techniques, specifically autoencoders and generative models, to analyze and model protein conformational spaces derived from molecular dynamics simulations.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="032ccea09088936d97298cfd360ed651db6739c7d1296e02662939e04ac7e109" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
@@ -301,6 +318,11 @@
     <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics simulations combined with machine learning-based representation learning of residue interactions. SAWNERGY creates residue interaction networks and embeddings from MD trajectories, while DeepDriveMD uses deep learning on MD data for adaptive sampling. Their shared use of MD data and learned representations of residue interactions establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on the SAWNERGY framework, detailing its application to molecular dynamics simulations for analyzing protein dynamics and residue interactions.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="0c23bcd66b19b204436d471c34cf5e8e4e0f6b374d0202aed8be6998ff4f06be" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
@@ -363,6 +385,11 @@
       <data key="rationale">Both documents focus on molecular dynamics (MD) simulations and analysis, with MDAnalysis providing a Python library for trajectory analysis and DeepDriveMD integrating MD simulations with deep learning for adaptive sampling. They share a research topic in MD simulation workflows and data analysis, making them specifically related beyond generic science overlap.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents discuss molecular dynamics trajectory processing, with the source document explicitly mentioning an overlap and serving as an infrastructure layer for systems like the SAWNERGY machine learning pipeline described in the target.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="0dfe1d7320a89f84a7eeca357972884670fb4bd8a803f51f19b640002ed72bfd" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both MDAnalysis and enspara are Python toolkits designed for the analysis of molecular dynamics (MD) simulation data. MDAnalysis focuses on reading, manipulating, and analyzing MD trajectories, providing infrastructure for trajectory access and atom selections, while enspara specializes in scalable modeling and analysis of molecular ensembles, particularly through Markov State Models and clustering methods. Their shared focus on MD data analysis and complementary functionalities indicate a specific shared research topic and method connection.</data>
@@ -391,6 +418,11 @@
     <edge source="15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on machine learning methods applied to molecular dynamics data, specifically using contact-map-based representations and autoencoder models such as convolutional VAEs and adversarial autoencoders. While mdlearn provides tools for preprocessing and representation learning of MD data, DeepDriveMD integrates these approaches into an adaptive sampling workflow, showing a clear shared research topic and methodological overlap.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on machine learning methods applied to molecular dynamics data, specifically utilizing autoencoders for learning representations from trajectory features.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="15ab0cc1e3f35c7adaa783f544fa7780f8aeefc9f987080f1e7a733ba50d01da" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
@@ -468,6 +500,11 @@
       <data key="rationale">Both documents focus on molecular dynamics simulations to study protein-ligand interactions and conformational states. The source discusses structure-based drug design using molecular docking and molecular dynamics, while the target presents DeepDriveMD, an adaptive molecular simulation workflow that uses machine learning to guide MD simulations toward interesting conformations. Their shared use of MD simulations and interest in protein conformations and ligand interactions establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods in drug discovery, specifically utilizing molecular dynamics simulations and analyzing protein-ligand interactions to guide candidate selection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="1c0c3d6795f6aea9b2785bf8a8a6a9bcbfcdff45ed139372d29d82bb324b7300" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on computational analysis of protein-ligand interactions and molecular dynamics simulations. The source discusses structure-based drug design and molecular dynamics to study protein-ligand complexes, while the target provides a toolkit (enspara) for scalable modeling and analysis of molecular ensembles from MD data, including clustering and Markov State Models. This shared focus on analyzing molecular dynamics data and protein conformations establishes a specific scientific connection.</data>
@@ -528,6 +565,11 @@
       <data key="rationale">Both documents focus on applying deep learning methods to molecular dynamics simulations of proteins, specifically using graph or contact-map representations to analyze protein conformational states and dynamics. They share a research topic in machine learning-driven analysis and sampling of protein conformations, making their approaches scientifically connected.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on developing advanced machine learning frameworks to analyze protein dynamics and extract residue-level features from molecular dynamics simulations for drug discovery and structural biology applications.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="20ddb9cdf632136cc63dc7f0caa0b86e07c42cb6fb098a88c2c9cc5f33baeefc" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on analyzing protein dynamics using computational methods. The source uses graph neural networks to identify conformational binding signatures in molecular dynamics simulations, while the target provides a toolkit for scalable modeling and analysis of molecular ensembles, including Markov State Models and clustering methods relevant to protein conformational states and allostery. Their shared emphasis on computational analysis of protein conformational dynamics and allosteric mechanisms establishes a meaningful scientific connection.</data>
@@ -576,6 +618,11 @@
     <edge source="210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics and machine learning methods applied to molecular systems. The source discusses diffusion models for 3D molecular generation in drug design, while the target describes DeepDriveMD, an adaptive molecular simulation workflow using deep learning to guide molecular dynamics simulations. Their shared emphasis on integrating machine learning with molecular dynamics for exploring molecular conformations and properties establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="210ab976a5b82c2b61a919283e84c4936df5919026243e937cae403a36dfbb3d" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on the application of generative diffusion models and machine learning techniques for molecular generation and drug discovery. This shared methodological focus on diffusion-based drug design provides a direct and useful connection between the two records.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1" target="40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6">
@@ -628,6 +675,11 @@
       <data key="rationale">Both documents focus on integrating molecular dynamics simulations with machine learning techniques to analyze and guide molecular conformations. The source uses MD and ML to restore p53 functionality by generating and evaluating molecules, while the target describes an adaptive MD workflow driven by deep learning to explore conformational states. Their shared use of MD simulations combined with ML for molecular state exploration and refinement establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational frameworks utilizing molecular dynamics simulations, machine learning surrogate models, and generative diffusion models to discover therapeutic compounds that restore the function of mutant p53.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="28115bc6045813c5a3d43ea04be0fb512103a23e940d8e8d97958ceb3bed8fe1" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics (MD) simulations and analysis of molecular ensembles, with the source using MD simulations and machine learning to restore p53 function, and the target providing a toolkit (enspara) for scalable modeling and analysis of MD data including clustering and Markov State Models. The shared use of MD data analysis and modeling methods establishes a specific scientific connection.</data>
@@ -668,6 +720,11 @@
       <data key="rationale">Both documents focus on molecular dynamics (MD) simulation data analysis involving residue-pair interactions and energy/contact maps. i-gRINN performs detailed residue-pair energy network analysis from MD trajectories, while DeepDriveMD uses contact-map-based representations and machine learning to guide adaptive MD sampling. Their shared use of residue-pair matrices and integration of MD with machine learning establishes a specific scientific connection.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational frameworks for analyzing protein molecular dynamics trajectories to extract structural and energetic insights for downstream applications like machine learning and drug discovery.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="40d9a47ad9f3b756b6ea1f1c8ae428ede792add3b898d34268fb98beaa189bc6" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on analyzing protein molecular dynamics data using graph-based methods and machine learning. The source describes i-gRINN, which performs residue-pair energy network analysis from MD trajectories, producing network metrics and energy matrices for machine learning. The target presents MDGraphEmb, a toolkit converting MD trajectories into graph embeddings for classification of protein conformational states. Both share the theme of graph representation of protein dynamics and integration with machine learning for functional insights.</data>
@@ -686,6 +743,11 @@
     <edge source="54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on molecular dynamics (MD) analysis and modeling, with PyEMMA providing tools for featurization, clustering, and Markov State Models, while DeepDriveMD integrates MD simulation with machine learning for adaptive sampling and representation learning. Their shared use of MD data analysis and clustering methods establishes a specific scientific connection.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on the analysis of molecular dynamics trajectories, with the source describing a general-purpose kinetics and modeling package and the target outlining a specialized machine learning pipeline for quantifying protein dynamics.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="54a39f714fbbb9ed42602646953e6f19e5238eef2fdd02573efda9774e6becf5" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
@@ -718,6 +780,11 @@
       <data key="rationale">Both documents focus on 3D molecule generation for drug design using advanced AI models, specifically involving spatial or structural constraints and conditional generation methods. The source benchmarks LLMs under spatial constraints for molecular design, while the target proposes a multimodal diffusion model for text-guided 3D molecule generation, indicating a shared research topic in AI-driven 3D molecular structure generation and control.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="56c312d87bb3257fb751157b0d2cc23769af9551e3fdbf2a5ddb1b45cc6ab917" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods and generative models for structure-based drug design and molecular generation. They share a core interest in evaluating or optimizing molecular structures for protein targets.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on residue-level network analysis of protein structures, using graph-based methods to study residue interactions and allostery. RinPy constructs residue interaction networks from protein structures and ensembles emphasizing graph-theoretical analysis, while gRINN analyzes residue interaction energies from MD trajectories to build protein energy networks and perform network analysis. Their shared focus on residue interaction networks and network centrality measures establishes a specific scientific connection.</data>
@@ -726,6 +793,11 @@
     <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on residue interaction networks in proteins and their analysis, with the target document explicitly mentioning RinPy as a key tool in the molecular dynamics and machine learning software landscape, indicating a shared research topic and method.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods for analyzing protein structures and dynamics, specifically addressing comparative states like wild-type versus mutant or ligand-bound states to study functional mechanisms and drug discovery.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="5a23c675afd6c36f84f7e8551dfbe72a757164d7c641fadfa020a13546f11257" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
@@ -743,9 +815,19 @@
       <data key="rationale">Both documents focus on computational drug discovery through novel molecule generation guided by advanced AI models. The source uses large language models for molecule design and optimization, while the target employs text-guided multimodal diffusion models for 3D molecule generation, linking textual descriptions to molecular structures. Their shared emphasis on AI-driven, text- or language-based molecular design and drug discovery establishes a specific scientific connection beyond generic overlap.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="61366ca2587a0ecbbb897c6906eef57fa135d656547af689b10b3daac86eb5b5" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents describe computational frameworks and pipelines aimed at automated molecular generation and drug discovery. They share a core focus on leveraging advanced machine learning methods to propose and optimize novel therapeutic compounds.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568" target="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on residue interaction energies and protein molecular dynamics analysis, with gRINN providing force-field-based residue interaction energy calculations and network analyses, and the target document discussing software tools including gRINN/i-gRINN relevant to extending SAWNERGY for machine learning on MD trajectories. They share a specific research topic and methods related to residue interaction networks and energetic decomposition in protein MD simulations.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents deal with the analysis of protein molecular dynamics trajectories, specifically extracting residue-level energetic or structural information, with the first document explicitly comparing its software to the SAWNERGY pipeline described in the second.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="622fad9b953c7e7e4b6221f1f6e1949a426e80c18a21948786f778c5a6d59568" target="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
@@ -756,6 +838,11 @@
     <edge source="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d" target="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on integrating machine learning with molecular dynamics simulations, specifically using representation learning on residue interactions and contact maps. DeepDriveMD is explicitly mentioned in the source as a key project relevant to SAWNERGY, and both share the goal of leveraging learned representations for scientific insights, though with different emphases (adaptive sampling vs. mutation/allostery hypotheses).</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents directly discuss the SAWNERGY project, focusing on its machine learning software landscape and its end-to-end research pipeline for analyzing protein molecular dynamics.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="723918af919b4a21040ad86e0193aba2cd00d299f4b0687e4d6241ff836c822d" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
@@ -778,6 +865,21 @@
       <data key="rationale">Both papers focus on 3D molecule generation using equivariant diffusion models and graph neural networks, aiming to improve molecular design for drug discovery. They share a specific research topic of equivariant diffusion-based 3D molecular generation, with one emphasizing target-aware generation and affinity prediction, and the other emphasizing text-guided conditional generation, indicating a useful connection in methodology and application domain.</data>
       <data key="inferred_by">llm</data>
     </edge>
+    <edge source="83574c94ecd3c5a64d93803759126be639f344f6aa384fb2b1a4a66aa906ce84" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods and machine learning models for drug discovery and molecular generation targeting protein structures. Specifically, they utilize generative diffusion models to propose novel therapeutic compounds.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="b3559ccb7f15c5d6c649d39766b4f9e9eb2fa7cee9617728d93f03a91e48f84f" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on generative machine learning models applied to drug discovery and molecular design, specifically utilizing diffusion models for generating novel molecular structures.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01" target="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents discuss the integration of molecular dynamics simulations with machine learning and autoencoders to analyze protein conformations and drive iterative scientific workflows.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
     <edge source="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on advanced analysis of molecular dynamics (MD) simulation data using machine learning and statistical modeling techniques. DeepDriveMD emphasizes adaptive sampling driven by deep learning to explore molecular conformations, while enspara provides scalable tools for clustering and Markov State Model construction from MD trajectories. Their shared focus on MD data analysis, clustering, and modeling molecular ensembles establishes a meaningful scientific connection.</data>
@@ -791,6 +893,21 @@
     <edge source="ba05739ed5b10ceaec6b93c78f6bbddb88151b7e11e075067d85275b6968bf01" target="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
       <data key="relation_type">topical_similarity</data>
       <data key="rationale">Both documents focus on machine learning methods applied to molecular dynamics data and representation learning. DeepDriveMD uses deep learning for adaptive sampling in molecular simulations, while deeptime provides general-purpose tools for dynamical modeling and time-lagged representations, including neural network approaches, which can complement adaptive sampling workflows like DeepDriveMD.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0" target="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on computational methods and toolkits for analyzing protein molecular dynamics simulations, particularly involving trajectory data and comparisons between wild-type and mutant protein states.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on applying machine learning and graph-based representations to molecular dynamics simulations of protein conformational ensembles. They share a core methodology centered on extracting feature representations from simulation trajectories to analyze protein dynamics.</data>
+      <data key="inferred_by">llm</data>
+    </edge>
+    <edge source="ba7e6996a4b92c92e6f4866e9d7fae8b925eec4baddb67bab4c7920ed8224ad0" target="f8abd04bd9243652ca648c5d9b7c4efb002775eee191b36a8006fb0ec5b38d5b">
+      <data key="relation_type">topical_similarity</data>
+      <data key="rationale">Both documents focus on analyzing molecular dynamics and time-series representations, with the target library explicitly noting integration with the source pipeline for dynamical analysis.</data>
       <data key="inferred_by">llm</data>
     </edge>
     <edge source="cb05895748e20805aea052ca4a473c8e6e7f6f4303edebb6eb6aa79a27c8a44e" target="f421dffa71e9d4f28ba2ed6e84a7480a74402e33d2a660697c728fb793eb5cfc">
