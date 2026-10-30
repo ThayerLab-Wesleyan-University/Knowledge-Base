@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import shutil
 
 import pytest
@@ -18,6 +19,10 @@ KEYWORDS = ['protein dynamics', 'molecular simulation', 'residue contacts', 'rep
 def repo(tmp_path):
     for folder in ('config', 'prompts'):
         shutil.copytree(PROJECT / folder, tmp_path / folder)
+    # Tests assume OpenAI is primary, independent of the deployed provider.
+    config = tmp_path / 'config/ingestion.json'
+    config.write_text(json.dumps({**json.loads(config.read_text()), 'provider': 'openai',
+                                  'model': 'gpt-4.1-mini-2025-04-14', 'model_context_tokens': 1047576}))
     for folder in ('pdf', 'markdown'):
         (tmp_path / folder).mkdir()
         (tmp_path / folder / 'README.md').write_text('Keep these instructions.\n')
