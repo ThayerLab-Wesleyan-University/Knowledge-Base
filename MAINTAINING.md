@@ -89,8 +89,8 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
-| `provider` | `openai` | Preferred provider: `openai` or `gemini`; automatic fallback to the other. |
-| `model` | `gpt-4.1-mini-2025-04-14` | OpenAI snapshot; also supports `gpt-4.1-mini`, or `gemini-3.8-flash` / `gemini-3.5-flash-lite` with Gemini. |
+| `provider` | `gemini` | Preferred provider: `openai` or `gemini`; automatic fallback to the other. |
+| `model` | `gemini-3.5-flash-lite` | Also supports `gemini-3.8-flash`, or `gpt-4.1-mini-2025-04-14` / `gpt-4.1-mini` with OpenAI. |
 | `model_context_tokens` | 1,047,576 | Checked against the model profile. |
 | `max_output_tokens` | 2,048 | Per-response output cap. |
 | `temperature` | 0 | Generation setting, not a guarantee of deterministic model output. |
