@@ -29,6 +29,8 @@ def maximum_requests(operations):
 def retry_delay(response, attempt):
     delay = 5 * 2 ** attempt + random.uniform(0, 1)
     if response is not None:
+        if response.status_code == 429:  # Outlast per-minute provider rate limits.
+            delay = max(delay, 30 * 2 ** attempt)
         value = response.headers.get("Retry-After", "")
         try:
             wait = float(value)

@@ -125,6 +125,8 @@ def test_transient_delays_honor_retry_after_and_stay_bounded(monkeypatch):
     assert retry_delay(httpx.Response(503), 0) == 5.5
     assert retry_delay(httpx.Response(503), 1) == 10.5
     assert retry_delay(httpx.Response(429, headers={'Retry-After': '30'}), 0) == 30
+    assert retry_delay(httpx.Response(429), 0) == 30
+    assert retry_delay(httpx.Response(429), 1) == 60
     assert retry_delay(httpx.Response(503, headers={'Retry-After': '3600'}), 0) == 60
     assert retry_delay(httpx.Response(503, headers={'Retry-After': 'garbage'}), 0) == 5.5
     monkeypatch.setattr('utility_scripts.llm.time.time', lambda: 0)
