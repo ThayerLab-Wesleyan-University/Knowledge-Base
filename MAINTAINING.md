@@ -98,7 +98,7 @@ Settings live in [config/ingestion.json](config/ingestion.json). Prompt versions
 | `max_extracted_input_tokens` | 150,000 | Conservative token upper bound: one token per UTF-8 byte of extracted text. |
 | `max_new_documents` | 10 | Maximum distinct new sources in one batch. |
 | `max_api_requests` | 300 | Batch-wide attempt cap, including retries. |
-| `request_timeout_seconds` | 60 | HTTP transport timeout. |
+| `request_timeout_seconds` | 180 | HTTP transport timeout. |
 | `max_pdf_pages` | 300 | Reject longer PDFs before extraction. |
 | `max_pdf_page_stream_bytes` | 10,000,000 | Reject oversized decompressed page streams. |
 
